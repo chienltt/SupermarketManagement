@@ -22,7 +22,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="version1" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="version1">
+      <change afterPath="$PROJECT_DIR$/src/src/product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/sample.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +77,13 @@
     </breakpoint_any>
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -135,12 +151,12 @@
       <Port>5050</Port>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="src.Main" />
       <module name="SupermarketManagement" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="src.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -255,34 +271,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1614135892424" />
-    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog" timestamp="1614243758572">
+    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog" timestamp="1614522954666">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614243758572" />
+    <state x="299" y="67" key="DBNavigator.ProjectSettingsDialog/0.0.1536.824@0.0.1536.824" timestamp="1614522954666" />
     <state x="548" y="153" key="FileChooserDialogImpl" timestamp="1614521965394">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614521965394" />
-    <state width="1478" height="210" key="GridCell.Tab.0.bottom" timestamp="1614137787810">
+    <state width="1478" height="210" key="GridCell.Tab.0.bottom" timestamp="1614757766403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614137787810" />
-    <state width="1478" height="210" key="GridCell.Tab.0.center" timestamp="1614137787810">
+    <state width="1478" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1614757766403" />
+    <state width="1478" height="210" key="GridCell.Tab.0.center" timestamp="1614757766403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614137787810" />
-    <state width="1478" height="210" key="GridCell.Tab.0.left" timestamp="1614137787810">
+    <state width="1478" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1614757766403" />
+    <state width="1478" height="210" key="GridCell.Tab.0.left" timestamp="1614757766403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614137787810" />
-    <state width="1478" height="210" key="GridCell.Tab.0.right" timestamp="1614137787810">
+    <state width="1478" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1614757766403" />
+    <state width="1478" height="210" key="GridCell.Tab.0.right" timestamp="1614757766403">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1478" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614137787810" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1614243518214">
+    <state width="1478" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1614757766403" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1614523091475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614243518214" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1614523091475" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614242627914">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
