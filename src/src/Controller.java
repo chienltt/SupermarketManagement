@@ -49,5 +49,14 @@ public class Controller {
         Controller.listRemainingBill.add(Bill);
     }
 
-
+    public static boolean payBill(bill Bill){
+        for (int i=0;i<Controller.listRemainingBill.size();i++){
+            if(Controller.listRemainingBill.get(i).getIdBill()== Bill.getIdBill())
+            {
+                Controller.listRemainingBill.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }
