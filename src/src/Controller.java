@@ -9,6 +9,9 @@ public class Controller {
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
 
+
+
+
     public static void sortListProducts(){
         Collections.sort(listProducts,(pro1,pro2)-> pro1.compareTo(pro2));
     }
@@ -24,7 +27,7 @@ public class Controller {
         Controller.listUsers.add(User);
         sortListUser();
     }
-    public static boolean addShipmentOfProduct(product Product,shipment Shipment){
+    public static boolean addShipmentOfProducts(product Product,shipment Shipment){
         for(int i=0;i<Controller.listProducts.size();i++){
             if(Controller.listProducts.get(i).getIdProduct()==Product.getIdProduct() )
             {
@@ -34,6 +37,8 @@ public class Controller {
         }
         return false;
     }
+
+
 
     public static void createBill(ArrayList<order> Orders,String idBill){
         bill Bill =new bill(idBill);
