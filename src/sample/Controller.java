@@ -24,8 +24,9 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-//Login_var
+    //Login_var
     private Boolean Logined = false;
+
     @FXML
     private JFXButton Login;
     @FXML
@@ -54,78 +55,96 @@ public class Controller implements Initializable {
     @FXML
     private JFXButton Cancel;
 
-// else
-
-
-    @FXML
-    private JFXButton Home_1;
-
+// Menu_var
 
     @FXML
-    private VBox Menu1;
+    private JFXButton Home;
 
     @FXML
-    private JFXButton Select1;
+    private JFXButton Sell_product;
 
     @FXML
-    private JFXButton Home2;
+    private JFXButton Buy_product;
+
+    @FXML
+    private JFXButton product;
+
+    @FXML
+    private JFXButton credit;
+
+    @FXML
+    private JFXButton employees;
+
+    @FXML
+    private AnchorPane Home_1;
+
+    @FXML
+    private AnchorPane Sell_product_1;
+
+    @FXML
+    private AnchorPane Buy_product_1;
+
+    @FXML
+    private AnchorPane product_1;
+
+    @FXML
+    private AnchorPane credit_1;
+
+    @FXML
+    private AnchorPane employees_1;
+
+    @FXML
+    private Label LB_Name;
 
 
-
-
+    // Signal_var
     public Boolean check_select = true;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //ss;
 
-        this.Close_Click(Login_tab, Close_Button);
+
         this.Login_Forget(Login2, Login_tab);
         this.Login_Forget(Login, Login_tab);
-
-
 
 
         //ss;
     }
 
-    public void Close_Click(AnchorPane tab, JFXButton but){
+    public void Close_Click(AnchorPane tab, JFXButton but) {
         but.setOnMouseClicked(event -> {
             tab.setVisible(false);
         });
     }
+
     // Tab_dang_nhap
-    public void Login_Forget(JFXButton login, AnchorPane Login_tab){
+    public void Login_Forget(JFXButton login, AnchorPane Login_tab) {
         login.setOnMouseClicked(event -> {
-            System.out.println(Login_tab.isVisible());
-            if (!Login_tab.isVisible()){
+            if (!Login_tab.isVisible()) {
                 Login_tab.setVisible(true);
-            }
-            else {
+            } else {
                 String user = username.getText();
                 String pass = password.getText();
                 //check_ki_tu_khi_dang_nh
                 // xu_li_thong_tin_dang_nhap
-                if (Check_key(user, pass, 4, 16) && (user.equals("gnctt") && pass.equals("191001")) ) {
+                if (Check_key(user, pass, 4, 16) && (user.equals("gnctt") && pass.equals("191001"))) {
 
                     Login_tab.setVisible(false);
                     username.setText("");
                     password.setText("");
                     notify_login.setText("");
                     Logined = true;
-                    if(Logined) {
+                    if (Logined) {
                         Login2.setText("Đăng xuất");
+                    } else {
+                        Login2.setText("Đăng nhập");
                     }
-                    else{
-                        Login2.setText("Đănh nhập");
-                    }
-                }
-                else {
-                    if(!Check_key(user, pass, 4, 16)){
+                } else {
+                    if (!Check_key(user, pass, 4, 16)) {
                         notify_login.setText("* tài khoản mật khẩu không đúng định dạng, không \n" +
                                 "chứa kí tự đặc biệt, dài hơn 4 kí tự không quá 16 kí tự");
-                    }
-                    else{
+                    } else {
                         notify_login.setText("* tài khoản hoặc mật khẩu không chính xác vui lòg nhập lại \n" + "hoặc chọn quên mật khẩu");
                     }
 
@@ -143,8 +162,7 @@ public class Controller implements Initializable {
 
                 content.setText("          Đã gửi mật khẩu mới\n" +
                         "            tới gmail của bạn");
-            }
-            else {
+            } else {
                 content.setText("          tài khoản chưa tồn tại\n" +
                         "            hãy đăng kí với quản lí");
             }
@@ -153,25 +171,11 @@ public class Controller implements Initializable {
     //
 
 
-    public void ButtonSelect(ActionEvent event) {
-        if (check_select) {
-            Menu1.setVisible(true);
-            check_select = false;
-        }
-        else {
-            Menu1.setVisible(false);
-            check_select = true;
-        }
-
-    }
-
-
-
     // Kiem_tra_dinh_dang_us_ps;
 
-    public boolean Check_space(String a){
+    public boolean Check_space(String a) {
         for (int i = 0; i < a.length(); i++) {
-            if ((a.charAt(i) >= 65 && a.charAt(i) <= 90) || (a.charAt(i) >= 97 && a.charAt(i) <= 122) || (a.charAt(i) >= 48 && a.charAt(i) <= 57) ) {
+            if ((a.charAt(i) >= 65 && a.charAt(i) <= 90) || (a.charAt(i) >= 97 && a.charAt(i) <= 122) || (a.charAt(i) >= 48 && a.charAt(i) <= 57)) {
 
                 return true;
             }
@@ -179,15 +183,79 @@ public class Controller implements Initializable {
         return false;
     }
 
-    public boolean Check_key(String a, String b,int minlength, int maxlength) {
+    public boolean Check_key(String a, String b, int minlength, int maxlength) {
         if (a.length() <= minlength || b.length() <= minlength || a.length() >= maxlength || b.length() >= maxlength) {
             return false;
-        }
-        else {
-            if(Check_space(a) && Check_space(b)) {
+        } else {
+            if (Check_space(a) && Check_space(b)) {
                 return true;
             }
         }
         return false;
     }
+
+
+
+
+    public void handleClick(ActionEvent e) {
+
+        if (e.getSource() == Home) {
+            LB_Name.setText("trang chủ");
+            Home_1.setVisible(true);
+            Sell_product_1.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
+        if (e.getSource() == Sell_product) {
+            LB_Name.setText("tạo đơn hàng");
+            Home_1.setVisible(false);
+            Sell_product_1.setVisible(true);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
+        if (e.getSource() == Buy_product) {
+            LB_Name.setText("nhập lô hàng");
+            Home_1.setVisible(false);
+            Sell_product_1.setVisible(false);
+            Buy_product_1.setVisible(true);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
+            if (e.getSource() == product) {
+                LB_Name.setText("sản phẩm");
+                Home_1.setVisible(false);
+                Sell_product_1.setVisible(false);
+                Buy_product_1.setVisible(false);
+                product_1.setVisible(true);
+                credit_1.setVisible(false);
+                employees_1.setVisible(false);
+            }
+
+            if (e.getSource() == employees) {
+                LB_Name.setText("nhân viên");
+                Home_1.setVisible(false);
+                Sell_product_1.setVisible(false);
+                Buy_product_1.setVisible(false);
+                product_1.setVisible(false);
+                credit_1.setVisible(false);
+                employees_1.setVisible(true);
+            }
+        if (e.getSource() ==credit) {
+            LB_Name.setText("thẻ tín dụng");
+            Home_1.setVisible(false);
+            Sell_product_1.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(true);
+            employees_1.setVisible(false);
+        }
+        }
     }
+
+
+

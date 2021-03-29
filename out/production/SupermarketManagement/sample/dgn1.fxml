@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,38 +13,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1051.7" style="-fx-background-color: #fcfcfc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="Main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1052.0" style="-fx-background-color: #c7c9c9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <AnchorPane prefHeight="50.0" prefWidth="426.0" style="-fx-background-color: #ff0000;" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="inform_tab" prefHeight="60.0" prefWidth="852.0" style="-fx-background-color: #02567d;" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton layoutX="833.0" layoutY="7.0" prefHeight="28.0" prefWidth="38.0" text=" ">
-               <graphic>
-                  <ImageView fitHeight="27.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="Search-icon.png" />
-                     </image>
-                  </ImageView>
-               </graphic></JFXButton>
-            <FontAwesomeIconView glyphName="USER" layoutX="970.0" layoutY="35.0" size="30" wrappingWidth="29.683828971501498" />
-            <JFXButton fx:id="Login2" layoutX="627.0" layoutY="9.0" prefHeight="31.0" prefWidth="59.0" text="Đăng nhập" AnchorPane.rightAnchor="0.0">
+            <FontAwesomeIconView glyphName="USER" layoutX="721.0" layoutY="42.0" size="40" wrappingWidth="29.683828971501498" />
+            <JFXButton fx:id="Login2" layoutX="961.0" layoutY="7.0" prefHeight="44.0" prefWidth="73.0" style="-fx-background-color: #ffffff;" text="Đăng&#10;nhập" AnchorPane.rightAnchor="3.0">
                <font>
-                  <Font size="8.0" />
+                  <Font size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="909.0" layoutY="5.0" prefHeight="38.0" prefWidth="52.0" text=" ">
-               <graphic>
-                  <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="confirm-notification-icon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <Label layoutX="4.0" layoutY="-3.0" prefHeight="75.0" prefWidth="136.0" style="-fx-background-color: #02e1ed;" text="    Home" textAlignment="CENTER" textFill="#f6eeee" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="916.0" AnchorPane.topAnchor="0.0">
-               <font>
-                  <Font name="Rockwell" size="23.0" />
-               </font>
-            </Label>
             <Label layoutX="218.0" layoutY="29.0" prefHeight="35.0" prefWidth="344.0" text="Nguyễn văn A - 191001- Quầy A1" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.topAnchor="20.0">
                <font>
                   <Font name="HoloLens MDL2 Assets" size="17.0" />
@@ -51,34 +30,116 @@
             </Label>
          </children>
       </AnchorPane>
-      <VBox layoutY="52.0" prefHeight="600.0" prefWidth="136.0" style="-fx-background-color: #ededed;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="75.0">
+      <VBox fx:id="Menu_Tab" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #c7c9c9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton fx:id="Home_1" prefHeight="63.0" prefWidth="142.0" text="Home">
+            <Pane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #f5410a;">
+               <children>
+                  <ImageView fitHeight="81.0" fitWidth="94.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="BatMan.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="85.0" layoutY="33.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="67.0" prefWidth="87.0" text="GNCTT" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Century" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <JFXButton fx:id="Home" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="trang chủ" textFill="WHITE">
                <font>
-                  <Font size="10.0" />
+                  <Font size="20.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="HOME" />
+                  <FontAwesomeIconView glyphName="HOME" size="30" />
                </graphic>
             </JFXButton>
-            <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="63.0" prefWidth="174.0">
+            <JFXButton fx:id="Sell_product" layoutX="10.0" layoutY="10.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="tạo đơn&#10;  hàng" textFill="#fffafa">
                <graphic>
-                  <FontAwesomeIconView />
+                  <FontAwesomeIconView glyphName="" size="30" />
                </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </JFXButton>
-            <JFXButton layoutX="10.0" layoutY="73.0" prefHeight="63.0" prefWidth="162.0">
+            <JFXButton fx:id="Buy_product" layoutX="10.0" layoutY="73.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="nhập lô hàng" textFill="WHITE">
                <graphic>
-                  <FontAwesomeIconView />
+                  <FontAwesomeIconView size="30" />
                </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </JFXButton>
-            <JFXButton layoutX="10.0" layoutY="136.0" prefHeight="63.0" prefWidth="194.0">
+            <JFXButton fx:id="product" layoutX="10.0" layoutY="136.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="sản phẩm" textFill="WHITE">
                <graphic>
-                  <FontAwesomeIconView />
+                  <FontAwesomeIconView size="30" />
                </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="credit" layoutX="10.0" layoutY="340.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="thẻ tín dụng" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView size="30" />
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="employees" layoutX="10.0" layoutY="410.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" style="-fx-background-color: #03a817;" text="nhân viên" textFill="WHITE">
+               <graphic>
+                  <FontAwesomeIconView size="30" />
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font>
             </JFXButton>
          </children>
       </VBox>
-      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #03d1ff;" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="267.70000000000005" AnchorPane.topAnchor="125.0">
+      <AnchorPane fx:id="tittle" layoutX="200.0" layoutY="57.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label fx:id="LB_Name" alignment="CENTER" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #a22ffa;" text="trang chủ" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="301.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Content" layoutX="200.0" layoutY="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <AnchorPane fx:id="Home_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Sell_product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button layoutX="61.0" layoutY="377.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button layoutX="374.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button layoutX="286.0" layoutY="159.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="credit_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button layoutX="333.0" layoutY="208.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="employees_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button layoutX="78.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="267.70000000000005" AnchorPane.topAnchor="125.0">
          <children>
             <Label layoutX="212.0" layoutY="33.0" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #f0f6f7;" text="Sign in" textFill="#240c0c">
                <font>
@@ -122,26 +183,5 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <VBox fx:id="Menu1" prefHeight="650.0" prefWidth="200.0" style="-fx-background-color: #fa0505;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Pane prefHeight="92.0" prefWidth="200.0" style="-fx-background-color: #fc5d5d;">
-               <children>
-                  <Label layoutX="74.0" layoutY="32.0" prefHeight="29.0" prefWidth="52.0" text="GNCTT" textFill="#fffefe">
-                     <font>
-                        <Font name="Forte" size="17.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="Select1" layoutX="33.0" layoutY="33.0" onAction="#ButtonSelect" prefHeight="27.0" prefWidth="30.0" style="-fx-background-color: #170201;" />
-               </children>
-            </Pane>
-            <JFXButton fx:id="Home2" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="Trang chủ" />
-            <JFXButton layoutX="10.0" layoutY="102.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C1" />
-            <JFXButton layoutX="10.0" layoutY="147.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C2" />
-            <JFXButton layoutX="10.0" layoutY="192.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C3" />
-            <JFXButton layoutX="10.0" layoutY="237.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C4" />
-            <JFXButton layoutX="10.0" layoutY="282.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C5" />
-            <JFXButton layoutX="10.0" layoutY="327.0" onAction="#ButtonSelect" prefHeight="45.0" prefWidth="200.0" text="C6" />
-         </children>
-      </VBox>
    </children>
 </AnchorPane>
