@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
@@ -13,6 +15,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -20,7 +25,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import src.product;
 
 public class Controller implements Initializable {
 
@@ -96,6 +101,29 @@ public class Controller implements Initializable {
     @FXML
     private Label LB_Name;
 
+    //product_1_table
+    @FXML
+    private TableView<product> product_table;
+    @FXML
+    private TableColumn<product, Integer> macol;
+    @FXML
+    private TableColumn<product, String> tencol;
+    @FXML
+    private TableColumn<product, Integer> soluongcol;
+    @FXML
+    private TableColumn<product, String> giacol;
+    @FXML
+    private TableColumn<product, String> ngaynhapcol;
+    @FXML
+    private TableColumn<product, String> HSDcol;
+    @FXML
+    private TableColumn<product, String> tinhtrangcol;
+    @FXML
+    private TableColumn<product, String> xulicol;
+
+    private ObservableList<product> productList;
+
+
 
     // Signal_var
     public Boolean check_select = true;
@@ -104,11 +132,22 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //ss;
 
-
+        this.Close_Click(Login_tab, Close_Button);
         this.Login_Forget(Login2, Login_tab);
         this.Login_Forget(Login, Login_tab);
 
+        productList= FXCollections.observableArrayList(
 
+        );
+        macol.setCellValueFactory(new PropertyValueFactory<product, Integer>("ma"));
+        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("ten"));
+        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("soluong"));
+        giacol.setCellValueFactory(new PropertyValueFactory<product, String>("gia"));
+        ngaynhapcol.setCellValueFactory(new PropertyValueFactory<product, String>("ngaynhap"));
+        HSDcol.setCellValueFactory(new PropertyValueFactory<product, String>("HSD"));
+        tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("tinhtrang"));
+        xulicol.setCellValueFactory(new PropertyValueFactory<product, String>("xuli"));
+        product_table.setItems(productList);
         //ss;
     }
 
@@ -196,7 +235,7 @@ public class Controller implements Initializable {
 
 
 
-
+    //Menu_
     public void handleClick(ActionEvent e) {
 
         if (e.getSource() == Home) {
