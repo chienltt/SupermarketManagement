@@ -136,7 +136,7 @@
             </AnchorPane>
             <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TableView fx:id="product1" prefHeight="499.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="product_table" prefHeight="499.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
                      <columns>
                         <TableColumn fx:id="macol" prefWidth="85.33331298828125" text="Mã" />
                         <TableColumn fx:id="tencol" minWidth="8.0" prefWidth="79.66668701171875" text="Tên" />

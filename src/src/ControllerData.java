@@ -3,7 +3,7 @@ package src;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Controller {
+public class ControllerData {
 
     public static ArrayList<product> listProducts = new ArrayList<product>();
     public static ArrayList<user> listUsers= new ArrayList<user>();
@@ -17,18 +17,18 @@ public class Controller {
     }
 
     public static void addProduct(product Product){
-        Controller.listProducts.add(Product);
+        ControllerData.listProducts.add(Product);
         sortListProducts();
     }
     public static void addUser(user User){
-        Controller.listUsers.add(User);
+        ControllerData.listUsers.add(User);
         sortListUser();
     }
     public static boolean addShipmentOfProduct(product Product,shipment Shipment){
-        for(int i=0;i<Controller.listProducts.size();i++){
-            if(Controller.listProducts.get(i).getIdProduct()==Product.getIdProduct() )
+        for(int i = 0; i< ControllerData.listProducts.size(); i++){
+            if(ControllerData.listProducts.get(i).getIdProduct()==Product.getIdProduct() )
             {
-                Controller.listProducts.get(i).addShipment(Shipment);
+                ControllerData.listProducts.get(i).addShipment(Shipment);
                 return true;
             }
         }
@@ -41,14 +41,14 @@ public class Controller {
         {
             Bill.addOrders(Orders.get(i));
         }
-        Controller.listRemainingBill.add(Bill);
+        ControllerData.listRemainingBill.add(Bill);
     }
 
     public static boolean payBill(bill Bill){
-        for (int i=0;i<Controller.listRemainingBill.size();i++){
-            if(Controller.listRemainingBill.get(i).getIdBill()== Bill.getIdBill())
+        for (int i = 0; i< ControllerData.listRemainingBill.size(); i++){
+            if(ControllerData.listRemainingBill.get(i).getIdBill()== Bill.getIdBill())
             {
-                Controller.listRemainingBill.remove(i);
+                ControllerData.listRemainingBill.remove(i);
                 return true;
             }
         }

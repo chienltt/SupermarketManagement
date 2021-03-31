@@ -24,8 +24,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import src.ControllerData;
+import src.date;
 import src.product;
+import src.shipment;
 
 public class Controller implements Initializable {
 
@@ -112,14 +117,16 @@ public class Controller implements Initializable {
     private TableColumn<product, Integer> soluongcol;
     @FXML
     private TableColumn<product, String> giacol;
-    @FXML
-    private TableColumn<product, String> ngaynhapcol;
-    @FXML
-    private TableColumn<product, String> HSDcol;
+//    @FXML
+//    private TableColumn<product, String> ngaynhapcol;
+//    @FXML
+//    private TableColumn<product, String> HSDcol;
     @FXML
     private TableColumn<product, String> tinhtrangcol;
-    @FXML
-    private TableColumn<product, String> xulicol;
+//    @FXML
+//    private TableColumn<product, String> xulicol;
+
+//    private TableColumn<product, String> malohangcol;
 
     private ObservableList<product> productList;
 
@@ -136,19 +143,33 @@ public class Controller implements Initializable {
         this.Login_Forget(Login2, Login_tab);
         this.Login_Forget(Login, Login_tab);
 
-        productList= FXCollections.observableArrayList(
+//        shipment shipment1=new shipment("198238912y84218",10,new date(12,10,2020),new date(2020,10,12));
+//        shipment shipment2=new shipment("198238912y84218",10,new date(12,10,2020),new date(2020,10,12));
+//        ArrayList<shipment> listProducts=new ArrayList<shipment>();
+//        listProducts.add(shipment1);
+//        listProducts.add(shipment2);
 
-        );
-        macol.setCellValueFactory(new PropertyValueFactory<product, Integer>("ma"));
-        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("ten"));
-        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("soluong"));
+        macol.setCellValueFactory(new PropertyValueFactory<product, Integer>("ma san pham"));
+//        malohangcol.setCellValueFactory(new PropertyValueFactory<product,String>("ma lo hang"));
+        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("ten san pham "));
+        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("so luong"));
         giacol.setCellValueFactory(new PropertyValueFactory<product, String>("gia"));
-        ngaynhapcol.setCellValueFactory(new PropertyValueFactory<product, String>("ngaynhap"));
-        HSDcol.setCellValueFactory(new PropertyValueFactory<product, String>("HSD"));
+//        ngaynhapcol.setCellValueFactory(new PropertyValueFactory<product, String>("ngaynhap"));
+//        HSDcol.setCellValueFactory(new PropertyValueFactory<product, String>("HSD"));
         tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("tinhtrang"));
-        xulicol.setCellValueFactory(new PropertyValueFactory<product, String>("xuli"));
-        product_table.setItems(productList);
+//        xulicol.setCellValueFactory(new PropertyValueFactory<product, String>("xuli"));
+        product_table.setItems(setProductlist());
         //ss;
+    }
+
+    public ObservableList<product> setProductlist(){
+        ObservableList<product> productlist= FXCollections.observableArrayList();
+        for (int i=0;i< ControllerData.listProducts.size();i++){
+            productlist.add(ControllerData.listProducts.get(i));
+        }
+        productlist.add(new product("mi tom","aoiwdiuajwd",4.00));
+        System.out.println(productlist);
+        return productlist;
     }
 
     public void Close_Click(AnchorPane tab, JFXButton but) {

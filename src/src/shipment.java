@@ -1,7 +1,10 @@
 package src;
 
 
-public class shipment  {
+public class shipment {
+    private String nameProduct;
+    private String idProduct;
+    private double price;
     private int numberOfProduct;
     private date receptionDate;
     private date expirationDate;
