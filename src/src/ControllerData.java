@@ -9,6 +9,18 @@ public class ControllerData {
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
 
+    public static void testAddProduct(){
+        product a=new product("bim bim","awdawd",5.0);
+        product b= new product("sua","sgdirgsjif",7.5);
+        product c= new product ("mitom","cbakcawd",4.0);
+        a.addShipment(new shipment("awdaywd",100,new date(5,5,5),new date(1,1,1)));
+        a.addShipment(new shipment("naiwdhaiwd",50,new date(50,50,50),new date(10,10,10)));
+        b.addShipment(new shipment("awdaywd",500,new date(56,6,7),new date(3,1,2)));
+        ControllerData.listProducts.add(a);
+        ControllerData.listProducts.add(b);
+        ControllerData.listProducts.add(c);
+    }
+
     public static void sortListProducts(){
         Collections.sort(listProducts,(pro1,pro2)-> pro1.compareTo(pro2));
     }

@@ -1,7 +1,6 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -9,28 +8,18 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import src.ControllerData;
-import src.date;
 import src.product;
-import src.shipment;
 
 public class Controller implements Initializable {
 
@@ -110,13 +99,13 @@ public class Controller implements Initializable {
     @FXML
     private TableView<product> product_table;
     @FXML
-    private TableColumn<product, Integer> macol;
+    private TableColumn<src.product, String> macol;
     @FXML
     private TableColumn<product, String> tencol;
     @FXML
     private TableColumn<product, Integer> soluongcol;
     @FXML
-    private TableColumn<product, String> giacol;
+    private TableColumn<src.product, Double> giacol;
 //    @FXML
 //    private TableColumn<product, String> ngaynhapcol;
 //    @FXML
@@ -143,20 +132,14 @@ public class Controller implements Initializable {
         this.Login_Forget(Login2, Login_tab);
         this.Login_Forget(Login, Login_tab);
 
-//        shipment shipment1=new shipment("198238912y84218",10,new date(12,10,2020),new date(2020,10,12));
-//        shipment shipment2=new shipment("198238912y84218",10,new date(12,10,2020),new date(2020,10,12));
-//        ArrayList<shipment> listProducts=new ArrayList<shipment>();
-//        listProducts.add(shipment1);
-//        listProducts.add(shipment2);
-
-        macol.setCellValueFactory(new PropertyValueFactory<product, Integer>("ma san pham"));
+        macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
 //        malohangcol.setCellValueFactory(new PropertyValueFactory<product,String>("ma lo hang"));
-        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("ten san pham "));
-        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("so luong"));
-        giacol.setCellValueFactory(new PropertyValueFactory<product, String>("gia"));
+        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("nameProduct"));
+        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("numberOfProduct"));
+        giacol.setCellValueFactory(new PropertyValueFactory<product, Double>("price"));
+        tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("state123"));
 //        ngaynhapcol.setCellValueFactory(new PropertyValueFactory<product, String>("ngaynhap"));
 //        HSDcol.setCellValueFactory(new PropertyValueFactory<product, String>("HSD"));
-        tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("tinhtrang"));
 //        xulicol.setCellValueFactory(new PropertyValueFactory<product, String>("xuli"));
         product_table.setItems(setProductlist());
         //ss;
@@ -164,11 +147,10 @@ public class Controller implements Initializable {
 
     public ObservableList<product> setProductlist(){
         ObservableList<product> productlist= FXCollections.observableArrayList();
+        ControllerData.testAddProduct();
         for (int i=0;i< ControllerData.listProducts.size();i++){
             productlist.add(ControllerData.listProducts.get(i));
         }
-        productlist.add(new product("mi tom","aoiwdiuajwd",4.00));
-        System.out.println(productlist);
         return productlist;
     }
 
