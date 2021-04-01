@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -15,10 +16,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import src.ControllerData;
+import src.order;
 import src.product;
 
 public class Controller implements Initializable {
@@ -60,7 +65,7 @@ public class Controller implements Initializable {
     private JFXButton Home;
 
     @FXML
-    private JFXButton Sell_product;
+    private JFXButton Order_button;
 
     @FXML
     private JFXButton Buy_product;
@@ -78,7 +83,7 @@ public class Controller implements Initializable {
     private AnchorPane Home_1;
 
     @FXML
-    private AnchorPane Sell_product_1;
+    private AnchorPane Order_tab;
 
     @FXML
     private AnchorPane Buy_product_1;
@@ -118,6 +123,38 @@ public class Controller implements Initializable {
 //    private TableColumn<product, String> malohangcol;
 
     private ObservableList<product> productList;
+
+    //Order_var
+
+    @FXML
+    private JFXButton Order_click;
+
+    @FXML
+    private AnchorPane Order_tab_2;
+
+    @FXML
+    private TableView<product> OrDer_table;
+
+    @FXML
+    private TableColumn<product, Integer> STT_Order;
+
+    @FXML
+    private TableColumn<product, String> ID_Order;
+
+    @FXML
+    private TableColumn<product, String> Name_Order;
+
+    @FXML
+    private TableColumn<product, String> state_Order;
+
+    @FXML
+    private TableColumn<product, Double> Price_Order;
+
+    @FXML
+    private TableColumn<order, ?> Amount_Order;
+
+    @FXML
+    private TableColumn<?, ?> Sum_Order;
 
 
 
@@ -244,25 +281,26 @@ public class Controller implements Initializable {
         if (e.getSource() == Home) {
             LB_Name.setText("trang chủ");
             Home_1.setVisible(true);
-            Sell_product_1.setVisible(false);
+            Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-        if (e.getSource() == Sell_product) {
+        if (e.getSource() == Order_button) {
             LB_Name.setText("tạo đơn hàng");
             Home_1.setVisible(false);
-            Sell_product_1.setVisible(true);
+            Order_tab.setVisible(true);
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(false);
             employees_1.setVisible(false);
+
         }
         if (e.getSource() == Buy_product) {
             LB_Name.setText("nhập lô hàng");
             Home_1.setVisible(false);
-            Sell_product_1.setVisible(false);
+            Order_tab.setVisible(false);
             Buy_product_1.setVisible(true);
             product_1.setVisible(false);
             credit_1.setVisible(false);
@@ -271,7 +309,7 @@ public class Controller implements Initializable {
             if (e.getSource() == product) {
                 LB_Name.setText("sản phẩm");
                 Home_1.setVisible(false);
-                Sell_product_1.setVisible(false);
+                Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
                 product_1.setVisible(true);
                 credit_1.setVisible(false);
@@ -281,7 +319,7 @@ public class Controller implements Initializable {
             if (e.getSource() == employees) {
                 LB_Name.setText("nhân viên");
                 Home_1.setVisible(false);
-                Sell_product_1.setVisible(false);
+                Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
                 product_1.setVisible(false);
                 credit_1.setVisible(false);
@@ -290,7 +328,7 @@ public class Controller implements Initializable {
         if (e.getSource() ==credit) {
             LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
-            Sell_product_1.setVisible(false);
+            Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(true);
@@ -298,6 +336,10 @@ public class Controller implements Initializable {
         }
         }
     }
+
+
+    //Order_tab
+
 
 
 
