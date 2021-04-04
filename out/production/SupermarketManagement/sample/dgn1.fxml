@@ -130,7 +130,7 @@
             </AnchorPane>
             <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" ripplerFill="#531818" style="-fx-background-color: #ffffff;" text="tạo đơn hàng mới" visible="false" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="230.0">
+                  <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" ripplerFill="#531818" style="-fx-background-color: #ffffff;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="230.0">
                      <graphic>
                         <FontAwesomeIconView glyphName="" />
                      </graphic>
@@ -184,7 +184,7 @@
                             <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" text="STT" />
                             <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" text="Mã sản phẩm" />
                               <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" text="Tên sản phẩm" />
-                              <TableColumn fx:id="status_Order" prefWidth="113.33331298828125" text="Trạng thái" />
+                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" text="Trạng thái" />
                               <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" text="Đơn giá" />
                               <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" text="Số lượng" />
                               <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" text="Thành tiền" />
@@ -205,7 +205,7 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán">
+                        <JFXButton fx:id="Paid_button_Order" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán">
                            <graphic>
                               <FontAwesomeIconView />
                            </graphic>
@@ -216,9 +216,21 @@
                         <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
                         <TextField layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
                         <TextField layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
-                        <AnchorPane layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #42b4ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
+                        <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #bdfff2;" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
-                              <TextField fx:id="Paid_Order" layoutX="202.0" layoutY="51.0" prefHeight="30.0" prefWidth="184.0">
+                              <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../res/close-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TextField fx:id="Paid_text_Order" layoutX="202.0" layoutY="51.0" prefHeight="30.0" prefWidth="184.0">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -253,7 +265,7 @@
                                     </Lighting>
                                  </effect>
                               </Label>
-                              <TextField fx:id="ToTal_Order" layoutX="202.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
+                              <TextField fx:id="ToTal_text_Order" layoutX="202.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -273,7 +285,7 @@
                                     </Lighting>
                                  </effect>
                               </Label>
-                              <TextField fx:id="ExCash_Order" layoutX="202.0" layoutY="173.0" prefHeight="30.0" prefWidth="184.0">
+                              <TextField fx:id="ExCash_text_Order" layoutX="202.0" layoutY="173.0" prefHeight="30.0" prefWidth="184.0">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -304,6 +316,7 @@
                               </JFXButton>
                            </children>
                         </AnchorPane>
+                        <Label layoutX="362.0" layoutY="443.0" prefHeight="25.0" prefWidth="68.0" text="Label" />
                      </children>
                   </AnchorPane>
                </children>

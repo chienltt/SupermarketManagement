@@ -1,6 +1,6 @@
 package src;
 
-public class order {
+public class order  {
     private int numbers;
     private String orderName;
     private int orderPrice;

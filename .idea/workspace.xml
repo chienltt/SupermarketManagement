@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
-      <change afterPath="$PROJECT_DIR$/src/sample/Payment_dg.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/gnctt_newbranch" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -257,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617264422203</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="khung_Objiect">
+      <created>1617265616104</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1617265616104</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -291,9 +306,9 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="new_v" />
-    <MESSAGE value="khung_Objiect" />
     <MESSAGE value="ver_2_gnctt" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver_2_gnctt" />
+    <MESSAGE value="khung_Objiect" />
+    <option name="LAST_COMMIT_MESSAGE" value="khung_Objiect" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -303,7 +318,7 @@
     <SUITE FILE_PATH="coverage/SupermarketManagement$Main.ic" NAME="Main Coverage Results" MODIFIED="1615141000115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sample.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617180350877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617471591745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>src.*</FILTER>
     </SUITE>
   </component>

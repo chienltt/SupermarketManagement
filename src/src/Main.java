@@ -14,7 +14,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("../sample/dgn1.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 1051.7, 650));
-        primaryStage.getIcons().add(new Image("con9.png"));
+        primaryStage.getIcons().add(new Image("shop-icon.png"));
         primaryStage.show();
     }
 

@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -133,28 +134,45 @@ public class Controller implements Initializable {
     private AnchorPane Order_tab_2;
 
     @FXML
-    private TableView<product> OrDer_table;
+    private TableView<order> OrDer_table;
 
     @FXML
-    private TableColumn<product, Integer> STT_Order;
+    private TableColumn<order, Integer> STT_Order;
 
     @FXML
-    private TableColumn<product, String> ID_Order;
+    private TableColumn<order, String> ID_Order;
 
     @FXML
-    private TableColumn<product, String> Name_Order;
+    private TableColumn<order, String> Name_Order;
 
     @FXML
-    private TableColumn<product, String> state_Order;
+    private TableColumn<order, String> state_Order;
 
     @FXML
-    private TableColumn<product, Double> Price_Order;
+    private TableColumn<order, Double> Price_Order;
 
     @FXML
-    private TableColumn<order, ?> Amount_Order;
+    private TableColumn<order, Integer> Amount_Order;
 
     @FXML
-    private TableColumn<?, ?> Sum_Order;
+    private TableColumn<order, Integer> Sum_Order;
+
+    @FXML
+    private JFXButton Paid_button_Order;
+
+    @FXML
+    private AnchorPane Payment_tab;
+    @FXML
+    private JFXButton Cancel_Paid_btn;
+
+    @FXML
+    private TextField Paid_text_Order;
+
+    @FXML
+    private TextField ToTal_text_Order;
+
+    @FXML
+    private TextField ExCash_text_Order;
 
 
 
@@ -168,6 +186,7 @@ public class Controller implements Initializable {
         this.Close_Click(Login_tab, Close_Button);
         this.Login_Forget(Login2, Login_tab);
         this.Login_Forget(Login, Login_tab);
+        this.Order_event();
 
         macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
 //        malohangcol.setCellValueFactory(new PropertyValueFactory<product,String>("ma lo hang"));
@@ -194,6 +213,12 @@ public class Controller implements Initializable {
     public void Close_Click(AnchorPane tab, JFXButton but) {
         but.setOnMouseClicked(event -> {
             tab.setVisible(false);
+        });
+    }
+
+    public void Open_Click(AnchorPane tab, JFXButton btn) {
+        btn.setOnMouseClicked(event -> {
+            tab.setVisible(true);
         });
     }
 
@@ -296,6 +321,9 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
 
+            //content of orderTab
+            Order_tab_2.setVisible(false);
+
         }
         if (e.getSource() == Buy_product) {
             LB_Name.setText("nhập lô hàng");
@@ -335,10 +363,22 @@ public class Controller implements Initializable {
             employees_1.setVisible(false);
         }
         }
+
+        //Order_tab
+    public void Order_event() {
+        //mo_tab_tao_don_hang
+        Open_Click(Order_tab_2, Order_click);
+        //tab_thanh_toan
+        Open_Click(Payment_tab, Paid_button_Order);
+        Close_Click(Payment_tab,Cancel_Paid_btn );
+        ToTal_text_Order.setText("gnctt");
+        ToTal_text_Order.setEditable(false);
+        ExCash_text_Order.setEditable(false);
+    }
     }
 
 
-    //Order_tab
+
 
 
 
