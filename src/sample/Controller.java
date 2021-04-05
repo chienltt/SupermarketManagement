@@ -183,9 +183,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //ss;
 
-        this.Close_Click(Login_tab, Close_Button);
-        this.Login_Forget(Login2, Login_tab);
-        this.Login_Forget(Login, Login_tab);
+        this.Login_event();
         this.Order_event();
 
         macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
@@ -364,6 +362,13 @@ public class Controller implements Initializable {
         }
         }
 
+        //Login_tab
+    public void Login_event() {
+        Close_Click(Login_tab, Close_Button);
+        Login_Forget(Login2, Login_tab);
+        Login_Forget(Login, Login_tab);
+    }
+
         //Order_tab
     public void Order_event() {
         //mo_tab_tao_don_hang
@@ -374,6 +379,7 @@ public class Controller implements Initializable {
         ToTal_text_Order.setText("gnctt");
         ToTal_text_Order.setEditable(false);
         ExCash_text_Order.setEditable(false);
+        //endm
     }
     }
 

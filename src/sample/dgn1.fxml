@@ -38,16 +38,16 @@
       </AnchorPane>
       <VBox fx:id="Menu_Tab" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #c7c9c9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #f5410a;">
+            <Pane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #010f14;">
                <children>
-                  <ImageView fitHeight="81.0" fitWidth="94.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="81.0" fitWidth="94.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="BatMan.png" />
+                        <Image url="ninJa_icon_2.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="85.0" layoutY="33.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="67.0" prefWidth="87.0" text="GNCTT" textAlignment="CENTER" textFill="WHITE">
+                  <Label layoutX="94.0" layoutY="26.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="67.0" prefWidth="62.0" text="G7" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Century" size="18.0" />
+                        <Font name="Century" size="46.0" />
                      </font>
                   </Label>
                </children>
@@ -57,52 +57,76 @@
                   <Font size="20.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="HOME" size="30" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="Home_icon.png" />
+                     </image>
+                  </ImageView>
                </graphic>
             </JFXButton>
             <JFXButton fx:id="Order_button" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#c02626" style="-fx-background-color: #03a817;" text="tạo đơn&#10;  hàng" textFill="#fffafa">
-               <graphic>
-                  <FontAwesomeIconView size="30" />
-               </graphic>
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="order_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <JFXButton fx:id="Buy_product" buttonType="RAISED" layoutX="10.0" layoutY="73.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#b52424" style="-fx-background-color: #03a817;" text="nhập lô hàng" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView size="30" />
-               </graphic>
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="add_icon_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <JFXButton fx:id="product" buttonType="RAISED" layoutX="10.0" layoutY="136.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#ba1e1e" style="-fx-background-color: #03a817;" text="sản phẩm" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView size="30" />
-               </graphic>
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="product_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <JFXButton fx:id="credit" buttonType="RAISED" layoutX="10.0" layoutY="340.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#be1c1c" style="-fx-background-color: #03a817;" text="thẻ tín dụng" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView size="30" />
-               </graphic>
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="cash_2_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
             <JFXButton fx:id="employees" buttonType="RAISED" layoutX="10.0" layoutY="410.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#cd1919" style="-fx-background-color: #03a817;" text="nhân viên" textFill="WHITE">
-               <graphic>
-                  <FontAwesomeIconView size="30" />
-               </graphic>
                <font>
                   <Font size="20.0" />
                </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="employee_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </JFXButton>
          </children>
       </VBox>
-      <AnchorPane fx:id="tittle" layoutX="200.0" layoutY="57.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+      <AnchorPane fx:id="tittle" layoutX="200.0" layoutY="57.0" style="-fx-background-color: #05f5f5;" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
          <children>
             <Label fx:id="LB_Name" alignment="CENTER" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #a22ffa;" text="trang chủ" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="301.0" AnchorPane.topAnchor="0.0">
                <font>
@@ -118,7 +142,7 @@
                   <Button mnemonicParsing="false" text="Button" />
                   <ImageView fitHeight="485.0" fitWidth="852.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/back_01.png" />
+                        <Image url="back_01.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="242.0" layoutY="73.0" text="Welcome" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
@@ -138,7 +162,7 @@
                         <Font size="20.0" />
                      </font>
                   </JFXButton>
-                  <AnchorPane fx:id="Order_tab_2" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="Order_tab_2" prefHeight="555.0" prefWidth="852.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label layoutX="24.0" layoutY="43.0" style="-fx-background-color: #fff5f5;" text="Nhập mã sản phẩm">
                            <font>
@@ -171,10 +195,7 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="Thêm">
-                           <graphic>
-                              <FontAwesomeIconView />
-                           </graphic>
+                        <JFXButton alignment="BOTTOM_RIGHT" buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="  Thêm">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -205,18 +226,22 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton fx:id="Paid_button_Order" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán">
-                           <graphic>
-                              <FontAwesomeIconView />
-                           </graphic>
+                        <JFXButton fx:id="Paid_button_Order" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="706.0" AnchorPane.topAnchor="488.0">
                            <font>
                               <Font size="14.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="buy_4_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                         </JFXButton>
                         <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
                         <TextField layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
                         <TextField layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
-                        <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #bdfff2;" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
+                        <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
                               <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
@@ -225,7 +250,7 @@
                                  <graphic>
                                     <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
-                                          <Image url="@../../res/close-icon.png" />
+                                          <Image url="close-icon.png" />
                                        </image>
                                     </ImageView>
                                  </graphic>
@@ -317,6 +342,11 @@
                            </children>
                         </AnchorPane>
                         <Label layoutX="362.0" layoutY="443.0" prefHeight="25.0" prefWidth="68.0" text="Label" />
+                        <ImageView fitHeight="20.0" fitWidth="17.0" layoutX="101.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="add-icon.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
