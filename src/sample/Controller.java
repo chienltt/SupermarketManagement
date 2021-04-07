@@ -190,13 +190,16 @@ public class Controller implements Initializable {
     private TextField ExCash_text_Order;
     // text_Order
     @FXML
-    private TextField id_product_Order;
+    private TextField id_product_Order; //text_id
 
     @FXML
-    private TextField number_Order;
+    private TextField number_Order; //text_so_luong
 
     @FXML
-    private JFXButton Add_btn_Order;
+    private JFXButton Add_btn_Order;  // button_them
+
+    @FXML
+    private TextField Total_money_Order; // text_tong_tien
 
 
 
