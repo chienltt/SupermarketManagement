@@ -199,9 +199,10 @@ public class Controller implements Initializable {
 
         this.Login_event();
         this.Order_event();
-        this.setvalueoftable();
+        setvalueoftable();
         this.searchinproducttable();
         this.editproducttable();
+        setvalueoftable();
     }
     // tao gia tri cho product_table
     public void setvalueoftable(){
@@ -267,6 +268,12 @@ public class Controller implements Initializable {
     public void Open_Click(AnchorPane tab, JFXButton btn) {
         btn.setOnMouseClicked(event -> {
             tab.setVisible(true);
+        });
+    }
+
+    public void search_Product_Click(JFXButton btn){
+        btn.setOnMouseClicked(event -> {
+
         });
     }
 
