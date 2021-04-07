@@ -137,6 +137,7 @@ public class Controller implements Initializable {
     @FXML
     private TextField search_text;
 
+
     private ObservableList<product> productList;
 
     //Order_var
@@ -170,7 +171,7 @@ public class Controller implements Initializable {
 
     @FXML
     private TableColumn<order, Integer> Sum_Order;
-
+   //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
 
@@ -187,6 +188,18 @@ public class Controller implements Initializable {
 
     @FXML
     private TextField ExCash_text_Order;
+    // text_Order
+    @FXML
+    private TextField id_product_Order; //text_id
+
+    @FXML
+    private TextField number_Order; //text_so_luong
+
+    @FXML
+    private JFXButton Add_btn_Order;  // button_them
+
+    @FXML
+    private TextField Total_money_Order; // text_tong_tien
 
 
 
@@ -353,6 +366,15 @@ public class Controller implements Initializable {
         return false;
     }
 
+    //get_text_khi_an_button
+    public void get_Text(TextField a, TextField b, JFXButton btn) {
+        btn.setOnMouseClicked(event -> {
+            String a1 = a.getText();
+            String b1 = b.getText();
+            System.out.println(a1 + " " + b1);
+        });
+    }
+
 
 
     //Menu_
@@ -436,6 +458,7 @@ public class Controller implements Initializable {
         ToTal_text_Order.setText("gnctt");
         ToTal_text_Order.setEditable(false);
         ExCash_text_Order.setEditable(false);
+        get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
     }
     }
