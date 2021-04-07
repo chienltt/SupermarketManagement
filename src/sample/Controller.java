@@ -5,6 +5,8 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
@@ -15,6 +17,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -23,6 +26,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.IntegerStringConverter;
 import src.ControllerData;
 import src.order;
 import src.product;
@@ -112,16 +117,25 @@ public class Controller implements Initializable {
     private TableColumn<product, Integer> soluongcol;
     @FXML
     private TableColumn<src.product, Double> giacol;
-//    @FXML
-//    private TableColumn<product, String> ngaynhapcol;
-//    @FXML
-//    private TableColumn<product, String> HSDcol;
     @FXML
     private TableColumn<product, String> tinhtrangcol;
-//    @FXML
-//    private TableColumn<product, String> xulicol;
+    @FXML
+    private TableColumn<product, String> chitietcol;
 
-//    private TableColumn<product, String> malohangcol;
+    //product textfield
+    @FXML
+    private TextField maid_pro;
+    @FXML
+    private TextField tenid_pro;
+    @FXML
+    private TextField soluongid_pro;
+    @FXML
+    private TextField giaid_pro;
+    @FXML
+    private TextField tinhtrangid_pro;
+
+    @FXML
+    private TextField search_text;
 
     private ObservableList<product> productList;
 
@@ -185,18 +199,54 @@ public class Controller implements Initializable {
 
         this.Login_event();
         this.Order_event();
+        this.setvalueoftable();
+        this.searchinproducttable();
+        this.editproducttable();
+    }
+    // tao gia tri cho product_table
+    public void setvalueoftable(){
+        productList= FXCollections.observableArrayList();
 
         macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
-//        malohangcol.setCellValueFactory(new PropertyValueFactory<product,String>("ma lo hang"));
         tencol.setCellValueFactory(new PropertyValueFactory<product, String>("nameProduct"));
         soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("numberOfProduct"));
         giacol.setCellValueFactory(new PropertyValueFactory<product, Double>("price"));
         tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("state123"));
-//        ngaynhapcol.setCellValueFactory(new PropertyValueFactory<product, String>("ngaynhap"));
-//        HSDcol.setCellValueFactory(new PropertyValueFactory<product, String>("HSD"));
-//        xulicol.setCellValueFactory(new PropertyValueFactory<product, String>("xuli"));
+        chitietcol.setCellValueFactory(new PropertyValueFactory<product,String>("button"));
         product_table.setItems(setProductlist());
-        //ss;
+    }
+
+    // tim kiem trong product_table
+    public void searchinproducttable(){
+        FilteredList<product> filteredData = new FilteredList<>(productList, b -> true);
+        search_text.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(employee -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (employee.getIdProduct().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+                    return true; // Filter matches first name.
+                } else if (employee.getNameProduct().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches last name.
+                }
+                else
+                    return false; // Does not match.
+            });
+        });
+        SortedList<product> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(product_table.comparatorProperty());
+        product_table.setItems(sortedData);
+    }
+
+    // chinh sua trong product_table
+    public void editproducttable(){
+        product_table.setEditable(true);
+        macol.setCellFactory(TextFieldTableCell.forTableColumn());
+        tencol.setCellFactory(TextFieldTableCell.forTableColumn());
+        soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     public ObservableList<product> setProductlist(){
