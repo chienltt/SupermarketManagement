@@ -517,7 +517,7 @@
             </AnchorPane>
             <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;">
                <children>
-                  <TableView fx:id="product_table" layoutX="1.0" layoutY="94.0" prefHeight="271.0" prefWidth="852.0">
+                  <TableView fx:id="product_table" layoutX="1.0" layoutY="119.0" prefHeight="346.0" prefWidth="848.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="119.0">
                      <columns>
                         <TableColumn fx:id="macol" prefWidth="109.99996948242188" text="Mã" />
                         <TableColumn fx:id="tencol" prefWidth="134.0" text="Tên" />
