@@ -240,7 +240,7 @@
                         </JFXButton>
                         <TextField fx:id="id_product_Order" layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
                         <TextField fx:id="number_Order" layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
-                        <TextField layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
+                        <TextField fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
                         <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
                               <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
