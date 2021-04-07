@@ -152,7 +152,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" ripplerFill="#531818" style="-fx-background-color: #ffffff;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="230.0">
                      <graphic>
@@ -195,7 +195,7 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton alignment="BOTTOM_RIGHT" buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="  Thêm">
+                        <JFXButton fx:id="Add_btn_Order" alignment="BOTTOM_RIGHT" buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="  Thêm">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -238,8 +238,8 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
-                        <TextField layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
+                        <TextField fx:id="id_product_Order" layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
+                        <TextField fx:id="number_Order" layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
                         <TextField layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
                         <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
@@ -515,7 +515,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false">
                <children>
                   <TableView fx:id="product_table" layoutX="1.0" layoutY="119.0" prefHeight="346.0" prefWidth="848.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="119.0">
                      <columns>
