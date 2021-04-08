@@ -31,6 +31,7 @@ import javafx.util.converter.IntegerStringConverter;
 import src.ControllerData;
 import src.order;
 import src.product;
+import src.shipment;
 
 public class Controller implements Initializable {
 
@@ -108,19 +109,18 @@ public class Controller implements Initializable {
 
     //product_1_table
     @FXML
-    private TableView<product> product_table;
+    private TableView<shipment> product_table;
     @FXML
-    private TableColumn<src.product, String> macol;
+    private TableColumn<shipment, String> macol;
     @FXML
-    private TableColumn<product, String> tencol;
+    private TableColumn<shipment, String> tencol;
     @FXML
-    private TableColumn<product, Integer> soluongcol;
+    private TableColumn<shipment, Integer> soluongcol;
     @FXML
-    private TableColumn<src.product, Double> giacol;
+    private TableColumn<shipment, Integer> giacol;
     @FXML
-    private TableColumn<product, String> tinhtrangcol;
-    @FXML
-    private TableColumn<product, String> chitietcol;
+    private TableColumn<shipment, String> tinhtrangcol;
+
 
     //product textfield
     @FXML
@@ -138,7 +138,7 @@ public class Controller implements Initializable {
     private TextField search_text;
 
 
-    private ObservableList<product> productList;
+    private ObservableList<shipment> shipmentsList;
 
     //Order_var
 
@@ -164,13 +164,15 @@ public class Controller implements Initializable {
     private TableColumn<order, String> state_Order;
 
     @FXML
-    private TableColumn<order, Double> Price_Order;
+    private TableColumn<order, Integer> Price_Order;
 
     @FXML
     private TableColumn<order, Integer> Amount_Order;
 
     @FXML
     private TableColumn<order, Integer> Sum_Order;
+
+    private ObservableList<order> ordersList;
    //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
@@ -212,26 +214,28 @@ public class Controller implements Initializable {
 
         this.Login_event();
         this.Order_event();
+        this.create_order();
         this.setvalueoftable();
         this.searchinproducttable();
         this.editproducttable();
     }
     // tao gia tri cho product_table
     public void setvalueoftable(){
-        productList= FXCollections.observableArrayList();
+        shipmentsList= FXCollections.observableArrayList(
+                new shipment("1","he", 100, 50, "con" )
+        );
 
-        macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
-        tencol.setCellValueFactory(new PropertyValueFactory<product, String>("nameProduct"));
-        soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("numberOfProduct"));
-        giacol.setCellValueFactory(new PropertyValueFactory<product, Double>("price"));
-        tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("state123"));
-        chitietcol.setCellValueFactory(new PropertyValueFactory<product,String>("button"));
-        product_table.setItems(setProductlist());
+        macol.setCellValueFactory(new PropertyValueFactory<shipment, String>("idProduct"));
+        tencol.setCellValueFactory(new PropertyValueFactory<shipment, String>("nameProduct"));
+        soluongcol.setCellValueFactory(new PropertyValueFactory<shipment, Integer>("amountOfShipment"));
+        giacol.setCellValueFactory(new PropertyValueFactory<shipment, Integer>("price"));
+        tinhtrangcol.setCellValueFactory(new PropertyValueFactory<shipment, String>("stateOfShipment"));
+        product_table.setItems(shipmentsList);
     }
 
     // tim kiem trong product_table
     public void searchinproducttable(){
-        FilteredList<product> filteredData = new FilteredList<>(productList, b -> true);
+        FilteredList<shipment> filteredData = new FilteredList<>(shipmentsList, b -> true);
         search_text.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(employee -> {
                 if (newValue == null || newValue.isEmpty()) {
@@ -247,7 +251,7 @@ public class Controller implements Initializable {
                     return false; // Does not match.
             });
         });
-        SortedList<product> sortedData = new SortedList<>(filteredData);
+        SortedList<shipment> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(product_table.comparatorProperty());
         product_table.setItems(sortedData);
     }
@@ -258,17 +262,18 @@ public class Controller implements Initializable {
         macol.setCellFactory(TextFieldTableCell.forTableColumn());
         tencol.setCellFactory(TextFieldTableCell.forTableColumn());
         soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
-        giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
+        giacol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
-    public ObservableList<product> setProductlist(){
-        ObservableList<product> productlist= FXCollections.observableArrayList();
-        ControllerData.testAddProduct();
-        for (int i=0;i< ControllerData.listProducts.size();i++){
-            productlist.add(ControllerData.listProducts.get(i));
+    public ObservableList<shipment> setShipmentlist(){
+        ObservableList<shipment> shipmentList= FXCollections.observableArrayList();
+        ControllerData.testAddShipment();
+        for (int i = 0; i< ControllerData.listShipment.size(); i++){
+            shipmentList.add(ControllerData.listShipment.get(i));
         }
-        return productlist;
+        System.out.println(shipmentList);
+        return shipmentList;
     }
 
     public void Close_Click(AnchorPane tab, JFXButton but) {
@@ -454,6 +459,41 @@ public class Controller implements Initializable {
         get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
     }
+
+    //product_event
+    // su kien Add de them san pham
+    public void add (ActionEvent e){
+        shipment newshipment = new shipment();
+        newshipment.setIdProduct(maid_pro.getText());
+        newshipment.setNameProduct(tenid_pro.getText());
+        newshipment.setAmountOfShipment(Integer.parseInt(soluongid_pro.getText()));
+        newshipment.setPrice(Integer.parseInt(giaid_pro.getText()));
+        newshipment.setStateOfShipment(tinhtrangid_pro.getText());
+        shipmentsList.add(newshipment);
+    }
+    // su kien delete de xoa san pham
+
+    public void delete(ActionEvent e){
+        //  productsList.remove(products.getSelectionModel().getSelectedItem());
+        shipment selected = product_table.getSelectionModel().getSelectedItem();
+        shipmentsList.remove(selected);
+    }
+
+    public void create_order() {
+        ordersList = FXCollections.observableArrayList(
+                new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
+                new order("t.h", "19", 100, 3, 23, "het", 100 * 3)
+        );
+        STT_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("STT_Order"));
+        ID_Order.setCellValueFactory(new PropertyValueFactory<order, String>("idProduct"));
+        Name_Order.setCellValueFactory(new PropertyValueFactory<order, String>("nameProduct"));
+        state_Order.setCellValueFactory(new PropertyValueFactory<order, String>("stateOfOrder"));
+        Price_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("price"));
+        Amount_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("amountOfOrder"));
+        Sum_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("totalOrder"));
+        OrDer_table.setItems(ordersList);
+    }
+
     }
 
 
