@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/SupermarketManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SupermarketManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" afterDir="false" />
+=======
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ControllerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ControllerData.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" afterDir="false" />
@@ -87,7 +90,11 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/operations-of-table-master/operations-of-table-master" />
+>>>>>>> Stashed changes
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -258,6 +265,7 @@
       <updated>1617033851034</updated>
     </task>
     <task id="LOCAL-00005" summary="khung_Objiect">
+<<<<<<< Updated upstream
       <created>1617197995493</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
@@ -300,6 +308,15 @@
       <updated>1617642052365</updated>
     </task>
     <option name="localTasksCounter" value="11" />
+=======
+      <created>1617180179455</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1617180179455</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+>>>>>>> Stashed changes
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -333,12 +350,17 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="new_v" />
+<<<<<<< Updated upstream
     <MESSAGE value="ver_2_gnctt" />
     <MESSAGE value="khung_Objiect" />
     <MESSAGE value="v_3" />
     <MESSAGE value="v_3." />
     <MESSAGE value="v_4" />
     <option name="LAST_COMMIT_MESSAGE" value="v_4" />
+=======
+    <MESSAGE value="khung_Objiect" />
+    <option name="LAST_COMMIT_MESSAGE" value="khung_Objiect" />
+>>>>>>> Stashed changes
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -348,7 +370,11 @@
     <SUITE FILE_PATH="coverage/SupermarketManagement$Main.ic" NAME="Main Coverage Results" MODIFIED="1615141000115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sample.*</FILTER>
     </SUITE>
+<<<<<<< Updated upstream
     <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617825561946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+=======
+    <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617180350877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+>>>>>>> Stashed changes
       <FILTER>src.*</FILTER>
     </SUITE>
   </component>
