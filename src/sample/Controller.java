@@ -336,6 +336,7 @@ public class Controller implements Initializable {
                         Login2.setText("Đăng xuất");
                     } else {
                         Login2.setText("Đăng nhập");
+                        //????
                     }
                 } else {
                     if (!Check_key(user, pass, 4, 16)) {
@@ -436,7 +437,7 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         if (e.getSource() == product) {
             LB_Name.setText("sản phẩm");
             Home_1.setVisible(false);
@@ -456,7 +457,7 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(true);
         }
-=======
+//=======
             if (e.getSource() == product) {
                 LB_Name.setText("sản phẩm");
                 Home_1.setVisible(false);
@@ -476,7 +477,7 @@ public class Controller implements Initializable {
                 credit_1.setVisible(false);
                 employees_1.setVisible(true);
             }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         if (e.getSource() ==credit) {
             LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
