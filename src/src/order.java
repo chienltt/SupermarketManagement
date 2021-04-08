@@ -10,8 +10,8 @@ public class order extends product {
     public order () {
 
     }
-    public order(String nameProduct, String idProduct, int price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder) {
-        super(nameProduct, idProduct, price);
+    public order(String idProduct, String nameProduct, int price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder) {
+        super(idProduct, nameProduct, price);
         this.STT_Order = STT_Order;
         this.amountOfOrder = amountOfOrder;
         this.stateOfOrder = stateOfOrder;
