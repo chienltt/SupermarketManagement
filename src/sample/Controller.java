@@ -255,6 +255,7 @@ public class Controller implements Initializable {
         product_table.setItems(sortedData);
     }
 
+
     // chinh sua trong product_table
     public void editproducttable(){
         product_table.setEditable(true);
@@ -483,7 +484,7 @@ public class Controller implements Initializable {
         shipment selected = product_table.getSelectionModel().getSelectedItem();
         shipmentsList.remove(selected);
     }
-
+    //create-Order
     public void create_order() {
         ordersList = FXCollections.observableArrayList(
                 new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
@@ -498,6 +499,25 @@ public class Controller implements Initializable {
         Sum_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("totalOrder"));
         OrDer_table.setItems(ordersList);
     }
+
+    public void add_Order (ActionEvent e){
+        order neworder = new order();
+        neworder.setIdProduct(id_product_Order.getText());
+        neworder.setNameProduct("bim bim"); // phu thuoc vao id
+        neworder.setAmountOfOrder(Integer.parseInt(number_Order.getText()));
+        neworder.setPrice(100); // phu thuoc vao id
+        neworder.setStateOfOrder("con"); // lay trong tung ban ghi phu thuoc vao id product
+        neworder.setSTT_Order(3); // set_stt
+        neworder.setTotalOrder(Integer.parseInt(number_Order.getText()) * 100);
+        ordersList.add(neworder);
+    }
+
+    public void delete_Order(ActionEvent e){
+        //  productsList.remove(products.getSelectionModel().getSelectedItem());
+        order selected = OrDer_table.getSelectionModel().getSelectedItem();
+        ordersList.remove(selected);
+    }
+
 
     }
 
