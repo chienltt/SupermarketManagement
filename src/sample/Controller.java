@@ -52,6 +52,8 @@ public class Controller implements Initializable {
     private AnchorPane Login_tab;
     @FXML
     private Label notify_login;
+    @FXML
+    private AnchorPane Login_tab_back;
 
     //forget_pass
     @FXML
@@ -137,6 +139,8 @@ public class Controller implements Initializable {
     @FXML
     private TextField search_text;
 
+    @FXML
+    private JFXButton search_button;
 
     private ObservableList<shipment> shipmentsList;
 
@@ -173,7 +177,7 @@ public class Controller implements Initializable {
     private TableColumn<order, Integer> Sum_Order;
 
     private ObservableList<order> ordersList;
-   //pay_var_order
+    //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
 
@@ -213,18 +217,16 @@ public class Controller implements Initializable {
         //ss;
 
         this.Login_event();
-        this.Order_event();
+        setShipmentlistDefault();
+        setOrderlistDefault();
         this.create_order();
+        this.Order_event();
         this.setvalueoftable();
         this.searchinproducttable();
         this.editproducttable();
     }
     // tao gia tri cho product_table
     public void setvalueoftable(){
-        shipmentsList= FXCollections.observableArrayList(
-                new shipment("1","he", 100, 50, "con" )
-        );
-
         macol.setCellValueFactory(new PropertyValueFactory<shipment, String>("idProduct"));
         tencol.setCellValueFactory(new PropertyValueFactory<shipment, String>("nameProduct"));
         soluongcol.setCellValueFactory(new PropertyValueFactory<shipment, Integer>("amountOfShipment"));
@@ -267,14 +269,24 @@ public class Controller implements Initializable {
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
-    public ObservableList<shipment> setShipmentlist(){
-        ObservableList<shipment> shipmentList= FXCollections.observableArrayList();
+    public ObservableList<shipment> setShipmentlistDefault(){
+        shipmentsList= FXCollections.observableArrayList();
         ControllerData.testAddShipment();
         for (int i = 0; i< ControllerData.listShipment.size(); i++){
-            shipmentList.add(ControllerData.listShipment.get(i));
+            shipmentsList.add(ControllerData.listShipment.get(i));
         }
-        System.out.println(shipmentList);
-        return shipmentList;
+        System.out.println(shipmentsList);
+        return shipmentsList;
+    }
+
+    public ObservableList<order> setOrderlistDefault(){
+        ordersList= FXCollections.observableArrayList();
+        ControllerData.testAddOrder();
+        for (int i = 0; i< ControllerData.listOrders.size(); i++){
+            ordersList.add(ControllerData.listOrders.get(i));
+        }
+        System.out.println(ordersList);
+        return ordersList;
     }
 
     public void Close_Click(AnchorPane tab, JFXButton but) {
@@ -289,7 +301,20 @@ public class Controller implements Initializable {
         });
     }
 
+    public void search_Product_Click(){
+        search_button.setOnMouseClicked(event -> {
+            searchinproducttable();
+        });
+    }
+
     // Tab_dang_nhap
+
+    public void Log_out() {
+        Login2.setOnMouseClicked(event -> {
+            Login_tab_back.setVisible(true);
+            Login_tab.setVisible(true);
+        });
+    }
     public void Login_Forget(JFXButton login, AnchorPane Login_tab) {
         login.setOnMouseClicked(event -> {
             if (!Login_tab.isVisible()) {
@@ -302,6 +327,7 @@ public class Controller implements Initializable {
                 if (Check_key(user, pass, 4, 16) && (user.equals("gnctt") && pass.equals("191001"))) {
 
                     Login_tab.setVisible(false);
+                    Login_tab_back.setVisible(false);
                     username.setText("");
                     password.setText("");
                     notify_login.setText("");
@@ -410,25 +436,25 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-            if (e.getSource() == product) {
-                LB_Name.setText("sản phẩm");
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(true);
-                credit_1.setVisible(false);
-                employees_1.setVisible(false);
-            }
+        if (e.getSource() == product) {
+            LB_Name.setText("sản phẩm");
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(true);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
 
-            if (e.getSource() == employees) {
-                LB_Name.setText("nhân viên");
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(false);
-                credit_1.setVisible(false);
-                employees_1.setVisible(true);
-            }
+        if (e.getSource() == employees) {
+            LB_Name.setText("nhân viên");
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(true);
+        }
         if (e.getSource() ==credit) {
             LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
@@ -438,16 +464,16 @@ public class Controller implements Initializable {
             credit_1.setVisible(true);
             employees_1.setVisible(false);
         }
-        }
-
-        //Login_tab
-    public void Login_event() {
-        Close_Click(Login_tab, Close_Button);
-        Login_Forget(Login2, Login_tab);
-        Login_Forget(Login, Login_tab);
     }
 
-        //Order_tab
+    //Login_tab
+    public void Login_event() {
+        Close_Click(Login_tab, Close_Button);
+        Login_Forget(Login, Login_tab);
+        Log_out();
+    }
+
+    //Order_tab
     public void Order_event() {
         //mo_tab_tao_don_hang
         Open_Click(Order_tab_2, Order_click);
@@ -481,10 +507,6 @@ public class Controller implements Initializable {
     }
     //create-Order
     public void create_order() {
-        ordersList = FXCollections.observableArrayList(
-                new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
-                new order("t.h", "19", 100, 3, 23, "het", 100 * 3)
-        );
         STT_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("STT_Order"));
         ID_Order.setCellValueFactory(new PropertyValueFactory<order, String>("idProduct"));
         Name_Order.setCellValueFactory(new PropertyValueFactory<order, String>("nameProduct"));
@@ -514,11 +536,4 @@ public class Controller implements Initializable {
     }
 
 
-    }
-
-
-
-
-
-
-
+}
