@@ -137,6 +137,8 @@ public class Controller implements Initializable {
     @FXML
     private TextField search_text;
 
+    @FXML
+    private JFXButton search_button;
 
     private ObservableList<product> productList;
 
@@ -213,7 +215,7 @@ public class Controller implements Initializable {
         this.Login_event();
         this.Order_event();
         setvalueoftable();
-        this.searchinproducttable();
+//        this.search_Product_Click();
         this.editproducttable();
         setvalueoftable();
     }
@@ -235,6 +237,7 @@ public class Controller implements Initializable {
         FilteredList<product> filteredData = new FilteredList<>(productList, b -> true);
         search_text.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(employee -> {
+                System.out.println(observable+"  "+oldValue+"   "+newValue);
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
@@ -261,6 +264,8 @@ public class Controller implements Initializable {
         soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        search_Product_Click();
     }
 
     public ObservableList<product> setProductlist(){
@@ -284,9 +289,9 @@ public class Controller implements Initializable {
         });
     }
 
-    public void search_Product_Click(JFXButton btn){
-        btn.setOnMouseClicked(event -> {
-
+    public void search_Product_Click(){
+        search_button.setOnMouseClicked(event -> {
+            searchinproducttable();
         });
     }
 
