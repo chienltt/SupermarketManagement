@@ -137,7 +137,7 @@
       </AnchorPane>
       <AnchorPane fx:id="Content" layoutX="200.0" layoutY="120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
-            <AnchorPane fx:id="Home_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Home_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Button mnemonicParsing="false" text="Button" />
                   <ImageView fitHeight="485.0" fitWidth="852.0" pickOnBounds="true" preserveRatio="true">
@@ -152,7 +152,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" ripplerFill="#531818" style="-fx-background-color: #ffffff;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="230.0">
                      <graphic>
@@ -206,15 +206,15 @@
                            </font>
                         </JFXButton>
                         <TableView fx:id="OrDer_table" layoutY="197.0" prefHeight="230.0" prefWidth="788.0">
-                          <columns>
-                            <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
-                            <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Mã sản phẩm" />
+                           <columns>
+                              <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
+                              <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Mã sản phẩm" />
                               <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Tên sản phẩm" />
                               <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" style="-fx-alignment: center;" text="Trạng thái" />
                               <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Đơn giá" />
                               <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Số lượng" />
                               <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Thành tiền" />
-                          </columns>
+                           </columns>
                         </TableView>
                         <Label layoutX="24.0" layoutY="451.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền">
                            <font>
@@ -531,7 +531,7 @@
                         <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="Search bar" />
+                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="nhập tên hoặc mã sản phẩm" />
                   <JFXButton fx:id="search_button" buttonType="RAISED" layoutX="630.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="#2dd327" style="-fx-background-color: #ffeae8;" text="Tìm Kiếm" />
                   <Button layoutX="642.0" layoutY="385.0" mnemonicParsing="false" onAction="#add" text="Add" />
                   <Button layoutX="709.0" layoutY="385.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
@@ -554,7 +554,12 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="267.70000000000005" AnchorPane.topAnchor="125.0">
+      <AnchorPane fx:id="Login_tab_back" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d3f5dc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="376.0" fitWidth="358.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="274.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="694.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #03d1ff;" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="267.70000000000005" AnchorPane.topAnchor="125.0">
          <children>
             <Label layoutX="212.0" layoutY="33.0" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #f0f6f7;" text="Sign in" textFill="#240c0c">
                <font>
