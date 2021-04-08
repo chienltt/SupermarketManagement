@@ -6,6 +6,7 @@ import java.util.Collections;
 public class ControllerData {
 
     public static ArrayList<product> listProducts = new ArrayList<product>();
+    public static ArrayList<order> listOrders = new ArrayList<order>();
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
     public static ArrayList<shipment> listShipment = new ArrayList<shipment>();
@@ -17,6 +18,15 @@ public class ControllerData {
         ControllerData.listShipment.add(a);
         ControllerData.listShipment.add(b);
         ControllerData.listShipment.add(c);
+    }
+
+    public static void testAddOrder(){
+        order a=new order("bim bim","awdawd",5,1 , 100, "còn hàng", 5 * 100);
+        order b= new order("sua", "sgdirgsjif",7, 2 ,200, "còn hàng", 7 * 200);
+        order c= new order ("mitom","cbakcawd",4,3 ,101, "hết hàng", 4 * 101);
+        ControllerData.listOrders.add(a);
+        ControllerData.listOrders.add(b);
+        ControllerData.listOrders.add(c);
     }
 
     public static void sortListProducts(){
