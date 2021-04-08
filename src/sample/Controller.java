@@ -436,6 +436,7 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
+<<<<<<< Updated upstream
         if (e.getSource() == product) {
             LB_Name.setText("sản phẩm");
             Home_1.setVisible(false);
@@ -455,6 +456,27 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(true);
         }
+=======
+            if (e.getSource() == product) {
+                LB_Name.setText("sản phẩm");
+                Home_1.setVisible(false);
+                Order_tab.setVisible(false);
+                Buy_product_1.setVisible(false);
+                product_1.setVisible(true);
+                credit_1.setVisible(false);
+                employees_1.setVisible(false);
+            }
+
+            if (e.getSource() == employees) {
+                LB_Name.setText("nhân viên");
+                Home_1.setVisible(false);
+                Order_tab.setVisible(false);
+                Buy_product_1.setVisible(false);
+                product_1.setVisible(false);
+                credit_1.setVisible(false);
+                employees_1.setVisible(true);
+            }
+>>>>>>> Stashed changes
         if (e.getSource() ==credit) {
             LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
