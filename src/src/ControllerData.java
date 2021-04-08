@@ -9,7 +9,7 @@ public class ControllerData {
     public static ArrayList<order> listOrders = new ArrayList<order>();
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
-    public static ArrayList<shipment> listShipment = new ArrayList<shipment>();
+    public static ArrayList<shipment> listShipment = new ArrayList<>();
 
     public static void testAddShipment(){
         shipment a=new shipment("bim bim","awdawd",5, 100, "còn hàng");
@@ -18,6 +18,7 @@ public class ControllerData {
         ControllerData.listShipment.add(a);
         ControllerData.listShipment.add(b);
         ControllerData.listShipment.add(c);
+        System.out.println("123"+ControllerData.listShipment);
     }
 
     public static void testAddOrder(){
