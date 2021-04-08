@@ -8,17 +8,15 @@ public class ControllerData {
     public static ArrayList<product> listProducts = new ArrayList<product>();
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
+    public static ArrayList<shipment> listShipment = new ArrayList<shipment>();
 
-    public static void testAddProduct(){
-        product a=new product("bim bim","awdawd",5.0);
-        product b= new product("sua","sgdirgsjif",7.5);
-        product c= new product ("mitom","cbakcawd",4.0);
-        a.addShipment(new shipment("awdaywd",100,new date(5,5,5),new date(1,1,1)));
-        a.addShipment(new shipment("naiwdhaiwd",50,new date(50,50,50),new date(10,10,10)));
-        b.addShipment(new shipment("awdaywd",500,new date(56,6,7),new date(3,1,2)));
-        ControllerData.listProducts.add(a);
-        ControllerData.listProducts.add(b);
-        ControllerData.listProducts.add(c);
+    public static void testAddShipment(){
+        shipment a=new shipment("bim bim","awdawd",5, 100, "còn hàng");
+        shipment b= new shipment("sua","sgdirgsjif",7, 200, "còn hàng");
+        shipment c= new shipment ("mitom","cbakcawd",4, 101, "hết hàng");
+        ControllerData.listShipment.add(a);
+        ControllerData.listShipment.add(b);
+        ControllerData.listShipment.add(c);
     }
 
     public static void sortListProducts(){
@@ -27,25 +25,33 @@ public class ControllerData {
     public static void sortListUser(){
         Collections.sort(listUsers,(user1,user2)->user1.compareTo(user2));
     }
+    public static void sortListShipment(){
+        Collections.sort(listShipment,(ship1,ship2)-> ship1.compareTo(ship2));
+    }
 
     public static void addProduct(product Product){
         ControllerData.listProducts.add(Product);
         sortListProducts();
     }
+
+    public static void addShipment(shipment Shipment){
+        ControllerData.listShipment.add(Shipment);
+        sortListShipment();
+    }
     public static void addUser(user User){
         ControllerData.listUsers.add(User);
         sortListUser();
     }
-    public static boolean addShipmentOfProduct(product Product,shipment Shipment){
-        for(int i = 0; i< ControllerData.listProducts.size(); i++){
-            if(ControllerData.listProducts.get(i).getIdProduct()==Product.getIdProduct() )
-            {
-                ControllerData.listProducts.get(i).addShipment(Shipment);
-                return true;
-            }
-        }
-        return false;
-    }
+//    public static boolean addShipmentOfProduct(product Product,shipment Shipment){
+//        for(int i = 0; i< ControllerData.listProducts.size(); i++){
+//            if(ControllerData.listProducts.get(i).getIdProduct()==Product.getIdProduct() )
+//            {
+//                ControllerData.listProducts.get(i).addShipment(Shipment);
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
     public static void createBill(ArrayList<order> Orders,String idBill){
         bill Bill =new bill(idBill);
