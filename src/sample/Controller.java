@@ -217,16 +217,13 @@ public class Controller implements Initializable {
         this.Login_event();
         this.Order_event();
         this.create_order();
+        setShipmentlistDefault();
         this.setvalueoftable();
         this.searchinproducttable();
         this.editproducttable();
     }
     // tao gia tri cho product_table
     public void setvalueoftable(){
-        shipmentsList= FXCollections.observableArrayList(
-                new shipment("1","he", 100, 50, "con" )
-        );
-
         macol.setCellValueFactory(new PropertyValueFactory<shipment, String>("idProduct"));
         tencol.setCellValueFactory(new PropertyValueFactory<shipment, String>("nameProduct"));
         soluongcol.setCellValueFactory(new PropertyValueFactory<shipment, Integer>("amountOfShipment"));
@@ -268,14 +265,14 @@ public class Controller implements Initializable {
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
-    public ObservableList<shipment> setShipmentlist(){
-        ObservableList<shipment> shipmentList= FXCollections.observableArrayList();
+    public ObservableList<shipment> setShipmentlistDefault(){
+        shipmentsList= FXCollections.observableArrayList();
         ControllerData.testAddShipment();
         for (int i = 0; i< ControllerData.listShipment.size(); i++){
-            shipmentList.add(ControllerData.listShipment.get(i));
+            shipmentsList.add(ControllerData.listShipment.get(i));
         }
-        System.out.println(shipmentList);
-        return shipmentList;
+        System.out.println(shipmentsList);
+        return shipmentsList;
     }
 
     public void Close_Click(AnchorPane tab, JFXButton but) {

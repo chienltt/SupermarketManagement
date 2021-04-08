@@ -526,7 +526,7 @@
                         <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="Search bar" />
+                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="nhập tên hoặc mã sản phẩm" />
                   <JFXButton fx:id="search_button" buttonType="RAISED" layoutX="630.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="#2dd327" style="-fx-background-color: #ffeae8;" text="Tìm Kiếm" />
                   <Button layoutX="642.0" layoutY="385.0" mnemonicParsing="false" onAction="#add" text="Add" />
                   <Button layoutX="709.0" layoutY="385.0" mnemonicParsing="false" onAction="#delete" text="Delete" />

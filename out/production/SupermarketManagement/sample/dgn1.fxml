@@ -202,13 +202,13 @@
                         </JFXButton>
                         <TableView fx:id="OrDer_table" layoutY="197.0" prefHeight="230.0" prefWidth="788.0">
                           <columns>
-                            <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" text="STT" />
-                            <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" text="Mã sản phẩm" />
-                              <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" text="Tên sản phẩm" />
-                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" text="Trạng thái" />
-                              <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" text="Đơn giá" />
-                              <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" text="Số lượng" />
-                              <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" text="Thành tiền" />
+                            <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
+                            <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Mã sản phẩm" />
+                              <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Tên sản phẩm" />
+                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" style="-fx-alignment: center;" text="Trạng thái" />
+                              <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Đơn giá" />
+                              <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Số lượng" />
+                              <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Thành tiền" />
                           </columns>
                         </TableView>
                         <Label layoutX="24.0" layoutY="451.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền">
@@ -515,22 +515,21 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TableView fx:id="product_table" layoutX="1.0" layoutY="119.0" prefHeight="346.0" prefWidth="848.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="119.0">
+                  <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="435.0" prefWidth="849.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
                      <columns>
-                        <TableColumn fx:id="macol" prefWidth="109.99996948242188" text="Mã" />
-                        <TableColumn fx:id="tencol" prefWidth="134.0" text="Tên" />
-                        <TableColumn fx:id="soluongcol" prefWidth="170.0" text="Số lượng" />
-                        <TableColumn fx:id="giacol" prefWidth="144.0" text="Giá" />
-                        <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" text="Tình trạng" />
-                        <TableColumn fx:id="chitietcol" prefWidth="132.0" text="Chi tiết" />
+                        <TableColumn fx:id="macol" prefWidth="109.99996948242188" style="-fx-alignment: center;" text="Mã" />
+                        <TableColumn fx:id="tencol" prefWidth="134.0" style="-fx-alignment: center;" text="Tên" />
+                        <TableColumn fx:id="soluongcol" prefWidth="170.0" style="-fx-alignment: center;" text="Số lượng" />
+                        <TableColumn fx:id="giacol" prefWidth="144.0" style="-fx-alignment: center;" text="Giá" />
+                        <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="Search bar" />
+                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="nhập tên hoặc mã sản phẩm" />
                   <JFXButton fx:id="search_button" buttonType="RAISED" layoutX="630.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="#2dd327" style="-fx-background-color: #ffeae8;" text="Tìm Kiếm" />
-                  <Button layoutX="642.0" layoutY="385.0" mnemonicParsing="false" text="Add" />
-                  <Button layoutX="709.0" layoutY="385.0" mnemonicParsing="false" text="Delete" />
+                  <Button layoutX="642.0" layoutY="385.0" mnemonicParsing="false" onAction="#add" text="Add" />
+                  <Button layoutX="709.0" layoutY="385.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
                   <TextField fx:id="maid_pro" layoutX="1.0" layoutY="440.0" prefHeight="25.0" prefWidth="156.0" promptText="Mã" />
                   <TextField fx:id="tenid_pro" layoutX="157.0" layoutY="440.0" prefHeight="25.0" prefWidth="168.0" promptText="Tên" />
                   <TextField fx:id="soluongid_pro" layoutX="325.0" layoutY="440.0" prefHeight="25.0" prefWidth="181.0" promptText="Số lượng" />
