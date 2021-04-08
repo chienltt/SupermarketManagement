@@ -21,10 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SupermarketManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SupermarketManagement.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ControllerData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ControllerData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/shipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/shipment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ControllerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ControllerData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/shipment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +96,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\sample" />
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res\lib" />
+      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\sample" />
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -284,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617505378462</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="v_4">
+      <created>1617642052365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1617642052365</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -322,7 +337,8 @@
     <MESSAGE value="khung_Objiect" />
     <MESSAGE value="v_3" />
     <MESSAGE value="v_3." />
-    <option name="LAST_COMMIT_MESSAGE" value="v_3." />
+    <MESSAGE value="v_4" />
+    <option name="LAST_COMMIT_MESSAGE" value="v_4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -332,7 +348,7 @@
     <SUITE FILE_PATH="coverage/SupermarketManagement$Main.ic" NAME="Main Coverage Results" MODIFIED="1615141000115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sample.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617471591745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SupermarketManagement$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1617825561946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>src.*</FILTER>
     </SUITE>
   </component>
