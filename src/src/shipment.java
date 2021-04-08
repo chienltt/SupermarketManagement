@@ -10,7 +10,7 @@ public class shipment extends product{
 //    private date receptionDate;
 //    private date expirationDate;
 //    private String shipmentID; //             id_ship
-    public shipment( String nameProduct,String idProduct,int price,  int amountOfShipment, String stateOfShipment){
+    public shipment( String idProduct,String nameProduct,int price,  int amountOfShipment, String stateOfShipment){
 //        this.shipmentID=shipmentID;
         super(idProduct, nameProduct, price);
         this.amountOfShipment = amountOfShipment;
