@@ -162,7 +162,7 @@
                         <Font size="20.0" />
                      </font>
                   </JFXButton>
-                  <AnchorPane fx:id="Order_tab_2" prefHeight="555.0" prefWidth="852.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane fx:id="Order_tab_2" prefHeight="555.0" prefWidth="852.0" style="-fx-background-color: #b1c3de;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label layoutX="24.0" layoutY="43.0" style="-fx-background-color: #fff5f5;" text="Nhập mã sản phẩm">
                            <font>
@@ -179,7 +179,7 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton buttonType="RAISED" layoutX="426.0" layoutY="43.0" ripplerFill="#ff0c0c" style="-fx-background-color: #fcfcfc;" text="Ok" />
+                        <JFXButton buttonType="RAISED" layoutX="426.0" layoutY="43.0" ripplerFill="#ff0c0c" style="-fx-background-color: #db8cc2;" text="Tìm kiếm" />
                         <Label layoutX="94.0" layoutY="91.0" style="-fx-background-color: #fff5f5;" text="Số Lượng">
                            <font>
                               <Font size="16.0" />
@@ -195,20 +195,20 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton alignment="BOTTOM_RIGHT" buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="  Thêm">
+                        <JFXButton fx:id="Add_btn_Order" alignment="BOTTOM_RIGHT" buttonType="RAISED" layoutX="94.0" layoutY="135.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="  Thêm">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </JFXButton>
-                        <TableView fx:id="OrDer_table" layoutY="197.0" prefHeight="230.0" prefWidth="788.0">
+                        <TableView fx:id="OrDer_table" layoutY="197.0" prefHeight="230.0" prefWidth="852.0">
                           <columns>
-                            <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" text="STT" />
-                            <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" text="Mã sản phẩm" />
-                              <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" text="Tên sản phẩm" />
-                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" text="Trạng thái" />
-                              <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" text="Đơn giá" />
-                              <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" text="Số lượng" />
-                              <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" text="Thành tiền" />
+                            <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
+                            <TableColumn fx:id="ID_Order" prefWidth="129.0" style="-fx-alignment: center;" text="Mã sản phẩm" />
+                              <TableColumn fx:id="Name_Order" prefWidth="156.0" style="-fx-alignment: center;" text="Tên sản phẩm" />
+                              <TableColumn fx:id="state_Order" prefWidth="123.0" style="-fx-alignment: center;" text="Trạng thái" />
+                              <TableColumn fx:id="Price_Order" prefWidth="111.0" style="-fx-alignment: center;" text="Đơn giá" />
+                              <TableColumn fx:id="Amount_Order" prefWidth="130.0" style="-fx-alignment: center;" text="Số lượng" />
+                              <TableColumn fx:id="Sum_Order" prefWidth="141.0" style="-fx-alignment: center;" text="Thành tiền" />
                           </columns>
                         </TableView>
                         <Label layoutX="24.0" layoutY="451.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền">
@@ -238,9 +238,9 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
-                        <TextField layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
-                        <TextField layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
+                        <TextField fx:id="id_product_Order" layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
+                        <TextField fx:id="number_Order" layoutX="182.0" layoutY="91.0" prefHeight="25.0" prefWidth="139.0" />
+                        <TextField fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" prefHeight="25.0" prefWidth="181.0" />
                         <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
                               <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -353,24 +353,188 @@
             </AnchorPane>
             <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button layoutX="374.0" layoutY="174.0" mnemonicParsing="false" text="Button" />
+                  <AnchorPane fx:id="Order_tab_21" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #b1c3de;">
+                     <children>
+                        <Label layoutX="24.0" layoutY="43.0" style="-fx-background-color: #fff5f5;" text="Nhập mã sản phẩm">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Label>
+                        <JFXButton buttonType="RAISED" layoutX="426.0" layoutY="43.0" ripplerFill="#ff0c0c" style="-fx-background-color: #db8cc2;" text="Tìm kiếm" />
+                        <TableView fx:id="Buy_table" layoutY="87.0" prefHeight="315.0" prefWidth="852.0">
+                           <columns>
+                              <TableColumn fx:id="STT_Buy" prefWidth="81.0" text="STT" />
+                              <TableColumn fx:id="ID_Buy" prefWidth="123.0" text="Mã sản phẩm" />
+                              <TableColumn fx:id="Name_Buy" prefWidth="146.0" text="Tên sản phẩm" />
+                              <TableColumn fx:id="Price_Buy" prefWidth="113.0" text="Đơn giá" />
+                              <TableColumn fx:id="Amount_Buy" prefWidth="120.0" text="Số lượng" />
+                              <TableColumn fx:id="Exdate_Buy" prefWidth="125.0" text="Hạn sử dụng" />
+                              <TableColumn prefWidth="143.0" text="Ngày nhập" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="489.0" layoutY="430.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền nhập">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Label>
+                        <JFXButton fx:id="Paid_button_Order1" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="706.0" AnchorPane.topAnchor="488.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="buy_4_icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" promptText="Search bar" />
+                        <TextField layoutX="652.0" layoutY="427.0" prefHeight="31.0" prefWidth="122.0" />
+                        <AnchorPane fx:id="Payment_tab1" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
+                           <children>
+                              <JFXButton fx:id="Cancel_Paid_btn1" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="close-icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <TextField fx:id="Paid_text_Order1" layoutX="202.0" layoutY="51.0" prefHeight="30.0" prefWidth="184.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="29.0" layoutY="54.0" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #fff5f5;" text="Số tiền đã thu">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Label>
+                              <Label layoutX="29.0" layoutY="110.0" prefHeight="30.0" prefWidth="168.0" style="-fx-background-color: #fff5f5;" text="Tổng số tiền đơn hàng">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="ToTal_text_Order1" layoutX="202.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="29.0" layoutY="173.0" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fff5f5;" text="Số tiền còn lại">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                       <light>
+                                          <Light.Distant />
+                                       </light>
+                                    </Lighting>
+                                 </effect>
+                              </Label>
+                              <TextField fx:id="ExCash_text_Order1" layoutX="202.0" layoutY="173.0" prefHeight="30.0" prefWidth="184.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <JFXButton fx:id="Cancle_Order1" buttonType="RAISED" layoutX="184.0" layoutY="240.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="Hủy">
+                                 <graphic>
+                                    <FontAwesomeIconView />
+                                 </graphic>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="Pay_Order1" buttonType="RAISED" layoutX="54.0" layoutY="305.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán">
+                                 <graphic>
+                                    <FontAwesomeIconView />
+                                 </graphic>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="Bill_Order1" buttonType="RAISED" layoutX="283.0" layoutY="305.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #fcfcfc;" text="In hóa đơn">
+                                 <graphic>
+                                    <FontAwesomeIconView />
+                                 </graphic>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b1c3de;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <TableView fx:id="product_table" prefHeight="499.0" prefWidth="916.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                  <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="435.0" prefWidth="849.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
                      <columns>
-                        <TableColumn fx:id="macol" prefWidth="85.33331298828125" text="Mã" />
-                        <TableColumn fx:id="tencol" minWidth="8.0" prefWidth="79.66668701171875" text="Tên" />
-                        <TableColumn fx:id="soluongcol" prefWidth="122.33331298828125" text="Số lượng" />
-                        <TableColumn fx:id="giacol" prefWidth="146.66668701171875" text="Giá" />
-                        <TableColumn fx:id="ngaynhapcol" prefWidth="117.0" text="Ngày nhập" />
-                        <TableColumn fx:id="HSDcol" prefWidth="86.66668701171875" text="HSD" />
-                        <TableColumn fx:id="tinhtrangcol" minWidth="0.0" prefWidth="98.33331298828125" text="Tình trạng" />
-                        <TableColumn prefWidth="182.66668701171875" text="Xử lí" fx:id="xulicol" />
+                        <TableColumn fx:id="macol" prefWidth="109.99996948242188" style="-fx-alignment: center;" text="Mã" />
+                        <TableColumn fx:id="tencol" prefWidth="134.0" style="-fx-alignment: center;" text="Tên" />
+                        <TableColumn fx:id="soluongcol" prefWidth="170.0" style="-fx-alignment: center;" text="Số lượng" />
+                        <TableColumn fx:id="giacol" prefWidth="144.0" style="-fx-alignment: center;" text="Giá" />
+                        <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
                      </columns>
                   </TableView>
-                  <JFXTextField layoutX="22.0" layoutY="39.0" prefHeight="25.0" prefWidth="774.0" />
+                  <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="Search bar" />
+                  <JFXButton fx:id="search_button" buttonType="RAISED" layoutX="630.0" layoutY="30.0" prefHeight="40.0" prefWidth="100.0" ripplerFill="#2dd327" style="-fx-background-color: #ffeae8;" text="Tìm Kiếm" />
+                  <Button layoutX="642.0" layoutY="385.0" mnemonicParsing="false" onAction="#add" style="-fx-background-color: #26c952;" text="Add" />
+                  <Button layoutX="709.0" layoutY="385.0" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: #c21717;" text="Delete" />
+                  <TextField fx:id="maid_pro" layoutX="1.0" layoutY="440.0" prefHeight="25.0" prefWidth="156.0" promptText="Mã" />
+                  <TextField fx:id="tenid_pro" layoutX="157.0" layoutY="440.0" prefHeight="25.0" prefWidth="168.0" promptText="Tên" />
+                  <TextField fx:id="soluongid_pro" layoutX="325.0" layoutY="440.0" prefHeight="25.0" prefWidth="181.0" promptText="Số lượng" />
+                  <TextField fx:id="giaid_pro" layoutX="506.0" layoutY="440.0" prefHeight="25.0" prefWidth="168.0" promptText="Giá" />
+                  <TextField fx:id="tinhtrangid_pro" layoutX="674.0" layoutY="440.0" prefHeight="25.0" prefWidth="175.0" promptText="Tình trạng" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="credit_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
