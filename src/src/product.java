@@ -6,23 +6,28 @@ import java.util.ArrayList;
 public class product {
 
     private String idProduct;
+//<<<<<<< Updated upstream
     private String nameProduct;
     private int price;
 //    private int numberOfProduct;
 //    private String state;
 //    private ArrayList<shipment> listShipment  ;
     public product (String nameProduct,String idProduct,int price){
+//=======
+//    private double price;
+//    private int numberOfProduct;
+//    private ArrayList<shipment> listShipment;
+//>>>>>>> Stashed changes
         this.nameProduct=nameProduct;
         this.idProduct=idProduct;
         this.price=price;
 //        this.listShipment=new ArrayList<shipment>();
 //        this.numberOfProduct =0;
 //        this.state="Het hang";
-    }
-    public product(product Product){
-        this.nameProduct=Product.nameProduct;
-        this.idProduct=Product.idProduct;
-        this.price =Product.price;
+        //    public product(product Product){
+//        this.nameProduct=Product.nameProduct;
+//        this.idProduct=Product.idProduct;
+//        this.price =Product.price;
 //        this.listShipment=Product.listShipment;
 //        this.numberOfProduct=Product.numberOfProduct;
 //        this.state=Product.state;
