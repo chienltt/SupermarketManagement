@@ -3,10 +3,10 @@ package src;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ConnectionUtils {
+    public class ConnectionUtils {
 
     private static final String userName = "root";
-    private static final String password = "Chien8bltt";
+    private static final String password = "";
     // jdbc:mysql://hostname:port/dbname
     private static final String connectionURL = "jdbc:mysql://localhost:3306/supermarketdatabase";
 
