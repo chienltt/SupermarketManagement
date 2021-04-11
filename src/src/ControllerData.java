@@ -8,16 +8,20 @@ public class ControllerData {
     public static ArrayList<product> listProducts = new ArrayList<product>();
     public static ArrayList<user> listUsers= new ArrayList<user>();
     public static ArrayList<bill> listRemainingBill= new ArrayList<bill>();
-    public static ArrayList<shipment> listShipment = new ArrayList<>();
 
-    public static void testAddShipment(){
-        shipment a=new shipment("bim bim","awdawd",5, 100, "còn hàng");
-        shipment b= new shipment("sua","sgdirgsjif",7, 200, "còn hàng");
-        shipment c= new shipment ("mitom","cbakcawd",4, 101, "hết hàng");
-        ControllerData.listShipment.add(a);
-        ControllerData.listShipment.add(b);
-        ControllerData.listShipment.add(c);
-        System.out.println("123"+ControllerData.listShipment);
+    public static void testAddProduct(){
+        product a=new product("bim bim","ăduiawuid",10,10);
+        product b=new product("sua","ăduioawda1",15,50);
+        product c=new product("keo","ăqdawdawid",5,0);
+        shipment a1=new shipment(a,"awdaădawwd",50, new date(2000,2000,2000), new date(1000,1000,1000));
+        shipment a2= new shipment(a,"sgdirgsjif",70, new date(20,20,10), new date(15,20,15));
+        shipment b1= new shipment (b,"cbakcawđăd",40, new date(100,100,20), new date(30,30,30));
+        a.addShipment(a1);
+        a.addShipment(a2);
+        b.addShipment(b1);
+        ControllerData.listProducts.add(a);
+        ControllerData.listProducts.add(b);
+        ControllerData.listProducts.add(c);
     }
 
     public static void sortListProducts(){
@@ -26,19 +30,16 @@ public class ControllerData {
     public static void sortListUser(){
         Collections.sort(listUsers,(user1,user2)->user1.compareTo(user2));
     }
-    public static void sortListShipment(){
-        Collections.sort(listShipment,(ship1,ship2)-> ship1.compareTo(ship2));
-    }
 
     public static void addProduct(product Product){
         ControllerData.listProducts.add(Product);
         sortListProducts();
     }
-
-    public static void addShipment(shipment Shipment){
-        ControllerData.listShipment.add(Shipment);
-        sortListShipment();
-    }
+//
+//    public static void addShipment(shipment Shipment){
+//        ControllerData.listShipment.add(Shipment);
+//        sortListShipment();
+//    }
     public static void addUser(user User){
         ControllerData.listUsers.add(User);
         sortListUser();

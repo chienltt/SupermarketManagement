@@ -2,22 +2,22 @@ package src;
 
 import java.util.PrimitiveIterator;
 
-public class order extends product {
+public class order extends productInfo {
     private int STT_Order;
     private int amountOfOrder;
     private String stateOfOrder;
     private int totalOrder;
-    public order () {
-
-    }
-    public order(String nameProduct, String idProduct, int price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder) {
+//    public order () {
+//
+//    }
+    public order(String nameProduct, String idProduct, double price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder) {
         super(nameProduct, idProduct, price);
         this.STT_Order = STT_Order;
         this.amountOfOrder = amountOfOrder;
         this.stateOfOrder = stateOfOrder;
         this.totalOrder = totalOrder;
     }
-    public int getTotalCost(){
+    public double getTotalCost(){
         return amountOfOrder * getPrice();
     }
 
@@ -49,7 +49,7 @@ public class order extends product {
         this.totalOrder = totalOrder;
     }
 
-    public int getTotalOrder() {
+    public double getTotalOrder() {
         return amountOfOrder * getPrice();
     }
 

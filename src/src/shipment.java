@@ -1,54 +1,51 @@
 package src;
 
 
-public class shipment extends product{
+public class shipment extends productInfo{
 //    private String nameProduct;
 //    private String idProduct;
 //    private double price;
-    private int amountOfShipment;
-    private String stateOfShipment;
-//    private date receptionDate;
-//    private date expirationDate;
+    private String shipmentID;
+    private int amountOfProduct;
+    private date receptionDate;
+    private date expirationDate;
 //    private String shipmentID; //             id_ship
-    public shipment( String nameProduct,String idProduct,int price,  int amountOfShipment, String stateOfShipment){
+    public shipment( String nameProduct,String idProduct,int price,String shipmentID,  int amountOfProduct, date receptionDate,date expirationDate){
 //        this.shipmentID=shipmentID;
         super(idProduct, nameProduct, price);
-        this.amountOfShipment = amountOfShipment;
-        this.stateOfShipment = stateOfShipment;
-//        this.receptionDate= new date(receptionDate);
-//        this.expirationDate=new date(expirationDate);
+        this.shipmentID=shipmentID;
+        this.amountOfProduct = amountOfProduct;
+        this.receptionDate= new date(receptionDate);
+        this.expirationDate=new date(expirationDate);
     }
 
-    public shipment() {
-
+    public shipment(productInfo Product,String shipmentID,int amountOfProduct, date receptionDate,date expirationDate){
+        super(Product.idProduct, Product.nameProduct, Product.price);
+        this.shipmentID=shipmentID;
+        this.amountOfProduct = amountOfProduct;
+        this.receptionDate= new date(receptionDate);
+        this.expirationDate=new date(expirationDate);
     }
 
-//    public date getExpirationDate() {
-//        return expirationDate;
-//    }
-//
-//    public date getReceptionDate() {
-//        return receptionDate;
-//    }
-
-    public int getAmountOfShipment() {
-        return amountOfShipment;
+    public date getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setAmountOfShipment(int amountOfShipment) {
-        this.amountOfShipment = amountOfShipment;
+    public date getReceptionDate() {
+        return receptionDate;
     }
 
-    public String getStateOfShipment() {
-        return stateOfShipment;
+    public int getAmountOfProduct() {
+        return amountOfProduct;
     }
 
-    public void setStateOfShipment(String stateOfShipment) {
-        this.stateOfShipment = stateOfShipment;
+    public void setAmountOfProduct(int amountOfProduct) {
+        this.amountOfProduct = amountOfProduct;
     }
-    //    public String getShipmentID() {
-//        return shipmentID;
-//    }
+
+        public String getShipmentID() {
+        return shipmentID;
+    }
 
 
 }

@@ -8,7 +8,7 @@ public class bill {
     private String idBill;
     private String stateBill;
     private ArrayList<order> listOrders;
-    private int totalCost;
+    private double totalCost;
     public bill(String idBill){
         this.idBill=idBill;
         this.stateBill= "Unpaid";
@@ -20,7 +20,7 @@ public class bill {
         totalCost=totalCost+Order.getTotalCost();
     }
 
-    public int getTotalCost() {
+    public double getTotalCost() {
         return totalCost;
     }
 
