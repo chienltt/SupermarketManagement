@@ -12,10 +12,7 @@ import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
@@ -121,6 +118,7 @@ public class Controller implements Initializable {
 
 
     //product textfield
+
     @FXML
     private TextField maid_pro;
     @FXML
@@ -131,6 +129,46 @@ public class Controller implements Initializable {
     private TextField giaid_pro;
     @FXML
     private TextField tinhtrangid_pro;
+
+    //detail_tab//dinh dang table o day;
+
+
+
+
+    @FXML
+    private Button detail_pro;
+
+    @FXML
+    private Button Close_detail;
+
+    @FXML
+    private TableView<?> detail_table;
+
+    @FXML
+    private TableColumn<?, ?> macol2;
+
+    @FXML
+    private TableColumn<?, ?> tencol2;
+
+    @FXML
+    private TableColumn<?, ?> soluongcol2;
+
+    @FXML
+    private TableColumn<?, ?> giacol2;
+
+    @FXML
+    private TableColumn<?, ?> ngaynhapcol2;
+
+    @FXML
+    private TableColumn<?, ?> ngayhethancol2;
+
+
+
+
+
+
+
+
 
     @FXML
     private TextField search_text;
@@ -385,7 +423,6 @@ public class Controller implements Initializable {
     public void handleClick(ActionEvent e) {
 
         if (e.getSource() == Home) {
-            LB_Name.setText("trang chủ");
             Home_1.setVisible(true);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
@@ -394,7 +431,6 @@ public class Controller implements Initializable {
             employees_1.setVisible(false);
         }
         if (e.getSource() == Order_button) {
-            LB_Name.setText("tạo đơn hàng");
             Home_1.setVisible(false);
             Order_tab.setVisible(true);
             Buy_product_1.setVisible(false);
@@ -407,7 +443,6 @@ public class Controller implements Initializable {
 
         }
         if (e.getSource() == Buy_product) {
-            LB_Name.setText("nhập lô hàng");
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(true);
@@ -416,7 +451,6 @@ public class Controller implements Initializable {
             employees_1.setVisible(false);
         }
             if (e.getSource() == product) {
-                LB_Name.setText("sản phẩm");
                 Home_1.setVisible(false);
                 Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
@@ -426,7 +460,6 @@ public class Controller implements Initializable {
             }
 
             if (e.getSource() == employees) {
-                LB_Name.setText("nhân viên");
                 Home_1.setVisible(false);
                 Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
@@ -435,7 +468,6 @@ public class Controller implements Initializable {
                 employees_1.setVisible(true);
             }
         if (e.getSource() ==credit) {
-            LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
@@ -471,8 +503,20 @@ public class Controller implements Initializable {
             product_table.setEditable(true);
             src.product s = product_table.getSelectionModel().getSelectedItem();
             System.out.println(s.getIdProduct());
+            detail_pro.setVisible(true);
         });
 
+    }
+
+    public void detail_table(ActionEvent e) {
+        detail_table.setVisible(true);
+        Close_detail.setVisible(true);
+    }
+
+    public void Closee(ActionEvent e) {
+        detail_table.setVisible(false);
+        Close_detail.setVisible(false);
+        detail_pro.setVisible(false);
     }
 
     //product_event
