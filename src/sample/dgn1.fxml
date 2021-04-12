@@ -520,7 +520,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #93aaed;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #93aaed;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="435.0" prefWidth="849.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
                      <columns>
@@ -529,6 +529,7 @@
                         <TableColumn fx:id="soluongcol" prefWidth="170.0" style="-fx-alignment: center;" text="Số lượng" />
                         <TableColumn fx:id="giacol" prefWidth="144.0" style="-fx-alignment: center;" text="Giá" />
                         <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
+                        <TableColumn fx:id="chitietcol" prefWidth="129.0" text="Chi tiết" />
                      </columns>
                   </TableView>
                   <TextField fx:id="search_text" layoutX="269.0" layoutY="31.0" prefHeight="38.0" prefWidth="315.0" promptText="Nhập tên hoặc mã sản phẩm" style="-fx-background-color: #fffcfd;" />

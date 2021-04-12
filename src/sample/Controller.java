@@ -3,19 +3,20 @@ package sample;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.sun.prism.impl.Disposer;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
@@ -27,6 +28,7 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.util.Callback;
 import javafx.util.converter.DoubleStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import src.*;
@@ -118,7 +120,8 @@ public class Controller implements Initializable {
     private TableColumn<product, Double> giacol;
     @FXML
     private TableColumn<product, String> tinhtrangcol;
-
+    @FXML
+    private TableColumn<product, Boolean> chitietcol;
 
     //product textfield
     @FXML
@@ -218,6 +221,7 @@ public class Controller implements Initializable {
         this.setvalueColumnoftable();
         this.searchinproducttable();
         this.editproducttable();
+        this.addbutton();
     }
     // tao gia tri cho product_table
     public void setvalueColumnoftable(){
@@ -517,7 +521,56 @@ public class Controller implements Initializable {
         ordersList.remove(selected);
     }
 
+    //Define the button cell
+    private class ButtonCell extends TableCell<product, Boolean> {
+        final Button cellButton = new Button("Action");
 
+        ButtonCell() {
+
+            cellButton.setOnAction(new EventHandler<ActionEvent>() {
+
+                @Override
+                public void handle(ActionEvent t) {
+                    // do something when button clicked
+                    //...
+                }
+            });
+        }
+        //Display button if the row is not empty
+        @Override
+        protected void updateItem(Boolean t, boolean empty) {
+            super.updateItem(t, empty);
+            if(!empty){
+                setGraphic(cellButton);
+            }
+        }
+    }
+    public void addbutton(){
+        //Insert Button
+       // TableColumn chitietcol = new TableColumn<>("Chi tiết");
+        chitietcol.setSortable(false);
+
+        chitietcol.setCellValueFactory(
+                new Callback<TableColumn.CellDataFeatures<product, Boolean>,
+                        ObservableValue<Boolean>>() {
+
+                    @Override
+                    public ObservableValue<Boolean> call(TableColumn.CellDataFeatures<product, Boolean> p) {
+                        return new SimpleBooleanProperty(p.getValue() != null);
+                    }
+                });
+
+        chitietcol.setCellFactory(
+                new Callback<TableColumn<product, Boolean>, TableCell<product, Boolean>>() {
+
+                    @Override
+                    public TableCell<product, Boolean> call(TableColumn<product, Boolean> p) {
+                        return new ButtonCell();
+                    }
+
+                });
+        //product_table.getColumns().add(chitietcol);
+    }
     }
 
 
