@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ConnectionUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/ControllerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ControllerData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/productInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/productInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/shipment.java" afterDir="false" />
-    </list>
+    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,6 +199,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main (1)" />
