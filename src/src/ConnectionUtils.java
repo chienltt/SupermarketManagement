@@ -49,7 +49,7 @@ public class ConnectionUtils {
                 while (resultShipments.next()){
                     shipment s= new shipment(listProducts.get(i),resultShipments.getString(4),resultShipments.getInt(5),
                             resultShipments.getString(2),resultShipments.getString(3));
-                    listProducts.get(i).add
+                    listProducts.get(i).addShipment(s);
                 }
             }
             return listProducts;
