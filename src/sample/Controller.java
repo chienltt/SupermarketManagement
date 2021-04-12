@@ -218,6 +218,7 @@ public class Controller implements Initializable {
         this.setvalueColumnoftable();
         this.searchinproducttable();
         this.editproducttable();
+        this.select_product();
     }
     // tao gia tri cho product_table
     public void setvalueColumnoftable(){
@@ -465,6 +466,15 @@ public class Controller implements Initializable {
         //endm
     }
 
+    public void select_product() {
+        product_table.setOnMouseClicked(event -> {
+            product_table.setEditable(true);
+            src.product s = product_table.getSelectionModel().getSelectedItem();
+            System.out.println(s.getIdProduct());
+        });
+
+    }
+
     //product_event
     // su kien Add de them san pham
     public void add (ActionEvent e){
@@ -516,6 +526,8 @@ public class Controller implements Initializable {
         order selected = OrDer_table.getSelectionModel().getSelectedItem();
         ordersList.remove(selected);
     }
+
+
 
 
     }
