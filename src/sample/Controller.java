@@ -486,8 +486,8 @@ public class Controller implements Initializable {
     //create-Order
     public void create_order() {
         ordersList = FXCollections.observableArrayList(
-                new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
-                new order("t.h", "19", 100, 3, 23, "het", 100 * 3)
+//                new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
+//                new order("t.h", "19", 100, 3, 23, "het", 100 * 3)
         );
         STT_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("STT_Order"));
         ID_Order.setCellValueFactory(new PropertyValueFactory<order, String>("idProduct"));

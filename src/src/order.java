@@ -10,8 +10,8 @@ public class order extends productInfo {
 //    public order () {
 //
 //    }
-    public order(String nameProduct, String idProduct, double price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder) {
-        super(nameProduct, idProduct, price);
+    public order(String nameProduct, String idProduct, double price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder,int dateToExpired) {
+        super(nameProduct, idProduct, price,dateToExpired);
         this.STT_Order = STT_Order;
         this.amountOfOrder = amountOfOrder;
         this.stateOfOrder = stateOfOrder;

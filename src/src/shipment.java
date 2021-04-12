@@ -7,31 +7,31 @@ public class shipment extends productInfo{
 //    private double price;
     private String shipmentID;
     private int amountOfProduct;
-    private date receptionDate;
-    private date expirationDate;
+    private String receptionDate;
+    private String expirationDate;
 //    private String shipmentID; //             id_ship
-    public shipment( String nameProduct,String idProduct,int price,String shipmentID,  int amountOfProduct, date receptionDate,date expirationDate){
+    public shipment( String nameProduct,String idProduct,int price,String shipmentID,  int amountOfProduct, String receptionDate,String expirationDate,int dateToExpired){
 //        this.shipmentID=shipmentID;
-        super(idProduct, nameProduct, price);
+        super(idProduct, nameProduct, price,dateToExpired);
         this.shipmentID=shipmentID;
         this.amountOfProduct = amountOfProduct;
-        this.receptionDate= new date(receptionDate);
-        this.expirationDate=new date(expirationDate);
+        this.receptionDate= receptionDate;
+        this.expirationDate=expirationDate;
     }
 
-    public shipment(productInfo Product,String shipmentID,int amountOfProduct, date receptionDate,date expirationDate){
-        super(Product.idProduct, Product.nameProduct, Product.price);
+    public shipment(product Product,String shipmentID,int amountOfProduct, String receptionDate,String expirationDate){
+        super(Product.idProduct, Product.nameProduct, Product.price,Product.dateToExpired);
         this.shipmentID=shipmentID;
         this.amountOfProduct = amountOfProduct;
-        this.receptionDate= new date(receptionDate);
-        this.expirationDate=new date(expirationDate);
+        this.receptionDate= receptionDate;
+        this.expirationDate=expirationDate;
     }
 
-    public date getExpirationDate() {
+    public String getExpirationDate() {
         return expirationDate;
     }
 
-    public date getReceptionDate() {
+    public String getReceptionDate() {
         return receptionDate;
     }
 

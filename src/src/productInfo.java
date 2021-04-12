@@ -4,15 +4,30 @@ public class productInfo {
     protected String idProduct;
     protected String nameProduct;
     protected double price;
-    public productInfo (String nameProduct,String idProduct,double price){
+    protected int dateToExpired;
+    public productInfo (String nameProduct,String idProduct,double price,int dateToExpired){
         this.nameProduct=nameProduct;
         this.idProduct=idProduct;
         this.price=price;
+        this.dateToExpired=dateToExpired;
     }
     public productInfo(productInfo Product){
         this.nameProduct=Product.nameProduct;
         this.idProduct=Product.idProduct;
         this.price =Product.price;
+        this.dateToExpired= Product.dateToExpired;
+    }
+
+    public void setDateToExpired(int dateToExpired) {
+        this.dateToExpired = dateToExpired;
+    }
+
+    public int getDateToExpired() {
+        return dateToExpired;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public void setNameProduct(String nameProduct) {

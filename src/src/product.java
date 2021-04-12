@@ -11,14 +11,14 @@ public class product extends productInfo {
     private int numberOfProduct;
     private String state;
     private ArrayList<shipment> listShipment  ;
-    public product (String idProduct,String nameProduct,double price,int numberOfProduct){
-        super(idProduct, nameProduct, price);
+    public product (String idProduct,String nameProduct,double price,int dateToExpired){
+        super(idProduct, nameProduct, price,dateToExpired);
         this.listShipment=new ArrayList<shipment>();
-        this.numberOfProduct =numberOfProduct;
+        this.numberOfProduct =0;
         this.state="Het hang";
     }
     public product(productInfo Product){
-        super(Product.idProduct,Product.nameProduct,Product.price);
+        super(Product.idProduct,Product.nameProduct,Product.price, Product.dateToExpired);
         this.listShipment=new ArrayList<shipment>();
         this.numberOfProduct =0;
         this.state="Het hang";
