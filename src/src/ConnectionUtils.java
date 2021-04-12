@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ConnectionUtils {
 
     private static final String userName = "root";
-    private static final String password = "Chien8bltt";
+    private static final String password = "gnctt197320";
     // jdbc:mysql://hostname:port/dbname
     private static final String connectionURL = "jdbc:mysql://localhost:3306/supermarketdatabase";
 
