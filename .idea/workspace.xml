@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_23.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SupermarketManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SupermarketManagement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dgn1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ConnectionUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
