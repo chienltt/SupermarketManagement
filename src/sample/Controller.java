@@ -119,7 +119,6 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<product, String> tinhtrangcol;
 
-
     //product textfield
     @FXML
     private TextField maid_pro;
@@ -132,6 +131,8 @@ public class Controller implements Initializable {
     @FXML
     private TextField tinhtrangid_pro;
 
+    @FXML
+    private TextField chitietlohang;
     @FXML
     private TextField search_text;
 

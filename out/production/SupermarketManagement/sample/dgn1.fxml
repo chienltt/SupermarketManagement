@@ -296,7 +296,7 @@
                                     </Lighting>
                                  </effect>
                               </Label>
-                              <TextField fx:id="ToTal_text_Order" layoutX="202.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
+                              <TextField fx:id="ToTal_text_Order" layoutX="2020.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
