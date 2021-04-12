@@ -217,7 +217,7 @@ public class Controller implements Initializable {
         this.create_order();
         this.setvalueColumnoftable();
         this.searchinproducttable();
-        this.editproducttable();
+//        this.editproducttable();
         this.select_product();
     }
     // tao gia tri cho product_table
