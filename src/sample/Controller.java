@@ -251,6 +251,7 @@ public class Controller implements Initializable {
         SortedList<product> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(product_table.comparatorProperty());
         product_table.setItems(sortedData);
+        System.out.println(sortedData);
     }
 
 
@@ -262,8 +263,6 @@ public class Controller implements Initializable {
         soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
-        product p = new product("P1","Ca chua",10000.0,300);
-        ConnectionUtils.updateDataProducts(p);
         setProductlist();
     }
 
