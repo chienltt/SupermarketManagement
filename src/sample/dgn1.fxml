@@ -24,7 +24,7 @@
       <AnchorPane fx:id="inform_tab" prefHeight="60.0" prefWidth="852.0" style="-fx-background-color: #02567d;" AnchorPane.bottomAnchor="590.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <FontAwesomeIconView glyphName="USER" layoutX="721.0" layoutY="42.0" size="40" wrappingWidth="29.683828971501498" />
-            <JFXButton fx:id="Login2" layoutX="961.0" layoutY="7.0" prefHeight="44.0" prefWidth="73.0" style="-fx-background-color: #ffffff;" text="Đăng&#10;nhập" AnchorPane.rightAnchor="3.0">
+            <JFXButton fx:id="Login2" layoutX="961.0" layoutY="7.0" prefHeight="44.0" prefWidth="73.0" style="-fx-background-color: #fff238;" text="Đăng&#10;nhập" AnchorPane.rightAnchor="3.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -36,7 +36,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <VBox fx:id="Menu_Tab" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #c7c9c9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="Menu_Tab" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #32a651;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
          <children>
             <Pane prefHeight="120.0" prefWidth="200.0" style="-fx-background-color: #010f14;">
                <children>
@@ -358,7 +358,7 @@
             </AnchorPane>
             <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane fx:id="Order_tab_21" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #eaa8ed;">
+                  <AnchorPane fx:id="Order_tab_21" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #eaa8ed;" visible="false">
                      <children>
                         <Label layoutX="24.0" layoutY="43.0" style="-fx-background-color: #b3fff2;" text="Nhập mã sản phẩm">
                            <font>
@@ -520,7 +520,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #93aaed;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #93aaed;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="435.0" prefWidth="849.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
                      <columns>
@@ -548,9 +548,19 @@
                   <Button layoutX="333.0" layoutY="208.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="employees_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="employees_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #eef280;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button layoutX="78.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
+                  <TableView fx:id="employee_table" layoutY="95.0" prefHeight="323.0" prefWidth="852.0">
+                    <columns>
+                      <TableColumn fx:id="employeeId" prefWidth="133.0" text="employeeId" />
+                      <TableColumn fx:id="employeeUsername" prefWidth="163.0" text="employeeUsername" />
+                        <TableColumn fx:id="employeePasword" prefWidth="196.0" text="employeePassword" />
+                        <TableColumn fx:id="employeeName" prefWidth="191.0" text="employeeName" />
+                        <TableColumn fx:id="employeeInfo" prefWidth="168.0" text="employeeInfo" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="search_employee" layoutX="262.0" layoutY="35.0" onAction="#searchinemployeetable" prefHeight="41.0" prefWidth="264.0" promptText="Search bar..." />
+                  <Button layoutX="549.0" layoutY="33.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="66.0" text="OK" />
                </children>
             </AnchorPane>
          </children>

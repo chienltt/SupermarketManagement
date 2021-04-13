@@ -176,7 +176,7 @@ public class Controller implements Initializable {
     private TableColumn<order, Integer> Sum_Order;
 
     private ObservableList<order> ordersList;
-   //pay_var_order
+    //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
 
@@ -206,8 +206,23 @@ public class Controller implements Initializable {
     @FXML
     private TextField Total_money_Order; // text_tong_tien
 
-
-
+// employee table
+    @FXML
+    private TableView<employee>  employee_table;
+    @FXML
+    private TableColumn<employee,String>  employeeId;
+    @FXML
+    private TableColumn<employee,String>  employeeUsername;
+    @FXML
+    private TableColumn<employee,String>  employeePasword;
+    @FXML
+    private TableColumn<employee,String>  employeeName;
+    @FXML
+    private TableColumn<employee,String>   employeeInfo;
+    @FXML
+    private ObservableList<employee> employeelist;
+    @FXML
+    private TextField search_employee;
     // Signal_var
     public Boolean check_select = true;
 
@@ -222,9 +237,48 @@ public class Controller implements Initializable {
         this.searchinproducttable();
         this.editproducttable();
         this.addbutton();
+        this.setvalueColumofemployee_table();
+    }
+
+
+    //tao gai tri cho employee_table
+    public  void setvalueColumofemployee_table(){
+        employeelist =FXCollections.observableArrayList(
+          new employee("001","XYZ","123","Jonh","30 tuoi")
+        );
+        employeeId.setCellValueFactory(new PropertyValueFactory<employee, String>("employeeid"));
+        employeeUsername.setCellValueFactory(new PropertyValueFactory<employee, String>("employeeusername"));
+        employeePasword.setCellValueFactory(new PropertyValueFactory<employee, String>("employeepassword"));
+        employeeName.setCellValueFactory(new PropertyValueFactory<employee, String>("employeename"));
+        employeeInfo.setCellValueFactory(new PropertyValueFactory<employee, String>("employeeinfo"));
+        this.setemployeelist();
+    }
+    public void setemployeelist(){
+        employee_table.setItems(employeelist);
+    }
+    //search in employee_table
+    public void searchinemployeetable() {
+        FilteredList<employee> filteredData = new FilteredList<>(employeelist, b -> true);
+        search_employee.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(employee -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (employee.getEmployeeid().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches first name.
+                } else if (employee.getEmployeeusername().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true; // Filter matches last name.
+                } else
+                    return false; // Does not match.
+            });
+        });
+        SortedList<employee> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(employee_table.comparatorProperty());
+        employee_table.setItems(sortedData);
     }
     // tao gia tri cho product_table
-    public void setvalueColumnoftable(){
+    public void setvalueColumnoftable() {
         macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
         tencol.setCellValueFactory(new PropertyValueFactory<product, String>("nameProduct"));
         soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("numberOfProduct"));
@@ -234,7 +288,7 @@ public class Controller implements Initializable {
     }
 
     // tim kiem trong product_table
-    public void searchinproducttable(){
+    public void searchinproducttable() {
         FilteredList<product> filteredData = new FilteredList<>(productsList, b -> true);
         search_text.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(employee -> {
@@ -242,12 +296,11 @@ public class Controller implements Initializable {
                     return true;
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
-                if (employee.getIdProduct().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
+                if (employee.getIdProduct().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches first name.
                 } else if (employee.getNameProduct().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true; // Filter matches last name.
-                }
-                else
+                } else
                     return false; // Does not match.
             });
         });
@@ -258,22 +311,22 @@ public class Controller implements Initializable {
 
 
     // chinh sua trong product_table
-    public void editproducttable(){
+    public void editproducttable() {
         product_table.setEditable(true);
-//        macol.setCellFactory(TextFieldTableCell.forTableColumn());
-//        tencol.setCellFactory(TextFieldTableCell.forTableColumn());
+        macol.setCellFactory(TextFieldTableCell.forTableColumn());
+        tencol.setCellFactory(TextFieldTableCell.forTableColumn());
         soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
         tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
-        product p = new product("P1","Ca chua",10000.0,300);
+        product p = new product("P1", "Ca chua", 10000.0, 300);
         ConnectionUtils.updateDataProducts(p);
         setProductlist();
     }
 
-    public void setProductlist(){
-        productsList= FXCollections.observableArrayList();
-        ArrayList<product> listProducts= ConnectionUtils.getDataProducts();
-        for (int i = 0; i< listProducts.size(); i++){
+    public void setProductlist() {
+        productsList = FXCollections.observableArrayList();
+        ArrayList<product> listProducts = ConnectionUtils.getDataProducts();
+        for (int i = 0; i < listProducts.size(); i++) {
             productsList.add(listProducts.get(i));
         }
         product_table.setItems(productsList);
@@ -291,7 +344,7 @@ public class Controller implements Initializable {
         });
     }
 
-    public void search_Product_Click(){
+    public void search_Product_Click() {
         search_button.setOnMouseClicked(event -> {
             searchinproducttable();
         });
@@ -383,7 +436,6 @@ public class Controller implements Initializable {
     }
 
 
-
     //Menu_
     public void handleClick(ActionEvent e) {
 
@@ -418,26 +470,26 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-            if (e.getSource() == product) {
-                LB_Name.setText("sản phẩm");
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(true);
-                credit_1.setVisible(false);
-                employees_1.setVisible(false);
-            }
+        if (e.getSource() == product) {
+            LB_Name.setText("sản phẩm");
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(true);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
 
-            if (e.getSource() == employees) {
-                LB_Name.setText("nhân viên");
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(false);
-                credit_1.setVisible(false);
-                employees_1.setVisible(true);
-            }
-        if (e.getSource() ==credit) {
+        if (e.getSource() == employees) {
+            LB_Name.setText("nhân viên");
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(true);
+        }
+        if (e.getSource() == credit) {
             LB_Name.setText("thẻ tín dụng");
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
@@ -446,22 +498,22 @@ public class Controller implements Initializable {
             credit_1.setVisible(true);
             employees_1.setVisible(false);
         }
-        }
+    }
 
-        //Login_tab
+    //Login_tab
     public void Login_event() {
         Close_Click(Login_tab, Close_Button);
         Login_Forget(Login2, Login_tab);
         Login_Forget(Login, Login_tab);
     }
 
-        //Order_tab
+    //Order_tab
     public void Order_event() {
         //mo_tab_tao_don_hang
         Open_Click(Order_tab_2, Order_click);
         //tab_thanh_toan
         Open_Click(Payment_tab, Paid_button_Order);
-        Close_Click(Payment_tab,Cancel_Paid_btn );
+        Close_Click(Payment_tab, Cancel_Paid_btn);
         ToTal_text_Order.setText("gnctt");
         ToTal_text_Order.setEditable(false);
         ExCash_text_Order.setEditable(false);
@@ -471,8 +523,8 @@ public class Controller implements Initializable {
 
     //product_event
     // su kien Add de them san pham
-    public void add (ActionEvent e){
-//        product newproduct = new product(productInfo);
+    public void add(ActionEvent e) {
+//        product newproduct = new product();
 //        newproduct.setIdProduct(maid_pro.getText());
 //        newproduct.setNameProduct(tenid_pro.getText());
 //        newproduct.setNumberOfProduct(Integer.parseInt(soluongid_pro.getText()));
@@ -482,11 +534,12 @@ public class Controller implements Initializable {
     }
     // su kien delete de xoa san pham
 
-    public void delete(ActionEvent e){
+    public void delete(ActionEvent e) {
         //  productsList.remove(products.getSelectionModel().getSelectedItem());
         product selected = product_table.getSelectionModel().getSelectedItem();
         productsList.remove(selected);
     }
+
     //create-Order
     public void create_order() {
         ordersList = FXCollections.observableArrayList(
@@ -503,7 +556,7 @@ public class Controller implements Initializable {
         OrDer_table.setItems(ordersList);
     }
 
-    public void add_Order (ActionEvent e){
+    public void add_Order(ActionEvent e) {
 //        order neworder = new order();
 //        neworder.setIdProduct(id_product_Order.getText());
 //        neworder.setNameProduct("bim bim"); // phu thuoc vao id
@@ -515,8 +568,7 @@ public class Controller implements Initializable {
 //        ordersList.add(neworder);
     }
 
-    public void delete_Order(ActionEvent e){
-        //  productsList.remove(products.getSelectionModel().getSelectedItem());
+    public void delete_Order(ActionEvent e) {
         order selected = OrDer_table.getSelectionModel().getSelectedItem();
         ordersList.remove(selected);
     }
@@ -536,18 +588,20 @@ public class Controller implements Initializable {
                 }
             });
         }
+
         //Display button if the row is not empty
         @Override
         protected void updateItem(Boolean t, boolean empty) {
             super.updateItem(t, empty);
-            if(!empty){
+            if (!empty) {
                 setGraphic(cellButton);
             }
         }
     }
-    public void addbutton(){
+
+    public void addbutton() {
         //Insert Button
-       // TableColumn chitietcol = new TableColumn<>("Chi tiết");
+        // TableColumn chitietcol = new TableColumn<>("Chi tiết");
         chitietcol.setSortable(false);
 
         chitietcol.setCellValueFactory(
@@ -571,7 +625,11 @@ public class Controller implements Initializable {
                 });
         //product_table.getColumns().add(chitietcol);
     }
-    }
+
+
+}
+
+
 
 
 
