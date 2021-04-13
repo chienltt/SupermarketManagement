@@ -5,7 +5,7 @@ public class productInfo {
     protected String nameProduct;
     protected double price;
     protected int dateToExpired;
-    public productInfo (String nameProduct,String idProduct,double price,int dateToExpired){
+    public productInfo (String idProduct,String nameProduct,double price,int dateToExpired){
         this.nameProduct=nameProduct;
         this.idProduct=idProduct;
         this.price=price;
@@ -38,9 +38,6 @@ public class productInfo {
         this.idProduct = idProduct;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public double getPrice() {
         return price;

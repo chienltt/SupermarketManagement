@@ -24,6 +24,9 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
+
 import javafx.util.converter.DoubleStringConverter;
 import javafx.util.converter.IntegerStringConverter;
 import src.*;
@@ -141,25 +144,28 @@ public class Controller implements Initializable {
     private Button Close_detail;
 
     @FXML
-    private TableView<?> detail_table;
+    private TableView<shipment> detail_table;
+
+    private ObservableList<shipment> shipmentsList;
+
+    private String currentProductIdChoice;
 
     @FXML
-    private TableColumn<?, ?> macol2;
+    private TableColumn<shipment, String> macolproduct2;
 
     @FXML
-    private TableColumn<?, ?> tencol2;
+    private TableColumn<shipment, String > tencol2;
+    @FXML
+    private TableColumn< shipment, String> macolshipment2;
 
     @FXML
-    private TableColumn<?, ?> soluongcol2;
+    private TableColumn<shipment, Integer> soluongcol2;
 
     @FXML
-    private TableColumn<?, ?> giacol2;
+    private TableColumn<shipment, String> ngaynhapcol2;
 
     @FXML
-    private TableColumn<?, ?> ngaynhapcol2;
-
-    @FXML
-    private TableColumn<?, ?> ngayhethancol2;
+    private TableColumn<shipment, String> ngayhethancol2;
 
 
 
@@ -250,23 +256,32 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //ss;
-
         this.Login_event();
         this.Order_event();
         this.create_order();
-        this.setvalueColumnoftable();
+        this.setvalueColumnoftableProduct();
+        this.setValueDetailProductTable();
+        this.editproducttable();
         this.searchinproducttable();
-//        this.editproducttable();
         this.select_product();
     }
     // tao gia tri cho product_table
-    public void setvalueColumnoftable(){
+    public void setvalueColumnoftableProduct(){
         macol.setCellValueFactory(new PropertyValueFactory<product, String>("idProduct"));
         tencol.setCellValueFactory(new PropertyValueFactory<product, String>("nameProduct"));
         soluongcol.setCellValueFactory(new PropertyValueFactory<product, Integer>("numberOfProduct"));
         giacol.setCellValueFactory(new PropertyValueFactory<product, Double>("price"));
         tinhtrangcol.setCellValueFactory(new PropertyValueFactory<product, String>("state"));
         this.setProductlist();
+    }
+
+    public void setValueDetailProductTable(){
+        macolproduct2.setCellValueFactory(new PropertyValueFactory<shipment,String>("idProduct"));
+        tencol2.setCellValueFactory(new PropertyValueFactory<shipment, String>("nameProduct"));
+        macolshipment2.setCellValueFactory(new PropertyValueFactory<shipment,String >("shipmentID"));
+        soluongcol2.setCellValueFactory(new PropertyValueFactory<shipment,Integer>("amountOfProduct"));
+        ngaynhapcol2.setCellValueFactory(new PropertyValueFactory<shipment,String>("receptionDate"));
+        ngayhethancol2.setCellValueFactory(new PropertyValueFactory<shipment,String>("expirationDate"));
     }
 
     // tim kiem trong product_table
@@ -290,18 +305,19 @@ public class Controller implements Initializable {
         SortedList<product> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(product_table.comparatorProperty());
         product_table.setItems(sortedData);
-        System.out.println(sortedData);
     }
 
 
     // chinh sua trong product_table
     public void editproducttable(){
         product_table.setEditable(true);
+        detail_table.setEditable(true);
 //        macol.setCellFactory(TextFieldTableCell.forTableColumn());
-//        tencol.setCellFactory(TextFieldTableCell.forTableColumn());
-        soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        tencol.setCellFactory(TextFieldTableCell.forTableColumn());
+//        soluongcol.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         giacol.setCellFactory(TextFieldTableCell.forTableColumn(new DoubleStringConverter()));
-        tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
+//        tinhtrangcol.setCellFactory(TextFieldTableCell.forTableColumn());
+        soluongcol2.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         setProductlist();
     }
 
@@ -311,7 +327,19 @@ public class Controller implements Initializable {
         for (int i = 0; i< listProducts.size(); i++){
             productsList.add(listProducts.get(i));
         }
+        TextFields.bindAutoCompletion(id_product_Order,listProductId());
         product_table.setItems(productsList);
+    }
+    public void setShipmentList(){
+        shipmentsList=FXCollections.observableArrayList();
+        for (int i=0;i<productsList.size();i++){
+            if(productsList.get(i).getIdProduct()==currentProductIdChoice){
+                for(int j=0;j<productsList.get(i).getListShipment().size();j++){
+                    shipmentsList.add(productsList.get(i).getListShipment().get(j));
+                }
+            }
+        }
+        detail_table.setItems(shipmentsList);
     }
 
     public void Close_Click(AnchorPane tab, JFXButton but) {
@@ -494,21 +522,33 @@ public class Controller implements Initializable {
         ToTal_text_Order.setText("gnctt");
         ToTal_text_Order.setEditable(false);
         ExCash_text_Order.setEditable(false);
+
         get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
+    }
+
+    public ArrayList<String> listProductId(){
+        ArrayList<String> listId= new ArrayList<String>();
+        for (int i=0;i<productsList.size();i++){
+            String result = new String();
+            result=productsList.get(i).getIdProduct()+"("+productsList.get(i).getNameProduct()+")";
+            listId.add(result);
+        }
+        return listId;
     }
 
     public void select_product() {
         product_table.setOnMouseClicked(event -> {
             product_table.setEditable(true);
             src.product s = product_table.getSelectionModel().getSelectedItem();
-            System.out.println(s.getIdProduct());
+            currentProductIdChoice=s.getIdProduct();
             detail_pro.setVisible(true);
         });
 
     }
 
     public void detail_table(ActionEvent e) {
+        setShipmentList();
         detail_table.setVisible(true);
         Close_detail.setVisible(true);
     }
@@ -571,6 +611,27 @@ public class Controller implements Initializable {
         ordersList.remove(selected);
     }
 
+    public void handleChangeNameProduct(TableColumn.CellEditEvent edittedCell){
+        product productSelect = product_table.getSelectionModel().getSelectedItem();
+        productSelect.setNameProduct(edittedCell.getNewValue().toString());
+        ConnectionUtils.updateDataProducts(productSelect);
+        setProductlist();
+    }
+    public void handleChangePriceProduct(TableColumn.CellEditEvent edittedCell){
+        product productSelect = product_table.getSelectionModel().getSelectedItem();
+        double price = Double.parseDouble(edittedCell.getNewValue().toString());
+        productSelect.setPrice(price);
+        ConnectionUtils.updateDataProducts(productSelect);
+        setProductlist();
+    }
+    public void handleChangeQuantityShipment(TableColumn.CellEditEvent edittedCell){
+        shipment shipmentSelect = detail_table.getSelectionModel().getSelectedItem();
+        int Quantity= Integer.parseInt(edittedCell.getNewValue().toString());
+        shipmentSelect.setAmountOfProduct(Quantity);
+        ConnectionUtils.updateDataShipments(shipmentSelect);
+        setShipmentList();
+        setProductlist();
+    }
 
 
 

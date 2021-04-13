@@ -43,10 +43,6 @@ public class product extends productInfo {
         this.idProduct = idProduct;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public void setNumberOfProduct(int numberOfProduct) {
         this.numberOfProduct = numberOfProduct;
     }

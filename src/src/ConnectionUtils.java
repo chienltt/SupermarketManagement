@@ -35,7 +35,7 @@ public class ConnectionUtils {
             Statement st = con.createStatement();
             ResultSet resultProducts=st.executeQuery(sqlSelectProducts);
             while (resultProducts.next()){
-                product p=new product(resultProducts.getString(2),resultProducts.getString(1),resultProducts.getDouble(4),resultProducts.getInt(5));
+                product p=new product(resultProducts.getString(1),resultProducts.getString(2),resultProducts.getDouble(4),resultProducts.getInt(5));
                 String sqlSelectShipments = "SELECT * FROM shipments where  productId="+"'"+p.getIdProduct()+"'";
 //                ResultSet resultShipments= st.executeQuery(sqlSelectShipments);
 //                while (resultShipments.next()){
@@ -64,7 +64,22 @@ public class ConnectionUtils {
         try{
 
 //            String sqlUpdate = "UPDATE products SET quantityInStock = "+"'"+p.getNumberOfProduct()+"'"+" , "+"price = " +"'"+p.getPrice()+"'"+" WHERE"+" productId="+p.getIdProduct();
-            String sqlUpdate = "UPDATE products SET "+"price='"+ p.getPrice() + "' WHERE productId = '"+p.getIdProduct()+"' ";
+            String sqlUpdate = "UPDATE products SET "+"productName="+"'"+p.getNameProduct()+"'"+","+"price='"+ p.getPrice() + "' WHERE productId = '"+p.getIdProduct()+"' ";
+            Connection con = ConnectionUtils.openConnection();
+            Statement st = con.createStatement();
+            st.executeUpdate(sqlUpdate);
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            System.out.println("error");
+        }
+    }
+
+    public static void updateDataShipments(shipment s){
+        try{
+
+//            String sqlUpdate = "UPDATE products SET quantityInStock = "+"'"+p.getNumberOfProduct()+"'"+" , "+"price = " +"'"+p.getPrice()+"'"+" WHERE"+" productId="+p.getIdProduct();
+            String sqlUpdate = "UPDATE shipments SET "+"quantityInShipment="+"'"+s.getAmountOfProduct()+ "' WHERE shipmentId = '"+s.getShipmentID()+"' ";
             Connection con = ConnectionUtils.openConnection();
             Statement st = con.createStatement();
             st.executeUpdate(sqlUpdate);
