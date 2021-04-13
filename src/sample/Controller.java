@@ -36,6 +36,8 @@ public class Controller implements Initializable {
     //Login_var
     private Boolean Logined = false;
 
+    private Boolean orderVisible=false;
+
     @FXML
     private JFXButton Login;
     @FXML
@@ -205,8 +207,6 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<order, String> Name_Order;
 
-    @FXML
-    private TableColumn<order, String> state_Order;
 
     @FXML
     private TableColumn<order, Integer> Price_Order;
@@ -246,8 +246,7 @@ public class Controller implements Initializable {
     private JFXButton Add_btn_Order;  // button_them
 
     @FXML
-    private TextField Total_money_Order; // text_tong_tien
-
+    private Label Total_money_Order; // text_tong_tien
 
 
     // Signal_var
@@ -351,6 +350,9 @@ public class Controller implements Initializable {
     public void Open_Click(AnchorPane tab, JFXButton btn) {
         btn.setOnMouseClicked(event -> {
             tab.setVisible(true);
+            orderVisible=true;
+            ordersList=FXCollections.observableArrayList();
+
         });
     }
 
@@ -440,8 +442,29 @@ public class Controller implements Initializable {
     public void get_Text(TextField a, TextField b, JFXButton btn) {
         btn.setOnMouseClicked(event -> {
             String a1 = a.getText();
+            String resultId=new String();
+            for (int i=0;i<a1.length();i++)
+            {
+                if(a1.charAt(i) != '(') resultId=resultId+a1.charAt(i);
+                else break;
+            }
             String b1 = b.getText();
-            System.out.println(a1 + " " + b1);
+            for (int i=0;i<productsList.size();i++){
+                if(resultId.equals(productsList.get(i).getIdProduct())== true){
+                    System.out.println(resultId + " " + b1);
+                    if(Integer.parseInt(b1) <= productsList.get(i).getNumberOfProduct()) {
+                        order o = new order(productsList.get(i),ordersList.size()+1,Integer.parseInt(b1) );
+                        double totalMoney=0;
+                        ordersList.add(o);
+                        OrDer_table.setItems(ordersList);
+                        for(int j=0 ; j<ordersList.size();j++){
+                            totalMoney=totalMoney+ordersList.get(j).getTotalOrderCost();
+                        }
+                        Total_money_Order.setText(Double.toString(totalMoney));
+                    }
+                    break;
+                }
+            }
         });
     }
 
@@ -460,14 +483,20 @@ public class Controller implements Initializable {
         }
         if (e.getSource() == Order_button) {
             Home_1.setVisible(false);
-            Order_tab.setVisible(true);
+            if(orderVisible==false) {
+                Order_tab.setVisible(true);
+                Order_tab_2.setVisible(false);
+            } else {
+                Order_tab.setVisible(true);
+                Order_tab_2.setVisible(true);
+            }
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(false);
             employees_1.setVisible(false);
 
             //content of orderTab
-            Order_tab_2.setVisible(false);
+//            Order_tab_2.setVisible(false);
 
         }
         if (e.getSource() == Buy_product) {
@@ -515,7 +544,7 @@ public class Controller implements Initializable {
         //Order_tab
     public void Order_event() {
         //mo_tab_tao_don_hang
-        Open_Click(Order_tab_2, Order_click);
+        createOrder();
         //tab_thanh_toan
         Open_Click(Payment_tab, Paid_button_Order);
         Close_Click(Payment_tab,Cancel_Paid_btn );
@@ -525,6 +554,11 @@ public class Controller implements Initializable {
 
         get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
+    }
+
+    public void createOrder(){
+        if(orderVisible==false)
+            Open_Click(Order_tab_2, Order_click);
     }
 
     public ArrayList<String> listProductId(){
@@ -579,17 +613,12 @@ public class Controller implements Initializable {
     }
     //create-Order
     public void create_order() {
-        ordersList = FXCollections.observableArrayList(
-//                new order("bi", "1101", 100, 2, 20, "con hang", 100 * 2),
-//                new order("t.h", "19", 100, 3, 23, "het", 100 * 3)
-        );
         STT_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("STT_Order"));
         ID_Order.setCellValueFactory(new PropertyValueFactory<order, String>("idProduct"));
         Name_Order.setCellValueFactory(new PropertyValueFactory<order, String>("nameProduct"));
-        state_Order.setCellValueFactory(new PropertyValueFactory<order, String>("stateOfOrder"));
         Price_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("price"));
         Amount_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("amountOfOrder"));
-        Sum_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("totalOrder"));
+        Sum_Order.setCellValueFactory(new PropertyValueFactory<order, Integer>("totalOrderCost"));
         OrDer_table.setItems(ordersList);
     }
 
@@ -609,6 +638,11 @@ public class Controller implements Initializable {
         //  productsList.remove(products.getSelectionModel().getSelectedItem());
         order selected = OrDer_table.getSelectionModel().getSelectedItem();
         ordersList.remove(selected);
+        Double totalMoney =0.0;
+        for(int j=0 ; j<ordersList.size();j++){
+            totalMoney=totalMoney+ordersList.get(j).getTotalOrderCost();
+        }
+        Total_money_Order.setText(Double.toString(totalMoney));
     }
 
     public void handleChangeNameProduct(TableColumn.CellEditEvent edittedCell){

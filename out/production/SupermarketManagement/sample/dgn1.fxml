@@ -214,7 +214,6 @@
                             <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
                             <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Mã sản phẩm" />
                               <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Tên sản phẩm" />
-                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" style="-fx-alignment: center;" text="Trạng thái" />
                               <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Đơn giá" />
                               <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Số lượng" />
                               <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Thành tiền" />
@@ -249,7 +248,7 @@
                         </JFXButton>
                         <TextField fx:id="id_product_Order" layoutX="182.0" layoutY="43.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" AnchorPane.topAnchor="20.0" />
                         <TextField fx:id="number_Order" layoutX="182.0" layoutY="91.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" AnchorPane.topAnchor="60.0" />
-                        <TextField fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" />
+                        <Label fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" text="0" />
                         <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
                               <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

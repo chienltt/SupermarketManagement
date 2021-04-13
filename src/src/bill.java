@@ -17,7 +17,7 @@ public class bill {
     }
     public void addOrders(order Order){
         listOrders.add(Order);
-        totalCost=totalCost+Order.getTotalCost();
+        totalCost=totalCost+Order.getTotalOrderCost();
     }
 
     public double getTotalCost() {

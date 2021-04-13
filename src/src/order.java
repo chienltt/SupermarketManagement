@@ -5,28 +5,25 @@ import java.util.PrimitiveIterator;
 public class order extends productInfo {
     private int STT_Order;
     private int amountOfOrder;
-    private String stateOfOrder;
-    private int totalOrder;
+    private double totalOrderCost;
 //    public order () {
 //
 //    }
-    public order(String nameProduct, String idProduct, double price,int STT_Order, int amountOfOrder, String stateOfOrder, int totalOrder,int dateToExpired) {
-        super(nameProduct, idProduct, price,dateToExpired);
+    public order(String nameProduct, String idProduct, double price,int dateToExpired,int STT_Order, int amountOfOrder) {
+        super( idProduct,nameProduct, price,dateToExpired);
         this.STT_Order = STT_Order;
         this.amountOfOrder = amountOfOrder;
-        this.stateOfOrder = stateOfOrder;
-        this.totalOrder = totalOrder;
+        this.totalOrderCost = amountOfOrder*price;
     }
-    public double getTotalCost(){
-        return amountOfOrder * getPrice();
+    public order(product p ,int STT_Order, int amountOfOrder){
+        super(p.getIdProduct(),p.getNameProduct(),p.getPrice(),p.getDateToExpired());
+        this.STT_Order = STT_Order;
+        this.amountOfOrder = amountOfOrder;
+        this.totalOrderCost = amountOfOrder*price;
     }
 
     public void setAmountOfOrder(int amountOfOrder) {
         this.amountOfOrder = amountOfOrder;
-    }
-
-    public void setStateOfOrder(String stateOfOrder) {
-        this.stateOfOrder = stateOfOrder;
     }
 
     public void setSTT_Order(int STT_Order) {
@@ -41,15 +38,12 @@ public class order extends productInfo {
         return STT_Order;
     }
 
-    public String getStateOfOrder() {
-        return stateOfOrder;
+
+    public void setTotalOrderCost(double totalOrderCost) {
+        this.totalOrderCost = totalOrderCost;
     }
 
-    public void setTotalOrder(int totalOrder) {
-        this.totalOrder = totalOrder;
-    }
-
-    public double getTotalOrder() {
+    public double getTotalOrderCost() {
         return amountOfOrder * getPrice();
     }
 
