@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dgn1.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/order.java" afterDir="false" />
-    </list>
+    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -322,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618330897870</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="khung_Objiect">
+      <created>1618338469981</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1618338469981</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -367,30 +365,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618326095644" />
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1618338268987">
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1618338485119">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618338268987" />
-    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1618338268987">
+    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618338485119" />
+    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1618338485119">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618338268987" />
-    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1618338268987">
+    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618338485119" />
+    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1618338485118">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618338268987" />
-    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1618338268987">
+    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618338485118" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1618338485119">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618338268987" />
+    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618338485119" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1618326099471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618326099471" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1618331013003">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1618338476106">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618331013003" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618338476106" />
     <state x="209" y="32" key="new project wizard" timestamp="1618288272998">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
