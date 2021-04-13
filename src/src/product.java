@@ -27,6 +27,7 @@ public class product extends productInfo {
 //        this.state=Product.state;
     }
 
+
     public void addShipment(shipment Shipment){
         listShipment.add(Shipment);
         this.numberOfProduct =this.numberOfProduct +Shipment.getAmountOfProduct();

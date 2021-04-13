@@ -368,6 +368,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="khung_Objiect" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1618247927403">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1618247927403" />
     <state x="538" y="234" key="DetectedRootsChooserDialog" timestamp="1618146986970">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -377,25 +381,25 @@
     </state>
     <state x="488" y="148" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1618146985212" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618074084715" />
-    <state width="1322" height="85" key="GridCell.Tab.0.bottom" timestamp="1618241243628">
+    <state width="1322" height="85" key="GridCell.Tab.0.bottom" timestamp="1618248062599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="85" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1618241243628" />
+    <state width="1322" height="85" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1618248062599" />
     <state width="1493" height="219" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618128444842" />
-    <state width="1322" height="85" key="GridCell.Tab.0.center" timestamp="1618241243628">
+    <state width="1322" height="85" key="GridCell.Tab.0.center" timestamp="1618248062599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="85" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1618241243628" />
+    <state width="1322" height="85" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1618248062599" />
     <state width="1493" height="219" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618128444841" />
-    <state width="1322" height="85" key="GridCell.Tab.0.left" timestamp="1618241243627">
+    <state width="1322" height="85" key="GridCell.Tab.0.left" timestamp="1618248062599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="85" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1618241243627" />
+    <state width="1322" height="85" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1618248062599" />
     <state width="1493" height="219" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618128444841" />
-    <state width="1322" height="85" key="GridCell.Tab.0.right" timestamp="1618241243628">
+    <state width="1322" height="85" key="GridCell.Tab.0.right" timestamp="1618248062599">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="85" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1618241243628" />
+    <state width="1322" height="85" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1618248062599" />
     <state width="1493" height="219" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618128444841" />
     <state x="147" y="64" key="MergeDialog" timestamp="1617853076346">
       <screen x="0" y="0" width="1536" height="824" />
@@ -418,26 +422,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1617928814966" />
+    <state x="526" y="120" key="refactoring.ChangeSignatureDialog" timestamp="1618247950864">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="526" y="120" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1618247950864" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1618125951281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1618125951281" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/src/product.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/src/product.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

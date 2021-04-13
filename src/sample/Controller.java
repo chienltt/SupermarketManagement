@@ -472,12 +472,12 @@ public class Controller implements Initializable {
     //product_event
     // su kien Add de them san pham
     public void add (ActionEvent e){
-//        product newproduct = new product();
+//        product newproduct = new product(productInfo);
 //        newproduct.setIdProduct(maid_pro.getText());
 //        newproduct.setNameProduct(tenid_pro.getText());
-//        newproduct.setAmountOfProduct(Integer.parseInt(soluongid_pro.getText()));
+//        newproduct.setNumberOfProduct(Integer.parseInt(soluongid_pro.getText()));
 //        newproduct.setPrice(Integer.parseInt(giaid_pro.getText()));
-//        newproduct.setStateOfProduct(tinhtrangid_pro.getText());
+//        newproduct.setState(tinhtrangid_pro.getText());
 //        productsList.add(newproduct);
     }
     // su kien delete de xoa san pham
@@ -523,7 +523,7 @@ public class Controller implements Initializable {
 
     //Define the button cell
     private class ButtonCell extends TableCell<product, Boolean> {
-        final Button cellButton = new Button("Action");
+        final Button cellButton = new Button("Chi tiết");
 
         ButtonCell() {
 
