@@ -249,6 +249,11 @@ public class Controller implements Initializable {
     private Label Total_money_Order; // text_tong_tien
 
 
+    //Bien Huy order
+    @FXML
+    private JFXButton Cancel_Order;
+
+
     // Signal_var
     public Boolean check_select = true;
 
@@ -551,6 +556,7 @@ public class Controller implements Initializable {
         ToTal_text_Order.setText("gnctt");
         ToTal_text_Order.setEditable(false);
         ExCash_text_Order.setEditable(false);
+//        Cancel_Order_event();
 
         get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
@@ -665,6 +671,13 @@ public class Controller implements Initializable {
         ConnectionUtils.updateDataShipments(shipmentSelect);
         setShipmentList();
         setProductlist();
+    }
+   //
+    @FXML
+    public void Cancel_Order_event() {
+        Cancel_Order.setOnMouseClicked(event -> {
+            System.out.println("huy");
+        });
     }
 
 
