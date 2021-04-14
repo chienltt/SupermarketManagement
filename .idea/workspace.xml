@@ -19,12 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="khung_Objiect">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_15.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/fontawesomefx_8_9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/jfoenix_8_0_10.xml" afterDir="false" />
+    <list default="true" id="8897e402-736b-49e4-aad9-94dd8e7b0a21" name="Default Changelist" comment="mnmmnm">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_15__1_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/lib/controlsfx-8.40.15 (1).jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_15.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SupermarketManagement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SupermarketManagement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/sample/login.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ConnectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SupermarketManagement/src/ConnectionUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/dgn1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/dgn1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/ConnectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/ConnectionUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,26 +84,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../controlsfx-8.40.15.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res/lib/controlsfx-8.40.15 (1).jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res\lib" />
+      <recent name="C:\SupermarketManagement\res\lib" />
+      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\Style" />
+      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\sample" />
+      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\src" />
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\sample" />
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res\lib" />
       <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\SupermarketManagement\res\lib" />
-      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\Style" />
-      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res\lib" />
-      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\src\sample" />
-      <recent name="C:\Users\ADMIN\Documents\GitHub\SupermarketManagement\res" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
@@ -373,40 +380,6 @@
     <MESSAGE value="v_3." />
     <MESSAGE value="khung_Objiect" />
     <option name="LAST_COMMIT_MESSAGE" value="khung_Objiect" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="473" y="153" key="FileChooserDialogImpl" timestamp="1618411985885">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="473" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1618411985885" />
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1618411183734">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1618411183734" />
-    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1618411183734">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1618411183734" />
-    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1618411183734">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1618411183734" />
-    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1618411183734">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1618411183734" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1618412172795">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618412172795" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1618338600019">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1618338600019" />
-    <state x="209" y="32" key="new project wizard" timestamp="1618288272998">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1618288272998" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
