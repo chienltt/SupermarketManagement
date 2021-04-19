@@ -36,9 +36,9 @@ public class Controller implements Initializable {
     @FXML
     private JFXButton Login;
     @FXML
-    private JFXTextField username;
+    private TextField username;
     @FXML
-    private JFXPasswordField password;
+    private TextField password;
     @FXML
     private JFXButton Login2;
     @FXML
