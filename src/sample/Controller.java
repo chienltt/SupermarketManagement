@@ -39,14 +39,34 @@ public class Controller implements Initializable {
     private TextField username;
     @FXML
     private TextField password;
+
     @FXML
-    private JFXButton Login2;
+    private JFXButton Logout;
     @FXML
     private JFXButton Close_Button;
     @FXML
     private AnchorPane Login_tab;
     @FXML
     private Label notify_login;
+
+    @FXML
+    private AnchorPane Login_tab1;
+
+    @FXML
+    private AnchorPane Forget_pass_tab;
+
+    @FXML
+    private TextField ma_nv;
+    @FXML
+    private TextField email_nv;
+
+    @FXML
+    private JFXButton back_Login;
+
+    @FXML
+    private JFXButton send_rq;
+
+
 
     //forget_pass
     @FXML
@@ -64,7 +84,7 @@ public class Controller implements Initializable {
 // Menu_var
 
     @FXML
-    private JFXButton Home;
+    private JFXButton Home_btn;
 
     @FXML
     private JFXButton Order_button;
@@ -333,53 +353,26 @@ public class Controller implements Initializable {
     }
 
     // Tab_dang_nhap
-    public void Login_Forget(JFXButton login, AnchorPane Login_tab) {
+    public void Login_Forget(JFXButton login, AnchorPane Login_tab, JFXButton logout, JFXButton send_pass) {
         login.setOnMouseClicked(event -> {
-            if (!Login_tab.isVisible()) {
-                Login_tab.setVisible(true);
-            } else {
-                String user = username.getText();
-                String pass = password.getText();
-                //check_ki_tu_khi_dang_nh
-                // xu_li_thong_tin_dang_nhap
-                if (Check_key(user, pass, 4, 16) && (user.equals("gnctt") && pass.equals("191001"))) {
-
-                    Login_tab.setVisible(false);
-                    username.setText("");
-                    password.setText("");
-                    notify_login.setText("");
-                    Logined = true;
-                    if (Logined) {
-                        Login2.setText("Đăng xuất");
-                    } else {
-                        Login2.setText("Đăng nhập");
-                    }
-                } else {
-                    if (!Check_key(user, pass, 4, 16)) {
-                        notify_login.setText("* tài khoản mật khẩu không đúng định dạng, không \n" +
-                                "chứa kí tự đặc biệt, dài hơn 4 kí tự không quá 16 kí tự");
-                    } else {
-                        notify_login.setText("* tài khoản hoặc mật khẩu không chính xác vui lòg nhập lại \n" + "hoặc chọn quên mật khẩu");
-                    }
-
-
-                }
-
-            }
+            String us = username.getText();
+            String ps = password.getText();
+            //xu LI _chuoi
+            System.out.println("xu Li validate, xac thuc tk, mk " + us + "/" + ps);
+            Login_tab.setVisible(false);
         });
         forget_pass.setOnMouseClicked(event -> {
-            String user = username.getText();
+            Forget_pass_tab.setVisible(true);
+        });
+        logout.setOnMouseClicked(event -> {
+            Login_tab.setVisible(true);
+            Login_tab1.setVisible(true);
+        });
+        send_pass.setOnMouseClicked(event -> {
+            String us = ma_nv.getText();
+            String ps = email_nv.getText();
             notify_forget_pas.setVisible(true);
-            Close_Click(notify_forget_pas, Ok_button);
-            Close_Click(notify_forget_pas, Cancel);
-            if (user.equals("gnctt")) {
-
-                content.setText("          Đã gửi mật khẩu mới\n" +
-                        "            tới gmail của bạn");
-            } else {
-                content.setText("          tài khoản chưa tồn tại\n" +
-                        "            hãy đăng kí với quản lí");
-            }
+            System.out.println("xu_li_quen_mk" + us + "/" + ps);
         });
     }
     //
@@ -387,26 +380,7 @@ public class Controller implements Initializable {
 
     // Kiem_tra_dinh_dang_us_ps;
 
-    public boolean Check_space(String a) {
-        for (int i = 0; i < a.length(); i++) {
-            if ((a.charAt(i) >= 65 && a.charAt(i) <= 90) || (a.charAt(i) >= 97 && a.charAt(i) <= 122) || (a.charAt(i) >= 48 && a.charAt(i) <= 57)) {
 
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean Check_key(String a, String b, int minlength, int maxlength) {
-        if (a.length() <= minlength || b.length() <= minlength || a.length() >= maxlength || b.length() >= maxlength) {
-            return false;
-        } else {
-            if (Check_space(a) && Check_space(b)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     //get_text_khi_an_button
     public void get_Text(TextField a, TextField b, JFXButton btn) {
@@ -421,14 +395,16 @@ public class Controller implements Initializable {
 
     //Menu_
     public void handleClick(ActionEvent e) {
+        System.out.println(e.getSource());
 
-        if (e.getSource() == Home) {
+        if (e.getSource() == Home_btn) {
             Home_1.setVisible(true);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(false);
             employees_1.setVisible(false);
+            System.out.println("home");
         }
         if (e.getSource() == Order_button) {
             Home_1.setVisible(false);
@@ -479,9 +455,10 @@ public class Controller implements Initializable {
 
         //Login_tab
     public void Login_event() {
-        Close_Click(Login_tab, Close_Button);
-        Login_Forget(Login2, Login_tab);
-        Login_Forget(Login, Login_tab);
+        Login_Forget(Login, Login_tab, Logout, send_rq);
+        Close_Click(Forget_pass_tab, back_Login);
+        Close_Click(notify_forget_pas, Ok_button);
+        Close_Click(notify_forget_pas, Cancel);
     }
 
         //Order_tab
