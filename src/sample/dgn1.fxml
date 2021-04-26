@@ -15,6 +15,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -37,7 +38,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
                </HBox.margin>
             </ImageView>
-            <JFXButton fx:id="Login2" alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffffff; -fx-font-family: Quicksan; -fx-font-weight: Bolder;" text=" ">
+            <JFXButton fx:id="Logout" alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffffff; -fx-font-family: Quicksan; -fx-font-weight: Bolder;" text=" ">
                <font>
                   <Font size="13.0" />
                </font>
@@ -65,7 +66,7 @@
                      </font>
                   </Text>
                </children></HBox>
-            <JFXButton fx:id="Home" alignment="TOP_LEFT" buttonType="RAISED" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#be2525" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="trang chủ" textFill="WHITE">
+            <JFXButton fx:id="Home_btn" alignment="TOP_LEFT" buttonType="RAISED" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#be2525" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="trang chủ" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -141,7 +142,10 @@
       </VBox>
       <AnchorPane fx:id="Content" layoutX="200.0" layoutY="120.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
          <children>
-            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" />
+               </children></AnchorPane>
             <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" prefHeight="80.0" prefWidth="233.0" ripplerFill="#531818" style="-fx-background-color: #d8d9dc; -fx-font-family: Quicksand; -fx-font-weight: Bold; -fx-background-radius: 2000;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="279.0" AnchorPane.topAnchor="230.0">
@@ -517,7 +521,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="358.0" prefWidth="720.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="95.0">
                      <columns>
@@ -601,7 +605,45 @@
                      </font>
                   </JFXButton>
                   <JFXButton fx:id="forget_pass" layoutX="27.0" layoutY="337.0" prefHeight="49.0" prefWidth="115.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Quên mật khẩu" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
-                  <AnchorPane fx:id="notify_forget_pas" layoutX="109.0" layoutY="80.0" prefHeight="221.0" prefWidth="315.0" style="-fx-background-color: #c9b3b3;" visible="false" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="109.0">
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="132.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Tên đăng nhập">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="231.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Mật khẩu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="Forget_pass_tab" layoutY="89.0" prefHeight="394.0" prefWidth="533.0" style="-fx-background-color: #f2f2f2;" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Line endX="344.66668701171875" startX="-167.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0" />
+                  <Label alignment="TOP_LEFT" layoutX="40.0" layoutY="227.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập Email">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="134.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập mã nhân viên">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="7.0" text="Quên mật khẩu" textFill="#240c0c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ma_nv" layoutX="38.0" layoutY="169.0" prefHeight="35.0" prefWidth="349.0" />
+                  <TextField fx:id="email_nv" layoutX="38.0" layoutY="262.0" prefHeight="35.0" prefWidth="349.0" />
+                  <JFXButton fx:id="send_rq" alignment="TOP_LEFT" buttonType="RAISED" layoutX="35.0" layoutY="313.0" prefHeight="37.0" prefWidth="73.0" style="-fx-font-weight: Bolder;" text="Gửi đi">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="back_Login" alignment="TOP_LEFT" layoutX="38.0" layoutY="350.0" prefHeight="30.0" prefWidth="161.0" style="-fx-font-weight: Bolder;" text="Quay lại trang đăng nhập" />
+                  <AnchorPane fx:id="notify_forget_pas" prefHeight="221.0" prefWidth="315.0" style="-fx-background-color: #c9b3b3;" visible="false" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="109.0">
                      <children>
                         <Label fx:id="content" layoutX="36.0" layoutY="41.0" prefHeight="126.0" prefWidth="249.0" style="-fx-background-color: #ffffff;" text="          Đã gửi mật khẩu mới&#10;            tới gmail của bạn&#10;" textAlignment="CENTER">
                            <font>
@@ -616,44 +658,6 @@
                         </JFXButton>
                      </children>
                   </AnchorPane>
-                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="132.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Tên đăng nhập">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="231.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Mật khẩu">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutY="89.0" prefHeight="394.0" prefWidth="533.0" style="-fx-background-color: #f2f2f2;" visible="false" AnchorPane.rightAnchor="20.0">
-               <children>
-                  <Line endX="344.66668701171875" startX="-167.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0" />
-                  <Label alignment="TOP_LEFT" layoutX="40.0" layoutY="227.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập Email">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="134.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập mã sinh viên">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="14.0" text="Quên mật khẩu" textFill="#240c0c">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="username1" layoutX="38.0" layoutY="169.0" prefHeight="35.0" prefWidth="349.0" />
-                  <TextField fx:id="username11" layoutX="38.0" layoutY="262.0" prefHeight="35.0" prefWidth="349.0" />
-                  <JFXButton alignment="TOP_LEFT" buttonType="RAISED" layoutX="35.0" layoutY="313.0" prefHeight="37.0" prefWidth="73.0" style="-fx-font-weight: Bolder;" text="Gửi đi">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton alignment="TOP_LEFT" layoutX="38.0" layoutY="350.0" prefHeight="30.0" prefWidth="161.0" style="-fx-font-weight: Bolder;" text="Quay lại trang đăng nhập" />
                </children>
             </AnchorPane>
             <Label layoutX="166.0" layoutY="197.0" prefHeight="210.0" prefWidth="233.0" style="-fx-font-weight: Bolder;" text="NGÀY &#10;   MỚI&#10;      TỐT &#10;         LÀNH" textFill="RED">
