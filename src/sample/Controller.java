@@ -231,6 +231,23 @@ public class Controller implements Initializable {
     private TableColumn<order, Integer> Sum_Order;
 
     private ObservableList<order> ordersList;
+
+
+    //Buy_pro_var
+
+    @FXML
+    private AnchorPane Payment_tab2;
+
+    @FXML
+    private JFXButton Paid_button_Buy;
+
+    ////payment_tab2_var
+    @FXML
+    private JFXButton back_Buy;
+    @FXML
+    private JFXButton bill_Buy;
+
+
    //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
@@ -272,6 +289,7 @@ public class Controller implements Initializable {
 
         this.Login_event();
         this.Order_event();
+        this.Buy_Product_event();
         this.create_order();
         this.setvalueColumnoftable();
         this.searchinproducttable();
@@ -473,6 +491,15 @@ public class Controller implements Initializable {
         ExCash_text_Order.setEditable(false);
         get_Text(id_product_Order, number_Order, Add_btn_Order);
         //endm
+    }
+
+    public void Buy_Product_event() {
+        //mo tab thanh toan
+        Open_Click(Payment_tab2, Paid_button_Buy);
+        Close_Click(Payment_tab2, back_Buy);
+        bill_Buy.setOnMouseClicked(event -> {
+            System.out.println("xu li in hoa don");
+        });
     }
 
     public void select_product() {
