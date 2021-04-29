@@ -198,6 +198,30 @@ public class Controller implements Initializable {
 
     private ObservableList<product> productsList;
 
+
+
+
+    //Home_var
+
+    @FXML
+    private JFXButton Buy_product2;
+
+    @FXML
+    private JFXButton Order_button2;
+
+    @FXML
+    private JFXButton product1;
+
+    @FXML
+    private JFXButton credit1;
+
+    @FXML
+    private JFXButton employees1;
+
+
+
+
+
     //Order_var
 
     @FXML
@@ -415,7 +439,7 @@ public class Controller implements Initializable {
     public void handleClick(ActionEvent e) {
         System.out.println(e.getSource());
 
-        if (e.getSource() == Home_btn) {
+        if (e.getSource() == Home_btn ) {
             Home_1.setVisible(true);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
@@ -424,7 +448,7 @@ public class Controller implements Initializable {
             employees_1.setVisible(false);
             System.out.println("home");
         }
-        if (e.getSource() == Order_button) {
+        if (e.getSource() == Order_button || e.getSource() == Order_button2) {
             Home_1.setVisible(false);
             Order_tab.setVisible(true);
             Buy_product_1.setVisible(false);
@@ -436,7 +460,7 @@ public class Controller implements Initializable {
             Order_tab_2.setVisible(false);
 
         }
-        if (e.getSource() == Buy_product) {
+        if (e.getSource() == Buy_product || e.getSource() == Buy_product2) {
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(true);
@@ -444,7 +468,7 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-            if (e.getSource() == product) {
+            if (e.getSource() == product || e.getSource() == product1) {
                 Home_1.setVisible(false);
                 Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
@@ -453,7 +477,7 @@ public class Controller implements Initializable {
                 employees_1.setVisible(false);
             }
 
-            if (e.getSource() == employees) {
+            if (e.getSource() == employees || e.getSource() == employees1) {
                 Home_1.setVisible(false);
                 Order_tab.setVisible(false);
                 Buy_product_1.setVisible(false);
@@ -461,7 +485,7 @@ public class Controller implements Initializable {
                 credit_1.setVisible(false);
                 employees_1.setVisible(true);
             }
-        if (e.getSource() ==credit) {
+        if (e.getSource() ==credit || e.getSource() == credit1) {
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
