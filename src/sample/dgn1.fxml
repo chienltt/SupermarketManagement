@@ -17,7 +17,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -146,7 +145,67 @@
          <children>
             <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" />
+                  <JFXButton fx:id="Order_button2" layoutX="139.0" layoutY="40.0" onAction="#handleClick" prefHeight="203.0" prefWidth="203.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Tạo đơn hàng" AnchorPane.bottomAnchor="303.5" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="40.0">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="order_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="Buy_product2" layoutX="467.0" layoutY="40.0" onAction="#handleClick" prefHeight="197.0" prefWidth="203.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Nhập lô hàng" AnchorPane.bottomAnchor="303.5" AnchorPane.leftAnchor="467.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="40.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="add_icon_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="product1" layoutX="70.0" layoutY="270.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Sản phẩm" AnchorPane.leftAnchor="40.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="product_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="credit1" layoutX="259.0" layoutY="262.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Thẻ tín dụng" AnchorPane.leftAnchor="304.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="cash_2_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="employees1" layoutX="315.0" layoutY="272.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Nhân Viên" AnchorPane.leftAnchor="568.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="employee_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
                </children></AnchorPane>
             <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
@@ -359,7 +418,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <AnchorPane fx:id="Buy_tab" layoutY="14.0" prefHeight="530.0" prefWidth="830.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
                      <children>
@@ -505,7 +564,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </AnchorPane>
-      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: WHITE;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="1052.0" style="-fx-background-color: #14a2e2;" AnchorPane.bottomAnchor="580.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane fx:id="Login_tab1" layoutX="852.0" layoutY="89.0" prefHeight="387.0" prefWidth="480.0" style="-fx-background-color: #f2f2f2;" AnchorPane.rightAnchor="20.0">
