@@ -3,31 +3,15 @@ package src;
 public class user {
     private String userIdAccount;
     private String userName;
-    private String userAddress;
+    private String userPhoneNumber;
     private int accountBalance;
 
-    public user(String userIdAccount){
+    public user(String userIdAccount, String userName, String userPhoneNumber, int accountBalance){
         this.userIdAccount=userIdAccount;
-        this.userName="undefined";
-        this.userAddress="undefined";
-        this.accountBalance=0;
-    }
-    public user(String userIdAccount,String userName){
-        this.userIdAccount=userIdAccount;
-        this.userName=userName;
-        this.userAddress="undefined";
-        this.accountBalance=0;
-    }
-    public user(String userIdAccount,String userName,String userAddress){
-        this.userIdAccount=userIdAccount;
-        this.userName=userName;
-        this.userAddress=userAddress;
-        this.accountBalance=0;
-    }
-    public user(String userIdAccount,String userName,String userAddress,int accountBalance){
-        this.userIdAccount=userIdAccount;
-        this.userName=userName;
-        this.userAddress=userAddress;
+        if (userName=="") this.userName="undefined";
+        else this.userName=userName;
+        if (userPhoneNumber=="") this.userPhoneNumber="undefined";
+        else this.userPhoneNumber=userPhoneNumber;
         this.accountBalance=accountBalance;
     }
 
@@ -43,8 +27,8 @@ public class user {
         return accountBalance;
     }
 
-    public String getUserAddress() {
-        return userAddress;
+    public String getUserPhoneNumber() {
+        return userPhoneNumber;
     }
 
     public String getUserIdAccount() {
@@ -55,8 +39,8 @@ public class user {
         return userName;
     }
 
-    public void setUserAddress(String userAddress) {
-        this.userAddress = userAddress;
+    public void setUserPhoneNumber(String userPhoneNumber) {
+        this.userPhoneNumber = userPhoneNumber;
     }
 
     public void setUserName(String userName) {

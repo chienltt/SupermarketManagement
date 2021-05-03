@@ -1,6 +1,6 @@
 package src;
 
-public class productInfo {
+public abstract class productInfo {
     protected String idProduct;
     protected String nameProduct;
     protected double price;

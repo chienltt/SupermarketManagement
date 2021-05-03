@@ -1,17 +1,17 @@
 package src;
 
-public class date {
+public class date1 {
     private int year;
     private int month;
     private int day;
-    public date(int year,int month,int day)
+    public date1(int year,int month,int day)
     {
         this.year=year;
         this.month=month;
         this.day=day;
     }
 
-    public date(date d){
+    public date1(date1 d){
         this.year=d.year;
         this.month=d.month;
         this.day=d.day;
