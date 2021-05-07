@@ -37,21 +37,56 @@ public class Controller implements Initializable {
     private Boolean Logined = false;
 
     private Boolean orderVisible=false;
+//
+//    @FXML
+//    private JFXButton Login;
+//    @FXML
+//    private JFXTextField username;
+//    @FXML
+//    private JFXPasswordField password;
+//    @FXML
+//    private JFXButton Login2;
+//    @FXML
+//    private JFXButton Close_Button;
+//    @FXML
+//    private AnchorPane Login_tab;
+//    @FXML
+//    private Label notify_login;
 
     @FXML
     private JFXButton Login;
     @FXML
-    private JFXTextField username;
+    private TextField username;
     @FXML
-    private JFXPasswordField password;
+    private TextField password;
+
     @FXML
-    private JFXButton Login2;
+    private JFXButton Logout;
     @FXML
     private JFXButton Close_Button;
     @FXML
     private AnchorPane Login_tab;
     @FXML
     private Label notify_login;
+
+    @FXML
+    private AnchorPane Login_tab1;
+
+    @FXML
+    private AnchorPane Forget_pass_tab;
+
+    @FXML
+    private TextField ma_nv;
+    @FXML
+    private TextField email_nv;
+
+    @FXML
+    private JFXButton back_Login;
+
+    @FXML
+    private JFXButton send_rq;
+
+
 
     //forget_pass
     @FXML
@@ -66,10 +101,23 @@ public class Controller implements Initializable {
     @FXML
     private JFXButton Cancel;
 
+//    //forget_pass
+//    @FXML
+//    private JFXButton forget_pass;
+//    @FXML
+//    private AnchorPane notify_forget_pas;
+//    @FXML
+//    private Label content;
+//    @FXML
+//    private JFXButton Ok_button;
+//
+//    @FXML
+//    private JFXButton Cancel;
+
 // Menu_var
 
     @FXML
-    private JFXButton Home;
+    private JFXButton Home_btn;
 
     @FXML
     private JFXButton Order_button;
@@ -106,6 +154,23 @@ public class Controller implements Initializable {
 
     @FXML
     private Label LB_Name;
+
+    //Home_var
+
+    @FXML
+    private JFXButton Buy_product2;
+
+    @FXML
+    private JFXButton Order_button2;
+
+    @FXML
+    private JFXButton product1;
+
+    @FXML
+    private JFXButton credit1;
+
+    @FXML
+    private JFXButton employees1;
 
     //product_1_table
     @FXML
@@ -218,7 +283,22 @@ public class Controller implements Initializable {
     private TableColumn<order, Integer> Sum_Order;
 
     private ObservableList<order> ordersList;
-   //pay_var_order
+    //Buy_pro_var
+
+    @FXML
+    private AnchorPane Payment_tab2;
+
+    @FXML
+    private JFXButton Paid_button_Buy;
+
+    ////payment_tab2_var
+    @FXML
+    private JFXButton back_Buy;
+    @FXML
+    private JFXButton bill_Buy;
+
+
+    //pay_var_order
     @FXML
     private JFXButton Paid_button_Order;
 
@@ -246,12 +326,13 @@ public class Controller implements Initializable {
     private JFXButton Add_btn_Order;  // button_them
 
     @FXML
-    private Label Total_money_Order; // text_tong_tien
+    private TextField Total_money_Order; // text_tong_tien
 
 
     //Bien Huy order
     @FXML
     private JFXButton Cancel_Order;
+
 
 
     // Signal_var
@@ -262,6 +343,7 @@ public class Controller implements Initializable {
         //ss;
         this.Login_event();
         this.Order_event();
+        this.Buy_Product_event();
         this.create_order();
         this.setvalueColumnoftableProduct();
         this.setValueDetailProductTable();
@@ -352,6 +434,7 @@ public class Controller implements Initializable {
         });
     }
 
+
     public void Open_Click(AnchorPane tab, JFXButton btn) {
         btn.setOnMouseClicked(event -> {
             tab.setVisible(true);
@@ -368,53 +451,26 @@ public class Controller implements Initializable {
     }
 
     // Tab_dang_nhap
-    public void Login_Forget(JFXButton login, AnchorPane Login_tab) {
+    public void Login_Forget(JFXButton login, AnchorPane Login_tab, JFXButton logout, JFXButton send_pass) {
         login.setOnMouseClicked(event -> {
-            if (!Login_tab.isVisible()) {
-                Login_tab.setVisible(true);
-            } else {
-                String user = username.getText();
-                String pass = password.getText();
-                //check_ki_tu_khi_dang_nh
-                // xu_li_thong_tin_dang_nhap
-                if (Check_key(user, pass, 4, 16) && (user.equals("gnctt") && pass.equals("191001"))) {
-
-                    Login_tab.setVisible(false);
-                    username.setText("");
-                    password.setText("");
-                    notify_login.setText("");
-                    Logined = true;
-                    if (Logined) {
-                        Login2.setText("Đăng xuất");
-                    } else {
-                        Login2.setText("Đăng nhập");
-                    }
-                } else {
-                    if (!Check_key(user, pass, 4, 16)) {
-                        notify_login.setText("* tài khoản mật khẩu không đúng định dạng, không \n" +
-                                "chứa kí tự đặc biệt, dài hơn 4 kí tự không quá 16 kí tự");
-                    } else {
-                        notify_login.setText("* tài khoản hoặc mật khẩu không chính xác vui lòg nhập lại \n" + "hoặc chọn quên mật khẩu");
-                    }
-
-
-                }
-
-            }
+            String us = username.getText();
+            String ps = password.getText();
+            //xu LI _chuoi
+            System.out.println("xu Li validate, xac thuc tk, mk " + us + "/" + ps);
+            Login_tab.setVisible(false);
         });
         forget_pass.setOnMouseClicked(event -> {
-            String user = username.getText();
+            Forget_pass_tab.setVisible(true);
+        });
+        logout.setOnMouseClicked(event -> {
+            Login_tab.setVisible(true);
+            Login_tab1.setVisible(true);
+        });
+        send_pass.setOnMouseClicked(event -> {
+            String us = ma_nv.getText();
+            String ps = email_nv.getText();
             notify_forget_pas.setVisible(true);
-            Close_Click(notify_forget_pas, Ok_button);
-            Close_Click(notify_forget_pas, Cancel);
-            if (user.equals("gnctt")) {
-
-                content.setText("          Đã gửi mật khẩu mới\n" +
-                        "            tới gmail của bạn");
-            } else {
-                content.setText("          tài khoản chưa tồn tại\n" +
-                        "            hãy đăng kí với quản lí");
-            }
+            System.out.println("xu_li_quen_mk" + us + "/" + ps);
         });
     }
     //
@@ -422,26 +478,7 @@ public class Controller implements Initializable {
 
     // Kiem_tra_dinh_dang_us_ps;
 
-    public boolean Check_space(String a) {
-        for (int i = 0; i < a.length(); i++) {
-            if ((a.charAt(i) >= 65 && a.charAt(i) <= 90) || (a.charAt(i) >= 97 && a.charAt(i) <= 122) || (a.charAt(i) >= 48 && a.charAt(i) <= 57)) {
 
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean Check_key(String a, String b, int minlength, int maxlength) {
-        if (a.length() <= minlength || b.length() <= minlength || a.length() >= maxlength || b.length() >= maxlength) {
-            return false;
-        } else {
-            if (Check_space(a) && Check_space(b)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     //get_text_khi_an_button
     public void get_Text(TextField a, TextField b, JFXButton btn) {
@@ -478,7 +515,7 @@ public class Controller implements Initializable {
     //Menu_
     public void handleClick(ActionEvent e) {
 
-        if (e.getSource() == Home) {
+        if (e.getSource() == Home_btn ) {
             Home_1.setVisible(true);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
@@ -486,25 +523,19 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-        if (e.getSource() == Order_button) {
+        if (e.getSource() == Order_button || e.getSource() == Order_button2) {
             Home_1.setVisible(false);
-            if(orderVisible==false) {
-                Order_tab.setVisible(true);
-                Order_tab_2.setVisible(false);
-            } else {
-                Order_tab.setVisible(true);
-                Order_tab_2.setVisible(true);
-            }
+            Order_tab.setVisible(true);
             Buy_product_1.setVisible(false);
             product_1.setVisible(false);
             credit_1.setVisible(false);
             employees_1.setVisible(false);
 
             //content of orderTab
-//            Order_tab_2.setVisible(false);
+            Order_tab_2.setVisible(false);
 
         }
-        if (e.getSource() == Buy_product) {
+        if (e.getSource() == Buy_product || e.getSource() == Buy_product2) {
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(true);
@@ -512,24 +543,24 @@ public class Controller implements Initializable {
             credit_1.setVisible(false);
             employees_1.setVisible(false);
         }
-            if (e.getSource() == product) {
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(true);
-                credit_1.setVisible(false);
-                employees_1.setVisible(false);
-            }
+        if (e.getSource() == product || e.getSource() == product1) {
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(true);
+            credit_1.setVisible(false);
+            employees_1.setVisible(false);
+        }
 
-            if (e.getSource() == employees) {
-                Home_1.setVisible(false);
-                Order_tab.setVisible(false);
-                Buy_product_1.setVisible(false);
-                product_1.setVisible(false);
-                credit_1.setVisible(false);
-                employees_1.setVisible(true);
-            }
-        if (e.getSource() ==credit) {
+        if (e.getSource() == employees || e.getSource() == employees1) {
+            Home_1.setVisible(false);
+            Order_tab.setVisible(false);
+            Buy_product_1.setVisible(false);
+            product_1.setVisible(false);
+            credit_1.setVisible(false);
+            employees_1.setVisible(true);
+        }
+        if (e.getSource() ==credit || e.getSource() == credit1) {
             Home_1.setVisible(false);
             Order_tab.setVisible(false);
             Buy_product_1.setVisible(false);
@@ -537,30 +568,38 @@ public class Controller implements Initializable {
             credit_1.setVisible(true);
             employees_1.setVisible(false);
         }
-        }
+    }
 
         //Login_tab
-    public void Login_event() {
-        Close_Click(Login_tab, Close_Button);
-        Login_Forget(Login2, Login_tab);
-        Login_Forget(Login, Login_tab);
-    }
+        public void Login_event() {
+            Login_Forget(Login, Login_tab, Logout, send_rq);
+            Close_Click(Forget_pass_tab, back_Login);
+            Close_Click(notify_forget_pas, Ok_button);
+            Close_Click(notify_forget_pas, Cancel);
+        }
 
         //Order_tab
-    public void Order_event() {
-        //mo_tab_tao_don_hang
-        createOrder();
-        //tab_thanh_toan
-        Open_Click(Payment_tab, Paid_button_Order);
-        Close_Click(Payment_tab,Cancel_Paid_btn );
-        ToTal_text_Order.setText("gnctt");
-        ToTal_text_Order.setEditable(false);
-        ExCash_text_Order.setEditable(false);
-//        Cancel_Order_event();
-
-        get_Text(id_product_Order, number_Order, Add_btn_Order);
-        //endm
+        public void Order_event() {
+            //mo_tab_tao_don_hang
+            Open_Click(Order_tab_2, Order_click);
+            //tab_thanh_toan
+            Open_Click(Payment_tab, Paid_button_Order);
+            Close_Click(Payment_tab,Cancel_Paid_btn );
+            ToTal_text_Order.setText("gnctt");
+            ToTal_text_Order.setEditable(false);
+            ExCash_text_Order.setEditable(false);
+            get_Text(id_product_Order, number_Order, Add_btn_Order);
+            //endm
+        }
+    public void Buy_Product_event() {
+        //mo tab thanh toan
+        Open_Click(Payment_tab2, Paid_button_Buy);
+        Close_Click(Payment_tab2, back_Buy);
+        bill_Buy.setOnMouseClicked(event -> {
+            System.out.println("xu li in hoa don");
+        });
     }
+
 
     public void createOrder(){
         if(orderVisible==false)
