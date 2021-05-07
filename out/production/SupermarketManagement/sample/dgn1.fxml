@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -10,6 +8,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -18,6 +18,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -38,7 +39,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" top="20.0" />
                </HBox.margin>
             </ImageView>
-            <JFXButton fx:id="Login2" alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffffff; -fx-font-family: Quicksan; -fx-font-weight: boilder;" text=" ">
+            <JFXButton fx:id="Logout" alignment="CENTER" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #ffffff; -fx-font-family: Quicksan; -fx-font-weight: Bolder;" text=" ">
                <font>
                   <Font size="13.0" />
                </font>
@@ -48,7 +49,7 @@
             </JFXButton>
          </children>
       </HBox>
-      <VBox fx:id="Menu_Tab" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #14a2e2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="Menu_Tab" alignment="TOP_CENTER" layoutY="52.0" prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #14a2e2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="852.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="200.0">
                <children>
@@ -57,7 +58,7 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <Text fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="GROUP 7">
+                  <Text fill="#fffdfd" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bold;" text="GROUP 7">
                      <HBox.margin>
                         <Insets bottom="20.0" right="20.0" top="30.0" />
                      </HBox.margin>
@@ -66,7 +67,7 @@
                      </font>
                   </Text>
                </children></HBox>
-            <JFXButton fx:id="Home" buttonType="RAISED" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#be2525" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="trang chủ" textFill="WHITE">
+            <JFXButton fx:id="Home_btn" alignment="TOP_LEFT" buttonType="RAISED" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#be2525" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="trang chủ" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -78,7 +79,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="Order_button" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#c02626" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="tạo đơn&#10;  hàng" textFill="WHITE">
+            <JFXButton fx:id="Order_button" alignment="TOP_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#c02626" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="tạo đơn&#10;  hàng" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -90,7 +91,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="Buy_product" buttonType="RAISED" layoutX="10.0" layoutY="73.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="nhập lô hàng" textFill="WHITE">
+            <JFXButton fx:id="Buy_product" alignment="TOP_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="73.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="nhập lô hàng" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -102,7 +103,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="product" buttonType="RAISED" layoutX="10.0" layoutY="136.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="sản phẩm" textFill="WHITE">
+            <JFXButton fx:id="product" alignment="TOP_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="136.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="sản phẩm" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -114,7 +115,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="credit" buttonType="RAISED" layoutX="10.0" layoutY="340.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="thẻ tín dụng" textFill="WHITE">
+            <JFXButton fx:id="credit" alignment="TOP_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="340.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="thẻ tín dụng" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -126,7 +127,7 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="employees" buttonType="RAISED" layoutX="10.0" layoutY="410.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="nhân viên" textFill="WHITE">
+            <JFXButton fx:id="employees" alignment="TOP_LEFT" buttonType="RAISED" layoutX="10.0" layoutY="410.0" onAction="#handleClick" prefHeight="70.0" prefWidth="200.0" ripplerFill="#aa2424" style="-fx-font-family: Quicksand; -fx-font-weight: bold;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="nhân viên" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
@@ -142,10 +143,73 @@
       </VBox>
       <AnchorPane fx:id="Content" layoutX="200.0" layoutY="120.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
          <children>
-            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" prefHeight="80.0" prefWidth="233.0" ripplerFill="#531818" style="-fx-background-color: #d8d9dc; -fx-font-family: Quicksand; -fx-font-weight: Bolder; -fx-background-radius: 2000;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="279.0" AnchorPane.topAnchor="230.0">
+                  <JFXButton fx:id="Order_button2" layoutX="139.0" layoutY="40.0" onAction="#handleClick" prefHeight="203.0" prefWidth="203.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Tạo đơn hàng" AnchorPane.bottomAnchor="303.5" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="40.0">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="order_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="Buy_product2" layoutX="467.0" layoutY="40.0" onAction="#handleClick" prefHeight="197.0" prefWidth="203.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Nhập lô hàng" AnchorPane.bottomAnchor="303.5" AnchorPane.leftAnchor="467.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="40.0">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="add_icon_1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="product1" layoutX="70.0" layoutY="270.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Sản phẩm" AnchorPane.leftAnchor="40.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="product_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="credit1" layoutX="259.0" layoutY="262.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Thẻ tín dụng" AnchorPane.leftAnchor="304.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="cash_2_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="employees1" layoutX="315.0" layoutY="272.0" onAction="#handleClick" prefHeight="184.0" prefWidth="200.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Nhân Viên" AnchorPane.leftAnchor="568.5" AnchorPane.topAnchor="308.75">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="employee_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </JFXButton>
+               </children></AnchorPane>
+            <AnchorPane fx:id="Order_tab" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="Order_click" buttonType="RAISED" layoutX="400.0" layoutY="217.0" prefHeight="80.0" prefWidth="233.0" ripplerFill="#531818" style="-fx-background-color: #d8d9dc; -fx-font-family: Quicksand; -fx-font-weight: Bold; -fx-background-radius: 2000;" text="tạo đơn hàng mới" AnchorPane.bottomAnchor="230.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="279.0" AnchorPane.topAnchor="230.0">
                      <graphic>
                         <FontAwesomeIconView glyphName="PLUS" size="2.5em" />
                      </graphic>
@@ -214,6 +278,7 @@
                               <TableColumn fx:id="STT_Order" prefWidth="60.33331298828125" style="-fx-alignment: center;" text="STT" />
                               <TableColumn fx:id="ID_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Mã sản phẩm" />
                               <TableColumn fx:id="Name_Order" prefWidth="121.66668701171875" style="-fx-alignment: center;" text="Tên sản phẩm" />
+                              <TableColumn fx:id="state_Order" prefWidth="113.33331298828125" style="-fx-alignment: center;" text="Trạng thái" />
                               <TableColumn fx:id="Price_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Đơn giá" />
                               <TableColumn fx:id="Amount_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Số lượng" />
                               <TableColumn fx:id="Sum_Order" prefWidth="122.6666259765625" style="-fx-alignment: center;" text="Thành tiền" />
@@ -234,7 +299,6 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton fx:id="Cancel_Order" buttonType="RAISED" onAction="#Cancel_Order_event" text="Huy" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="500.0" />
                         <JFXButton fx:id="Paid_button_Order" buttonType="RAISED" layoutX="24.0" layoutY="488.0" style="-fx-background-color: #fcfcfc; -fx-font-family: QuickSand; -fx-font-weight: Bolder;" text="Thanh toán" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="663.0" AnchorPane.topAnchor="488.0">
                            <font>
                               <Font size="14.0" />
@@ -249,7 +313,7 @@
                         </JFXButton>
                         <TextField fx:id="id_product_Order" layoutX="182.0" layoutY="43.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" AnchorPane.topAnchor="20.0" />
                         <TextField fx:id="number_Order" layoutX="182.0" layoutY="91.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" AnchorPane.topAnchor="60.0" />
-                        <Label fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" text="0" />
+                        <TextField fx:id="Total_money_Order" layoutX="144.0" layoutY="451.0" style="-fx-font-family: QuickSand; -fx-font-weight: Bolder;" />
                         <AnchorPane fx:id="Payment_tab" layoutX="308.0" layoutY="-165.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
                            <children>
                               <JFXButton fx:id="Cancel_Paid_btn" buttonType="RAISED" layoutX="410.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -356,25 +420,9 @@
             </AnchorPane>
             <AnchorPane fx:id="Buy_product_1" prefHeight="530.0" prefWidth="852.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <AnchorPane fx:id="Order_tab_21" prefHeight="530.0" prefWidth="852.0">
+                  <AnchorPane fx:id="Buy_tab" layoutY="14.0" prefHeight="530.0" prefWidth="830.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
                      <children>
-                        <Label layoutX="24.0" layoutY="43.0" style="-fx-background-color: #fff5f5;" text="Nhập mã sản phẩm">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <effect>
-                              <Lighting>
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                                 <light>
-                                    <Light.Distant />
-                                 </light>
-                              </Lighting>
-                           </effect>
-                        </Label>
-                        <JFXButton buttonType="RAISED" layoutX="426.0" layoutY="43.0" ripplerFill="#ff0c0c" style="-fx-background-color: #fcfcfc;" text="Ok" />
-                        <TableView fx:id="Buy_table" layoutY="87.0" prefHeight="315.0" prefWidth="659.0">
+                        <TableView fx:id="Buy_table" layoutY="36.0" prefHeight="430.0" prefWidth="659.0" style="-fx-font-weight: Bolder;">
                            <columns>
                               <TableColumn fx:id="STT_Buy" prefWidth="73.0" text="STT" />
                               <TableColumn fx:id="ID_Buy" prefWidth="92.0" text="Mã sản phẩm" />
@@ -385,7 +433,7 @@
                               <TableColumn prefWidth="110.6666259765625" text="Ngày nhập" />
                            </columns>
                         </TableView>
-                        <Label layoutX="718.0" layoutY="114.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền nhập">
+                        <Label layoutX="673.0" layoutY="36.0" style="-fx-background-color: #fff5f5;" text="tổng số tiền nhập">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -400,7 +448,7 @@
                               </Lighting>
                            </effect>
                         </Label>
-                        <JFXButton fx:id="Paid_button_Order1" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="36.0" prefWidth="122.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="706.0" AnchorPane.topAnchor="488.0">
+                        <JFXButton fx:id="Paid_button_Buy" buttonType="RAISED" layoutX="24.0" layoutY="488.0" prefHeight="36.0" prefWidth="125.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="663.0" AnchorPane.topAnchor="488.0">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -412,127 +460,67 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <TextField layoutX="182.0" layoutY="43.0" prefHeight="25.0" prefWidth="224.0" />
-                        <TextField layoutX="716.0" layoutY="152.0" prefHeight="31.0" prefWidth="122.0" />
-                        <AnchorPane fx:id="Payment_tab1" layoutX="308.0" layoutY="-165.0" prefHeight="400.0" prefWidth="440.0" style="-fx-background-color: #03d1ff;" visible="false" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="200.0">
+                        <TextField layoutX="673.0" layoutY="78.0" prefHeight="31.0" prefWidth="125.0" />
+                        <JFXButton buttonType="RAISED" layoutX="666.0" layoutY="419.0" prefHeight="47.0" prefWidth="139.0" style="-fx-background-color: White; -fx-font-weight: Bolder;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="Thêm">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </JFXButton>
+                        <AnchorPane fx:id="Payment_tab2" prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: White;" visible="false" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="216.0" AnchorPane.topAnchor="130.0">
                            <children>
-                              <JFXButton fx:id="Cancel_Paid_btn1" buttonType="RAISED" layoutX="410.0" prefHeight="33.0" prefWidth="30.0" ripplerFill="#b0dce9" style="-fx-background-color: #e6fffa;" text=" " AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="410.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <JFXButton fx:id="bill_Buy" buttonType="RAISED" layoutX="129.0" layoutY="198.0" prefHeight="38.0" prefWidth="122.0" style="-fx-font-weight: Bolder;" text="In hóa đơn" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="129.0">
                                  <font>
-                                    <Font size="11.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="close-icon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </JFXButton>
-                              <TextField fx:id="Paid_text_Order1" layoutX="202.0" layoutY="51.0" prefHeight="30.0" prefWidth="184.0">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="29.0" layoutY="54.0" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #fff5f5;" text="Số tiền đã thu">
-                                 <font>
-                                    <Font size="16.0" />
+                                    <Font size="17.0" />
                                  </font>
                                  <effect>
-                                    <Lighting>
-                                       <bumpInput>
-                                          <Shadow />
-                                       </bumpInput>
-                                       <light>
-                                          <Light.Distant />
-                                       </light>
-                                    </Lighting>
+                                    <Glow level="0.46">
+                                       <input>
+                                          <Lighting>
+                                             <bumpInput>
+                                                <Shadow />
+                                             </bumpInput>
+                                             <light>
+                                                <Light.Distant />
+                                             </light>
+                                          </Lighting>
+                                       </input>
+                                    </Glow>
                                  </effect>
-                              </Label>
-                              <Label layoutX="29.0" layoutY="110.0" prefHeight="30.0" prefWidth="168.0" style="-fx-background-color: #fff5f5;" text="Tổng số tiền đơn hàng">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <effect>
-                                    <Lighting>
-                                       <bumpInput>
-                                          <Shadow />
-                                       </bumpInput>
-                                       <light>
-                                          <Light.Distant />
-                                       </light>
-                                    </Lighting>
-                                 </effect>
-                              </Label>
-                              <TextField fx:id="ToTal_text_Order1" layoutX="202.0" layoutY="110.0" prefHeight="30.0" prefWidth="184.0">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <Label layoutX="29.0" layoutY="173.0" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fff5f5;" text="Số tiền còn lại">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <effect>
-                                    <Lighting>
-                                       <bumpInput>
-                                          <Shadow />
-                                       </bumpInput>
-                                       <light>
-                                          <Light.Distant />
-                                       </light>
-                                    </Lighting>
-                                 </effect>
-                              </Label>
-                              <TextField fx:id="ExCash_text_Order1" layoutX="202.0" layoutY="173.0" prefHeight="30.0" prefWidth="184.0">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </TextField>
-                              <JFXButton fx:id="Cancle_Order1" buttonType="RAISED" layoutX="184.0" layoutY="240.0" prefHeight="30.0" prefWidth="73.0" style="-fx-background-color: #fcfcfc;" text="Hủy">
-                                 <graphic>
-                                    <FontAwesomeIconView />
-                                 </graphic>
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
                               </JFXButton>
-                              <JFXButton fx:id="Pay_Order1" buttonType="RAISED" layoutX="54.0" layoutY="305.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #fcfcfc;" text="Thanh toán">
-                                 <graphic>
-                                    <FontAwesomeIconView />
-                                 </graphic>
+                              <Label layoutX="60.0" layoutY="83.0" style="-fx-font-weight: Bolder;" text="Tổng số tiền đã nhập là :             vnd">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="17.0" />
                                  </font>
-                              </JFXButton>
-                              <JFXButton fx:id="Bill_Order1" buttonType="RAISED" layoutX="283.0" layoutY="305.0" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: #fcfcfc;" text="In hóa đơn">
-                                 <graphic>
-                                    <FontAwesomeIconView />
-                                 </graphic>
+                              </Label>
+                              <JFXButton fx:id="back_Buy" layoutY="2.0" style="-fx-font-weight: bolder;" styleClass="hover_border" stylesheets="@../src/tableview.css" text="quay lại">
                                  <font>
-                                    <Font size="14.0" />
+                                    <Font size="13.0" />
                                  </font>
                               </JFXButton>
                            </children>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
                         </AnchorPane>
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="product_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: WHITE;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <TableView fx:id="product_table" layoutX="1.0" layoutY="96.0" prefHeight="358.0" prefWidth="720.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="95.0">
                      <columns>
                         <TableColumn fx:id="macol" prefWidth="109.99996948242188" style="-fx-alignment: center;" text="Mã" />
-                        <TableColumn fx:id="tencol" onEditCommit="#handleChangeNameProduct" prefWidth="134.0" style="-fx-alignment: center;" text="Tên" />
+                        <TableColumn fx:id="tencol" prefWidth="134.0" style="-fx-alignment: center;" text="Tên" />
                         <TableColumn fx:id="soluongcol" prefWidth="170.0" style="-fx-alignment: center;" text="Số lượng" />
-                        <TableColumn fx:id="giacol" onEditCommit="#handleChangePriceProduct" prefWidth="144.0" style="-fx-alignment: center;" text="Giá" />
+                        <TableColumn fx:id="giacol" prefWidth="144.0" style="-fx-alignment: center;" text="Giá" />
                         <TableColumn fx:id="tinhtrangcol" prefWidth="161.0" style="-fx-alignment: center;" text="Tình trạng" />
                         <TableColumn prefWidth="75.0" text="Mã" />
                      </columns>
                   </TableView>
                   <HBox alignment="CENTER_LEFT" layoutX="226.0" layoutY="31.0" style="-fx-background-color: #d8d9dc; -fx-background-radius: 1000;" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
                      <children>
-                        <TextField fx:id="search_text" prefHeight="31.0" prefWidth="171.0" promptText="nhập tên hoặc mã sản phẩm" style="-fx-background-color: #d8d9dc; -fx-background-radius: 1000; -fx-font-family: QUicksand; -fx-font-weight: Solder;">
+                        <TextField fx:id="search_text" prefHeight="31.0" prefWidth="171.0" promptText="nhập tên hoặc mã sản phẩm" style="-fx-background-color: #d8d9dc; -fx-background-radius: 1000; -fx-font-family: Quicksand; -fx-font-weight: bold;">
                            <HBox.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
@@ -550,10 +538,11 @@
                   <Button fx:id="detail_pro" layoutX="715.0" layoutY="465.0" mnemonicParsing="false" onAction="#detail_table" text="Chi tiết" visible="false" />
                   <TableView fx:id="detail_table" layoutX="56.0" layoutY="133.0" prefHeight="257.0" prefWidth="659.0" visible="false" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="134.0" AnchorPane.topAnchor="133.0">
                      <columns>
-                        <TableColumn fx:id="macolproduct2" prefWidth="83.0" text="Mã sản phẩm" />
+                        <TableColumn fx:id="macolproduct2" prefWidth="83.0" text="Mã" />
                         <TableColumn fx:id="tencol2" prefWidth="83.0" text="Tên" />
-                        <TableColumn fx:id="macolshipment2" prefWidth="83.0" text="Mã lô hàng" />
-                        <TableColumn fx:id="soluongcol2" onEditCommit="#handleChangeQuantityShipment" prefWidth="100.0" text="Số lượng" />
+                        <TableColumn fx:id="macolshipment2" prefWidth="75.0" text="Mã lô hàng" />
+                        <TableColumn fx:id="soluongcol2" prefWidth="100.0" text="Số lượng" />
+                        <TableColumn fx:id="giacol2" prefWidth="96.0" text="Giá" />
                         <TableColumn fx:id="ngaynhapcol2" prefWidth="141.66668701171875" text="Ngày nhập" />
                         <TableColumn fx:id="ngayhethancol2" prefWidth="128.0" text="Ngày hết hạn" />
                      </columns>
@@ -576,48 +565,90 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </AnchorPane>
-      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #03d1ff;" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="267.70000000000005" AnchorPane.topAnchor="125.0">
+      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="212.0" layoutY="33.0" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #f0f6f7;" text="Sign in" textFill="#240c0c">
-               <font>
-                  <Font size="26.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="username" layoutX="77.0" layoutY="156.0" prefHeight="31.0" prefWidth="358.0" promptText="Nhập tài khoản">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </JFXTextField>
-            <JFXPasswordField fx:id="password" layoutX="77.0" layoutY="227.0" prefHeight="25.0" prefWidth="358.0" promptText="Nhập mật khẩu">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </JFXPasswordField>
-            <JFXButton fx:id="Login" layoutX="222.0" layoutY="282.0" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #fcfcf2;" text="Đăng nhập" />
-            <JFXButton fx:id="forget_pass" layoutX="216.0" layoutY="328.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" text="Quên mật khẩu" />
-            <JFXButton fx:id="Close_Button" layoutX="471.0" layoutY="2.0" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: #06011c;" text=" " AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <FontAwesomeIconView glyphName="USER" layoutX="42.0" layoutY="195.0" size="30" />
-            <FontAwesomeIconView glyphName="KEY" layoutX="39.0" layoutY="259.0" size="30" />
-            <Label fx:id="notify_login" layoutX="113.0" layoutY="98.0" prefHeight="44.0" prefWidth="306.0" textFill="#a62e2e">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-            <AnchorPane fx:id="notify_forget_pas" layoutX="109.0" layoutY="68.0" prefHeight="221.0" prefWidth="315.0" style="-fx-background-color: #c9b3b3;" visible="false">
+            <HBox prefHeight="80.0" prefWidth="1052.0" style="-fx-background-color: #14a2e2;" AnchorPane.bottomAnchor="580.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <AnchorPane fx:id="Login_tab1" layoutX="852.0" layoutY="89.0" prefHeight="387.0" prefWidth="480.0" style="-fx-background-color: #f2f2f2;" AnchorPane.rightAnchor="20.0">
                <children>
-                  <Label fx:id="content" layoutX="36.0" layoutY="41.0" prefHeight="126.0" prefWidth="249.0" style="-fx-background-color: #ffffff;" text="          Đã gửi mật khẩu mới&#10;            tới gmail của bạn&#10;" textAlignment="CENTER">
+                  <Label fx:id="notify_login" layoutX="75.0" layoutY="80.0" prefHeight="49.0" prefWidth="382.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" textFill="#a62e2e">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #f0f6f7;" text="ĐĂNG NHẬP" textFill="#240c0c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="344.66668701171875" layoutX="167.0" layoutY="56.0" startX="-167.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0" />
+                  <TextField fx:id="username" layoutX="38.0" layoutY="170.0" prefHeight="35.0" prefWidth="349.0" />
+                  <TextField fx:id="password" layoutX="38.0" layoutY="261.0" prefHeight="35.0" prefWidth="349.0" />
+                  <JFXButton fx:id="Login" buttonType="RAISED" layoutX="374.0" layoutY="337.0" prefHeight="43.0" prefWidth="107.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Đăng nhập" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="337.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="forget_pass" layoutX="27.0" layoutY="337.0" prefHeight="49.0" prefWidth="115.0" style="-fx-font-family: Quicksand; -fx-font-weight: bolder;" text="Quên mật khẩu" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="132.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Tên đăng nhập">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="Ok_button" layoutX="132.0" layoutY="182.0" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: #ffffff;" text="OK" />
-                  <JFXButton fx:id="Cancel" layoutX="276.0" layoutY="-2.0" prefHeight="29.0" prefWidth="39.0" style="-fx-background-color: #ffffff;" text="X" AnchorPane.topAnchor="0.0">
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="231.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Mật khẩu">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="16.0" />
                      </font>
-                  </JFXButton>
+                  </Label>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="Forget_pass_tab" layoutY="89.0" prefHeight="394.0" prefWidth="533.0" style="-fx-background-color: #f2f2f2;" visible="false" AnchorPane.rightAnchor="20.0">
+               <children>
+                  <Line endX="344.66668701171875" startX="-167.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="50.0" />
+                  <Label alignment="TOP_LEFT" layoutX="40.0" layoutY="227.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập Email">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="38.0" layoutY="134.0" style="-fx-font-family: Quicksand; -fx-font-weight: Bolder;" text="Nhập mã nhân viên">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="10.0" layoutY="7.0" text="Quên mật khẩu" textFill="#240c0c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="ma_nv" layoutX="38.0" layoutY="169.0" prefHeight="35.0" prefWidth="349.0" />
+                  <TextField fx:id="email_nv" layoutX="38.0" layoutY="262.0" prefHeight="35.0" prefWidth="349.0" />
+                  <JFXButton fx:id="send_rq" alignment="TOP_LEFT" buttonType="RAISED" layoutX="35.0" layoutY="313.0" prefHeight="37.0" prefWidth="73.0" style="-fx-font-weight: Bolder;" text="Gửi đi">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="back_Login" alignment="TOP_LEFT" layoutX="38.0" layoutY="350.0" prefHeight="30.0" prefWidth="161.0" style="-fx-font-weight: Bolder;" text="Quay lại trang đăng nhập" />
+                  <AnchorPane fx:id="notify_forget_pas" prefHeight="221.0" prefWidth="315.0" style="-fx-background-color: #c9b3b3;" visible="false" AnchorPane.leftAnchor="109.0" AnchorPane.rightAnchor="109.0">
+                     <children>
+                        <Label fx:id="content" layoutX="36.0" layoutY="41.0" prefHeight="126.0" prefWidth="249.0" style="-fx-background-color: #ffffff;" text="          Đã gửi mật khẩu mới&#10;            tới gmail của bạn&#10;" textAlignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="Ok_button" layoutX="132.0" layoutY="182.0" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: #ffffff;" text="OK" />
+                        <JFXButton fx:id="Cancel" layoutX="276.0" layoutY="-2.0" prefHeight="29.0" prefWidth="39.0" style="-fx-background-color: #ffffff;" text="X" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="166.0" layoutY="197.0" prefHeight="210.0" prefWidth="233.0" style="-fx-font-weight: Bolder;" text="NGÀY &#10;   MỚI&#10;      TỐT &#10;         LÀNH" textFill="RED">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
