@@ -550,12 +550,28 @@
                   <Button fx:id="Close_detail" layoutX="789.0" layoutY="465.0" mnemonicParsing="false" onAction="#Closee" text="Đóng" visible="false" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="credit_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="credit_1" layoutX="40.0" layoutY="40.0" prefHeight="540.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <Button layoutX="333.0" layoutY="208.0" mnemonicParsing="false" text="Button" />
+                  <TableView layoutY="94.0" prefHeight="287.0" prefWidth="812.0">
+                     <columns>
+                        <TableColumn prefWidth="144.0" text="Mã khách hàng" />
+                        <TableColumn prefWidth="163.0" text="Tên khách hàng" />
+                        <TableColumn prefWidth="177.0" text="Số điện thoại" />
+                        <TableColumn prefWidth="171.0" text="Địa chỉ" />
+                        <TableColumn prefWidth="156.0" text="Số dư" />
+                     </columns>
+                  </TableView>
+                  <TextField layoutX="274.0" layoutY="20.0" prefHeight="41.0" prefWidth="249.0" promptText="Search credit.." />
+                  <Button layoutX="685.0" layoutY="397.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: red;" text="Delete" />
+                  <Button layoutX="595.0" layoutY="397.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="72.0" style="-fx-background-color: Green;" text="Add" />
+                  <TextField layoutY="455.0" prefHeight="25.0" prefWidth="156.0" promptText="Mã khách hàng" />
+                  <TextField layoutX="156.0" layoutY="455.0" prefHeight="25.0" prefWidth="156.0" promptText="Tên khách hàng" />
+                  <TextField layoutX="312.0" layoutY="455.0" prefHeight="25.0" prefWidth="168.0" promptText="Số điện thoại" />
+                  <TextField layoutX="478.0" layoutY="455.0" prefHeight="25.0" prefWidth="171.0" promptText="Địa chỉ" />
+                  <TextField layoutX="647.0" layoutY="455.0" prefHeight="25.0" prefWidth="168.0" promptText="Số dư" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="employees_1" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <AnchorPane fx:id="employees_1" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <TableView layoutY="118.0" prefHeight="210.0" prefWidth="772.0">
                      <columns>
@@ -581,7 +597,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </AnchorPane>
-      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="Login_tab" layoutX="284.0" layoutY="125.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: WHITE;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="80.0" prefWidth="1052.0" style="-fx-background-color: #14a2e2;" AnchorPane.bottomAnchor="580.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             <AnchorPane fx:id="Login_tab1" layoutX="852.0" layoutY="89.0" prefHeight="387.0" prefWidth="480.0" style="-fx-background-color: #f2f2f2;" AnchorPane.rightAnchor="20.0">
