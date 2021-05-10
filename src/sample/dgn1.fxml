@@ -143,7 +143,7 @@
       </VBox>
       <AnchorPane fx:id="Content" layoutX="200.0" layoutY="120.0" style="-fx-background-color: WHITE;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
          <children>
-            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="Home_1" layoutX="40.0" layoutY="40.0" prefHeight="547.0" prefWidth="812.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <JFXButton fx:id="Order_button2" layoutX="139.0" layoutY="40.0" onAction="#handleClick" prefHeight="203.0" prefWidth="203.0" style="-fx-background-color: #14a2e2; -fx-font-weight: Bolder;" text="Tạo đơn hàng" AnchorPane.bottomAnchor="303.5" AnchorPane.leftAnchor="139.0" AnchorPane.topAnchor="40.0">
                      <effect>
@@ -555,9 +555,25 @@
                   <Button layoutX="333.0" layoutY="208.0" mnemonicParsing="false" text="Button" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="employees_1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <AnchorPane fx:id="employees_1" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fafffa;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
-                  <Button layoutX="78.0" layoutY="67.0" mnemonicParsing="false" text="Button" />
+                  <TableView layoutY="118.0" prefHeight="210.0" prefWidth="772.0">
+                     <columns>
+                        <TableColumn prefWidth="158.0" text="employeeId" />
+                        <TableColumn prefWidth="156.0" text="employeeUsername" />
+                        <TableColumn prefWidth="139.0" text="employeePassword" />
+                        <TableColumn prefWidth="162.0" text="employeeName" />
+                        <TableColumn prefWidth="156.0" text="employeeInfo" />
+                     </columns>
+                  </TableView>
+                  <TextField layoutX="248.0" layoutY="41.0" prefHeight="46.0" prefWidth="276.0" promptText="Search employee.." />
+                  <Button layoutX="646.0" layoutY="351.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: red;" text="Delete" />
+                  <Button layoutX="538.0" layoutY="351.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="78.0" style="-fx-background-color: Green;" text="Add" />
+                  <TextField layoutY="419.0" promptText="employeeId" />
+                  <TextField layoutX="149.0" layoutY="419.0" promptText="employeeUsername" />
+                  <TextField layoutX="298.0" layoutY="419.0" prefHeight="25.0" prefWidth="161.0" promptText="employeePassword" />
+                  <TextField layoutX="457.0" layoutY="419.0" prefHeight="25.0" prefWidth="168.0" promptText="employeeName" />
+                  <TextField layoutX="610.0" layoutY="419.0" prefHeight="25.0" prefWidth="161.0" promptText="employeeInfo" />
                </children>
             </AnchorPane>
          </children>
